@@ -7,12 +7,12 @@
   rh = reset HEAD
   rhh = reset --hard HEAD
 
-  l = "!source ~/.githelpers && pretty_git_log"
+  l = "!. ~/.githelpers && pretty_git_log"
   la = "!git l --all"
   lr = "!git l -30"
   lra = "!git lr --all"
 
-  ruf = "!source ~/.githelpers && remove_untracked_files"
+  ruf = "!. ~/.githelpers && remove_untracked_files"
 
   dev = checkout develop
   stage = checkout staging
