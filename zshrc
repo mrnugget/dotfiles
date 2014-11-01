@@ -262,7 +262,13 @@ git_prompt_info() {
   echo "%{$fg_bold[red]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
-local dir_info="%{$fg_bold[green]%}%~%{$reset_color%}"
+local dir_info_color="$fg_bold[yellow]"
+local dir_info_color_file="${HOME}/.zsh.d/dir_info_color"
+if [ -r ${dir_info_color_file} ]; then
+  source ${dir_info_color_file}
+fi
+
+local dir_info="%{$dir_info_color%}%~%{$reset_color%}"
 local promptnormal="%{$fg_bold[grey]%}%% %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}%% %{$reset_color%}"
 
