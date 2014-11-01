@@ -8,5 +8,6 @@ ack: $(HOME)/.ackrc
 git: $(HOME)/.gitconfig $(HOME)/.githelpers $(HOME)/.gitignore
 psql: $(HOME)/.psqlrc
 zsh: $(HOME)/.zprofile $(HOME)/.zshrc $(HOME)/.zsh.d
+tmux: $(HOME)/.tmux.conf
 
-all: irb ack git psql zsh
+all: irb ack git psql zsh tmux
