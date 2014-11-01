@@ -1,2 +1,4 @@
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
+if type rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
