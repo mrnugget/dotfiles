@@ -1,0 +1,19 @@
+#!/bin/bash
+
+HASH="%C(yellow)%h%C(reset)"
+RELATIVE_TIME="%C(green)%ar%C(reset)"
+AUTHOR="%C(bold blue)%an%C(reset)"
+REFS="%C(red)%d%C(reset)"
+SUBJECT="%s"
+
+FORMAT="$HASH{$RELATIVE_TIME{$AUTHOR{$REFS $SUBJECT"
+
+pretty_git_log() {
+  git log --graph --pretty="tformat:$FORMAT" $* |
+  column -t -s '{' |
+  less -XRS --quit-if-one-screen
+}
+
+remove_untracked_files() {
+  git ls-files --other --exclude-standard | xargs rm -rf
+}

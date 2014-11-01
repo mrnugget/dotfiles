@@ -1,0 +1,31 @@
+[user]
+  name = Thorsten Ball
+  email = mrnugget@gmail.com
+[alias]
+  co = checkout
+  st = status
+  rh = reset HEAD
+  rhh = reset --hard HEAD
+
+  l = "!source ~/.githelpers && pretty_git_log"
+  la = "!git l --all"
+  lr = "!git l -30"
+  lra = "!git lr --all"
+
+  ruf = "!source ~/.githelpers && remove_untracked_files"
+
+  dev = checkout develop
+  stage = checkout staging
+  recu = checkout recurring-rides
+[core]
+  editor = vim -f
+  excludesfile = ~/.gitignore
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+	ui = true
+[push]
+	default = simple
+[branch]
+	autosetuprebase = always
