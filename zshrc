@@ -167,7 +167,15 @@ alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 
-# PostgreSQL
+# fzz and ag
+alias fazz='fzz ag -i {{}}'
+# fzz and find
+alias fizz='fzz find . -iname "*{{}}*"'
+
+##########
+# FUNCTIONS
+##########
+
 startpostgres() {
   local pidfile="/usr/local/var/postgres/postmaster.pid"
   if [ -s $pidfile ] && kill -0 $(cat $pidfile | head -n 1) > /dev/null 2>&1; then
@@ -177,16 +185,9 @@ startpostgres() {
   fi
 }
 
-alias stoppostgres='pg_ctl -D /usr/local/var/postgres stop'
-
-# fzz and ag
-alias fazz='fzz ag -i {{}}'
-# fzz and find
-alias fizz='fzz find . -iname "*{{}}*"'
-
-##########
-# FUNCTIONS
-##########
+stoppostgres() {
+  pg_ctl -D /usr/local/var/postgres stop
+}
 
 # Taken from here: http://timbabwe.com/2012/05/iterm_tab_and_window_titles_with_zsh
 precmd () {
