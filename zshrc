@@ -262,7 +262,7 @@ git_prompt_info() {
   echo "%{$fg_bold[red]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
-local dir_info_color="$fg_bold[yellow]"
+local dir_info_color="$fg_bold[green]"
 local dir_info_color_file="${HOME}/.zsh.d/dir_info_color"
 if [ -r ${dir_info_color_file} ]; then
   source ${dir_info_color_file}
