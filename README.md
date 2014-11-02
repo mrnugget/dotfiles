@@ -74,6 +74,11 @@ Here is the prompt after Vim has been suspended with Ctrl-Z:
 
 ![Prompt with dirty directory and a background job.](http://s3.thorstenball.com/gif/prompt_dirty_background_job.png)
 
+The setup here allows me to define a new color for the current directoy on each
+machine I clone this repo to, by adding the file `zsh.d/dir_info_color`.
+
+![Prompt with different color](http://s3.thorstenball.com/gif/prompt_different_color.png)
+
 ### Environment
 
 Vim is set up as the default editor in `psql` with `PSQL_EDITOR`, so
