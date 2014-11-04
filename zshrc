@@ -90,6 +90,9 @@ bindkey -M vicmd v edit-command-line
 # Push current line to buffer stack, return to PS1
 bindkey "^Q" push-input
 
+# Remap this to Ctrl-F, since Ctrl-[HJKL] is used for window navigation
+bindkey "^F" clear-screen
+
 # Make up/down arrow put the cursor at the end of the line
 # instead of using the vi-mode mappings for these keys
 bindkey "\eOA" up-line-or-history

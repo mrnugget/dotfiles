@@ -11,3 +11,7 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 def reload
   reload!
 end
+
+def clear
+  system('clear');
+end
