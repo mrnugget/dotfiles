@@ -6,6 +6,7 @@
   st = status
   rh = reset HEAD
   rhh = reset --hard HEAD
+  unstage = reset HEAD
 
   l = "!. ~/.githelpers && pretty_git_log"
   la = "!git l --all"
@@ -16,7 +17,6 @@
 
   dev = checkout develop
   stage = checkout staging
-  recu = checkout recurring-rides
 [core]
   editor = vim -f
   excludesfile = ~/.gitignore
