@@ -12,6 +12,7 @@
   la = "!git l --all"
   lr = "!git l -30"
   lra = "!git lr --all"
+  lg = "!git l -G $1 -- $2"
 
   ruf = "!. ~/.githelpers && remove_untracked_files"
 
