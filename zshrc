@@ -294,7 +294,7 @@ export EDITOR='vim'
 # Set it to 10ms
 export KEYTIMEOUT=1
 
-# rbenv: see ~/.zprofile
+# rbenv: see ~/.zshenv
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
