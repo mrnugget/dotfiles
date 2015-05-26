@@ -294,7 +294,12 @@ export EDITOR='vim'
 # Set it to 10ms
 export KEYTIMEOUT=1
 
-# rbenv: see ~/.zshenv
+# homebrew
+export PATH="/usr/local/bin:$PATH"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
