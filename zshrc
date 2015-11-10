@@ -298,8 +298,11 @@ export KEYTIMEOUT=1
 export PATH="/usr/local/bin:$PATH"
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#
+if which rbenv &> /dev/null; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
@@ -318,3 +321,8 @@ export PSQL_EDITOR='vim -c"set filetype=sql"'
 
 #heroku
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# direnv
+if which direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
