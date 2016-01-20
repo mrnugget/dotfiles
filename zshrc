@@ -279,6 +279,8 @@ PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 # ENV
 ########
 
+export EDITOR='vim'
+
 local envfile="${HOME}/.zsh.d/env.`uname`.sh"
 if [ -r ${envfile} ]; then
   . ${envfile}
@@ -287,7 +289,6 @@ fi
 export PATH="$HOME/bin:$PATH"
 
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
-export EDITOR='vim'
 
 # Reduce delay for key combinations in order to change to vi mode faster
 # See: http://www.johnhawthorn.com/2012/09/vi-escape-delays/

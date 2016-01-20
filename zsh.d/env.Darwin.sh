@@ -1,2 +1,1 @@
-# PATH for homebrew-installed Go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
