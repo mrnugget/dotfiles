@@ -327,3 +327,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if which direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
