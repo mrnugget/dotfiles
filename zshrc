@@ -302,7 +302,7 @@ export PATH="/usr/local/bin:$PATH"
 #
 if which rbenv &> /dev/null; then
   export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 # Encoding problems with gem
