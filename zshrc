@@ -151,6 +151,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 # Go way, Ghostscript
 alias gs='gst'
+alias gp='git push'
 
 # ruby & rails
 alias be='bundle exec'
@@ -190,11 +191,11 @@ stoppostgres() {
 }
 
 # Taken from here: http://timbabwe.com/2012/05/iterm_tab_and_window_titles_with_zsh
-precmd () {
-  tab_label=${PWD/${HOME}/\~} # use 'relative' path
-  echo -ne "\e]2;${tab_label}\a" # set window title to full string
-  echo -ne "\e]1;${tab_label: -24}\a" # set tab title to rightmost 24 characters
-}
+# precmd () {
+#   tab_label=${PWD/${HOME}/\~} # use 'relative' path
+#   echo -ne "\e]2;${tab_label}\a" # set window title to full string
+#   echo -ne "\e]1;${tab_label: -24}\a" # set tab title to rightmost 24 characters
+# }
 
 mkdircd() {
   mkdir -p $1 && cd $1
@@ -330,3 +331,7 @@ fi
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# rust
+
+export PATH="$HOME/.cargo/bin:$PATH"
