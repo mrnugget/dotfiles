@@ -263,7 +263,15 @@ git_prompt_info() {
   echo "%{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
-local dir_info_color="$fg_bold[black]"
+# local dir_info_color="$fg_bold[black]"
+
+# This just sets the color to "bold".
+# Future me. Try this to see what's correct:
+#   $ print -P '%fg_bold[black] black'
+#   $ print -P '%B%F{black} black'
+#   $ print -P '%B black'         
+local dir_info_color="%B"
+
 local dir_info_color_file="${HOME}/.zsh.d/dir_info_color"
 if [ -r ${dir_info_color_file} ]; then
   source ${dir_info_color_file}
