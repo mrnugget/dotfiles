@@ -248,7 +248,7 @@ cdfzz() {
 
 git_prompt_info() {
   local dirstatus=" ✔"
-  local dirty="%{$fg[yellow]%} ✗%{$reset_color%}"
+  local dirty="%{$fg_bold[red]%} ✗%{$reset_color%}"
 
   if [[ -n $(git status -s '' -uno  2> /dev/null) ]]; then
     dirstatus=$dirty
@@ -260,18 +260,18 @@ git_prompt_info() {
 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo "%{$fg_bold[red]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+  echo "%{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
-local dir_info_color="$fg_bold[green]"
+local dir_info_color="$fg_bold[black]"
 local dir_info_color_file="${HOME}/.zsh.d/dir_info_color"
 if [ -r ${dir_info_color_file} ]; then
   source ${dir_info_color_file}
 fi
 
 local dir_info="%{$dir_info_color%}%~%{$reset_color%}"
-local promptnormal="%{$fg_bold[grey]%}%% %{$reset_color%}"
-local promptjobs="%{$fg_bold[red]%}%% %{$reset_color%}"
+local promptnormal="%{$fg_bold[grey]%}$ %{$reset_color%}"
+local promptjobs="%{$fg_bold[red]%}$ %{$reset_color%}"
 
 # PROMPT='${dir_info} %{$fg_bold[grey]%}`rbenv version-name`%{$reset_color%} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
@@ -289,7 +289,7 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+# export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Reduce delay for key combinations in order to change to vi mode faster
 # See: http://www.johnhawthorn.com/2012/09/vi-escape-delays/
@@ -335,3 +335,5 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # rust
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# export COLORTERM=truecolor
