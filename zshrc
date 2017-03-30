@@ -341,7 +341,7 @@ if which direnv &> /dev/null; then
 fi
 
 # fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # rust
 
