@@ -4,3 +4,4 @@ zeus.json
 tags
 .agignore
 .projectile
+.env
