@@ -18,6 +18,8 @@
 
   dev = checkout develop
   stage = checkout staging
+
+	tree = log --oneline --decorate --graph
 [core]
   editor = vim -f
   excludesfile = ~/.gitignore
