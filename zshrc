@@ -347,4 +347,10 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
+if which rg &> /dev/null; then
+  compdef -d rg
+fi
+
+
 # export COLORTERM=truecolor
