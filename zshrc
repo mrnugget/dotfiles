@@ -344,13 +344,15 @@ fi
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # rust
-
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Android
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
 if which rg &> /dev/null; then
   compdef -d rg
 fi
 
-
-# export COLORTERM=truecolor
