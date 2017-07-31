@@ -229,8 +229,8 @@ spinner() {
   done
 }
 
-gifs3() {
-  local route="s3.thorstenball.com/gif/${1}"
+s3() {
+  local route="s3.thorstenball.com/${1}"
   aws s3 cp ${1} s3://${route}
   echo http://${route} | pbcopy
 }
