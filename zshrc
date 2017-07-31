@@ -280,7 +280,7 @@ if [ -r ${dir_info_color_file} ]; then
   source ${dir_info_color_file}
 fi
 
-local dir_info="%{$dir_info_color%}%~%{$reset_color%}"
+local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 local promptnormal="%{$fg_bold[grey]%}$ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}$ %{$reset_color%}"
 
