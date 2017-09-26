@@ -5,3 +5,7 @@ tags
 .agignore
 .projectile
 .env
+ac-comphist.dat
+eshell
+rake.cache
+tramp
