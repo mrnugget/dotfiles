@@ -1,12 +1,12 @@
 #!/bin/bash
 
-HASH="%C(yellow)%h%C(reset)"
-RELATIVE_TIME="%C(green)%ar%C(reset)"
-AUTHOR="%C(bold blue)%an%C(reset)"
-REFS="%C(red)%d%C(reset)"
+HASH="%C(always,yellow)%h%C(always,reset)"
+RELATIVE_TIME="%C(always,green)%ar%C(always,reset)"
+AUTHOR="%C(always,bold blue)%an%C(always,reset)"
+REFS="%C(always,red)%d%C(always,reset)"
 SUBJECT="%s"
 
-FORMAT="$HASH{$RELATIVE_TIME{$AUTHOR{$REFS $SUBJECT"
+FORMAT="$HASH $RELATIVE_TIME{$AUTHOR{$REFS $SUBJECT"
 
 pretty_git_log() {
   git log --graph --pretty="tformat:$FORMAT" $* |
