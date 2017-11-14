@@ -176,6 +176,9 @@ alias fizz='fzz find . -iname "*{{}}*"'
 # Notes
 alias n='vim +Notes' # Opens Vim and calls `:Notes`
 
+# Go
+alias got='go test ./...'
+
 ##########
 # FUNCTIONS
 ##########

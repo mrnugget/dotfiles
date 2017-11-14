@@ -30,5 +30,6 @@
 	ui = true
 [push]
 	default = current
+	followTags = true
 [branch]
 	autosetuprebase = always
