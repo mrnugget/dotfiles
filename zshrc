@@ -386,4 +386,3 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 if which rg &> /dev/null; then
   compdef -d rg
 fi
-
