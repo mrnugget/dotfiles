@@ -296,7 +296,8 @@ PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 # ENV
 ########
 
-export EDITOR='vim'
+alias vim='nvim'
+export EDITOR='nvim'
 
 local envfile="${HOME}/.zsh.d/env.`uname`.sh"
 if [ -r ${envfile} ]; then
