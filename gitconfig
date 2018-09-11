@@ -21,7 +21,6 @@
 
 	tree = log --oneline --decorate --graph
 [core]
-  editor = vim -f
   excludesfile = ~/.gitignore
 [color]
   diff = auto
@@ -37,3 +36,5 @@
 [diff "gpg"]
 	binary = true
 	textconv = gpg -d --quiet --yes --compress-algo=none --no-encrypt-to --batch --use-agent
+[commit]
+	verbose = true

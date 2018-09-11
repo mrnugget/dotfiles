@@ -23,11 +23,14 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
+setopt EXTENDED_HISTORY
+setopt HIST_VERIFY
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Dont record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Dont record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Dont write duplicate entries in the history file.
 
 setopt inc_append_history
 setopt share_history
@@ -333,6 +336,7 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 # golang
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
 # goenv
 if which goenv &> /dev/null; then
   eval "$(goenv init -)"
@@ -377,12 +381,16 @@ fi
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Android
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
 # Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
 if which rg &> /dev/null; then
   compdef -d rg
 fi
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# Try out `z`
+if [ -e /usr/local/etc/profile.d/z.sh ]; then
+  source /usr/local/etc/profile.d/z.sh 
+fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
