@@ -337,11 +337,6 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
-# goenv
-if which goenv &> /dev/null; then
-  eval "$(goenv init -)"
-fi
-
 
 # psql
 export PSQL_EDITOR='vim -c"set filetype=sql"'
