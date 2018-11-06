@@ -63,7 +63,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
 # use /etc/hosts and known_hosts for hostname completion
-[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _global_ssh_hosts=()
 [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 [ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
 [ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
@@ -130,7 +129,7 @@ bindkey '^E' end-of-line
 
 local aliasfile="${HOME}/.zsh.d/aliases.`uname`.sh"
 if [ -r ${aliasfile} ]; then
-  . ${aliasfile}
+  source ${aliasfile}
 fi
 
 alias lls='ls -lh --sort=size --reverse'
@@ -309,7 +308,7 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
-# export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Reduce delay for key combinations in order to change to vi mode faster
 # See: http://www.johnhawthorn.com/2012/09/vi-escape-delays/
