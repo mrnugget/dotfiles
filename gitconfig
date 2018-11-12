@@ -1,6 +1,7 @@
 [user]
   name = Thorsten Ball
   email = mrnugget@gmail.com
+
 [alias]
   co = checkout
   st = status
@@ -20,21 +21,26 @@
   stage = checkout staging
 
 	tree = log --oneline --decorate --graph
+
 [core]
   excludesfile = ~/.gitignore
+
 [color]
   diff = auto
   status = auto
   branch = auto
 	ui = true
+
 [push]
 	default = current
 	followTags = true
+
 [branch]
 	autosetuprebase = always
 
 [diff "gpg"]
 	binary = true
 	textconv = gpg -d --quiet --yes --compress-algo=none --no-encrypt-to --batch --use-agent
+
 [commit]
 	verbose = true
