@@ -50,6 +50,9 @@ cask 'whatsapp'
 cask 'spotify'
 cask 'karabiner-elements'
 
+tap 'caskroom/drivers'
+cask 'sonos'
+
 mas 'Fantastical 2', id: 975937182
 mas 'Xcode', id: 497799835
 mas 'Annotate', id: 918207447
