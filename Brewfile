@@ -48,6 +48,7 @@ cask 'racket'
 cask 'docker'
 cask 'whatsapp'
 cask 'spotify'
+cask 'karabiner-elements'
 
 mas 'Fantastical 2', id: 975937182
 mas 'Xcode', id: 497799835
