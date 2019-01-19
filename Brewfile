@@ -65,3 +65,6 @@ brew 'pyenv'
 
 # Rust installed manually via: https://rustup.rs/
 # Go installed manually with package from golang.org
+
+# 'Keyboard Cleaner' directly downloaded from here:
+# http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
