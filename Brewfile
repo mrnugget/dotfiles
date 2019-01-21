@@ -11,6 +11,9 @@ brew 'make'
 tap 'neovim/neovim'
 brew 'neovim'
 
+tap 'd12frosted/emacs-plus'
+brew 'emacs-plus', args: ['HEAD', 'with-modern-icon', 'without-spacemacs-icon']
+
 brew 'openssl'
 brew 'coreutils'
 
