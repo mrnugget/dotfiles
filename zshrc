@@ -363,8 +363,8 @@ if [ -e ~/.fzf ]; then
 fi
 
 if which fzf &> /dev/null && which rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-  export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
+  export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_DEFAULT_OPTS='
     --color=bg+:#DEECF9,bg:#FFFFFF,spinner:#3f5fff,hl:#586e75
