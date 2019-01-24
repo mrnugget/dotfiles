@@ -16,7 +16,6 @@ brew 'emacs-plus', args: ['HEAD', 'with-modern-icon', 'without-spacemacs-icon']
 
 brew 'openssl'
 brew 'coreutils'
-
 brew 'fzf'
 brew 'reattach-to-user-namespace'
 brew 'tmux'
@@ -55,6 +54,10 @@ cask 'karabiner-elements'
 cask 'vlc'
 cask 'adobe-acrobat-reader'
 cask 'kitty'
+cask 'alacritty'
+cask 'google-chrome'
+cask 'virtualbox'
+cask 'vagrant'
 
 tap 'caskroom/drivers'
 cask 'sonos'
