@@ -58,6 +58,7 @@ cask 'alacritty'
 cask 'google-chrome'
 cask 'virtualbox'
 cask 'vagrant'
+cask 'skype'
 
 tap 'caskroom/drivers'
 cask 'sonos'
