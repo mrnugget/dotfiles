@@ -298,8 +298,12 @@ PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 # ENV
 ########
 
-alias vim='nvim'
-export EDITOR='nvim'
+if which nvim &> /dev/null; then
+  alias vim='nvim'
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
 
 local envfile="${HOME}/.zsh.d/env.`uname`.sh"
 if [ -r ${envfile} ]; then
@@ -356,8 +360,10 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
 fi
 
 # fzf via local installation
+if [[ ! "$PATH" == */home/mrnugget/.fzf/bin* ]]; then
+  export PATH="$PATH:/home/mrnugget/.fzf/bin"
+fi
 if [ -e ~/.fzf ]; then
-  _append_to_path ~/.fzf/bin
   source ~/.fzf/shell/key-bindings.zsh
   source ~/.fzf/shell/completion.zsh
 fi
