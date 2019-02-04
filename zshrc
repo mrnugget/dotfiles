@@ -380,6 +380,15 @@ fi
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+if which rustc &> /dev/null; then
+  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
+
+# python
+if which pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+  # eval "$(pyenv virtualenv-init -)"
+fi
 
 # Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
 if which rg &> /dev/null; then
@@ -393,4 +402,3 @@ if [ -e /usr/local/etc/profile.d/z.sh ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
