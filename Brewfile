@@ -16,6 +16,7 @@ brew 'emacs-plus', args: ['HEAD', 'with-modern-icon', 'without-spacemacs-icon']
 
 brew 'openssl'
 brew 'coreutils'
+brew 'gnu-tar'
 brew 'fzf'
 brew 'reattach-to-user-namespace'
 brew 'tmux'
@@ -33,6 +34,7 @@ brew 'jq'
 brew 'tree'
 brew 'hub'
 brew 'dep'
+brew 'node'
 
 cask 'firefox'
 cask 'iterm2'
@@ -59,6 +61,7 @@ cask 'google-chrome'
 cask 'virtualbox'
 cask 'vagrant'
 cask 'skype'
+cask 'typora'
 
 tap 'caskroom/drivers'
 cask 'sonos'
@@ -69,7 +72,9 @@ mas 'Annotate', id: 918207447
 mas 'Todoist', id: 585829637
 
 brew 'zlib' # required by pyenv
+brew 'readline'
 brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 # brew 'https://raw.githubusercontent.com/dcos/dcos-e2e/master/minidcos.rb'
 
