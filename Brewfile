@@ -35,6 +35,8 @@ brew 'tree'
 brew 'hub'
 brew 'dep'
 brew 'node'
+brew 'sqlite3'
+brew 'pandoc'
 
 cask 'firefox'
 cask 'iterm2'
@@ -74,7 +76,6 @@ mas 'Todoist', id: 585829637
 brew 'zlib' # required by pyenv
 brew 'readline'
 brew 'pyenv'
-brew 'pyenv-virtualenv'
 
 # brew 'https://raw.githubusercontent.com/dcos/dcos-e2e/master/minidcos.rb'
 
