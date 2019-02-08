@@ -387,7 +387,7 @@ fi
 # python
 if which pyenv &> /dev/null; then
   eval "$(pyenv init -)"
-  # eval "$(pyenv virtualenv-init -)"
+  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
