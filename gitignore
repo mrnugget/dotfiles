@@ -9,3 +9,4 @@ ac-comphist.dat
 eshell
 rake.cache
 tramp
+.mypy_cache
