@@ -64,6 +64,7 @@ cask 'virtualbox'
 cask 'vagrant'
 cask 'skype'
 cask 'typora'
+cask 'monodraw'
 
 tap 'caskroom/drivers'
 cask 'sonos'
