@@ -64,7 +64,10 @@ cask 'virtualbox'
 cask 'vagrant'
 cask 'skype'
 cask 'typora'
+
 cask 'monodraw'
+cask 'KindleGen'
+cask 'basictex'
 
 tap 'caskroom/drivers'
 cask 'sonos'
