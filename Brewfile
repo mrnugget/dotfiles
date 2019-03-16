@@ -77,6 +77,7 @@ mas 'Xcode', id: 497799835
 mas 'Annotate', id: 918207447
 mas 'Todoist', id: 585829637
 mas 'Pixelmator', id: 407963104
+mas 'Kindle', id: 405399194
 
 brew 'zlib' # required by pyenv
 brew 'readline'
