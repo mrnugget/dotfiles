@@ -64,6 +64,7 @@ cask 'virtualbox'
 cask 'vagrant'
 cask 'skype'
 cask 'typora'
+cask 'licecap'
 
 cask 'monodraw'
 cask 'KindleGen'
