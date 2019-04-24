@@ -323,11 +323,18 @@ export KEYTIMEOUT=1
 export PATH="/usr/local/bin:$PATH"
 
 # rbenv
-#
 if which rbenv &> /dev/null; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - --no-rehash)"
 fi
+
+# asdf
+if [ -f /usr/local/opt/asdf/asdf.sh ]; then
+  echo "asdf exists"
+  source /usr/local/opt/asdf/asdf.sh
+  source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+fi
+
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8

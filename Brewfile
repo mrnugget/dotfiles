@@ -22,7 +22,6 @@ brew 'reattach-to-user-namespace'
 brew 'tmux'
 brew 'ripgrep'
 brew 'direnv'
-brew 'rbenv'
 brew 'youtube-dl'
 brew 'wget'
 brew 'curl'
@@ -37,6 +36,21 @@ brew 'dep'
 brew 'node'
 brew 'sqlite3'
 brew 'pandoc'
+
+# Give `asdf` a try
+# brew 'rbenv'
+brew 'asdf'
+# asdf dependencies
+brew 'automake'
+brew 'autoconf'
+brew 'libyaml'
+brew 'readline'
+brew 'libxslt'
+brew 'libtool'
+brew 'unixodbc'
+brew 'unzip'
+# Go installed with asdf
+# Ruby installed with asdf
 
 cask 'firefox'
 cask 'iterm2'
@@ -81,7 +95,6 @@ mas 'Pixelmator', id: 407963104
 mas 'Kindle', id: 405399194
 
 # Rust installed manually via: https://rustup.rs/
-# Go installed manually with package from golang.org
 
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
