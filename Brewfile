@@ -80,12 +80,6 @@ mas 'Todoist', id: 585829637
 mas 'Pixelmator', id: 407963104
 mas 'Kindle', id: 405399194
 
-brew 'zlib' # required by pyenv
-brew 'readline'
-brew 'pyenv'
-
-# brew 'https://raw.githubusercontent.com/dcos/dcos-e2e/master/minidcos.rb'
-
 # Rust installed manually via: https://rustup.rs/
 # Go installed manually with package from golang.org
 
