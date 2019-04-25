@@ -36,6 +36,7 @@ brew 'dep'
 brew 'node'
 brew 'sqlite3'
 brew 'pandoc'
+brew 'redis'
 
 # Give `asdf` a try
 # brew 'rbenv'
@@ -79,6 +80,7 @@ cask 'vagrant'
 cask 'skype'
 cask 'typora'
 cask 'licecap'
+cask 'postgres'
 
 cask 'monodraw'
 cask 'KindleGen'
