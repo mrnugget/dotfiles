@@ -330,7 +330,6 @@ fi
 
 # asdf
 if [ -f /usr/local/opt/asdf/asdf.sh ]; then
-  echo "asdf exists"
   source /usr/local/opt/asdf/asdf.sh
   source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 fi
