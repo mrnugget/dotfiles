@@ -37,6 +37,8 @@ brew 'node'
 brew 'sqlite3'
 brew 'pandoc'
 brew 'redis'
+brew 'nginx'
+brew 'gnupg'
 
 # Give `asdf` a try
 # brew 'rbenv'
