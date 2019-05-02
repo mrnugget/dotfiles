@@ -85,6 +85,7 @@ cask 'typora'
 cask 'licecap'
 cask 'postgres'
 cask 'libreoffice'
+cask 'google-cloud-sdk'
 
 cask 'monodraw'
 cask 'KindleGen'
