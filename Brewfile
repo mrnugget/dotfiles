@@ -39,6 +39,7 @@ brew 'pandoc'
 brew 'redis'
 brew 'nginx'
 brew 'gnupg'
+brew 'golang-migrate'
 
 # Give `asdf` a try
 # brew 'rbenv'
@@ -83,6 +84,7 @@ cask 'skype'
 cask 'typora'
 cask 'licecap'
 cask 'postgres'
+cask 'libreoffice'
 
 cask 'monodraw'
 cask 'KindleGen'
