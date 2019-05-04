@@ -55,6 +55,7 @@ brew 'unixodbc'
 brew 'unzip'
 # Go installed with asdf
 # Ruby installed with asdf
+# Node installed with asdf
 
 cask 'firefox'
 cask 'iterm2'
