@@ -40,6 +40,7 @@ brew 'redis'
 brew 'nginx'
 brew 'gnupg'
 brew 'golang-migrate'
+brew 'awscli'
 
 # Give `asdf` a try
 # brew 'rbenv'
