@@ -1,0 +1,23 @@
+# Colors (Tango Light from iTerm 2)
+colors:
+ primary:
+   background: '0xFFFFFF'
+   foreground: '0x000000'
+ normal:
+   black:   '0x000000'
+   red:     '0xd71e00'
+   green:   '0x5da602'
+   yellow:  '0xcfad00'
+   blue:    '0x417ab3'
+   magenta: '0x88658d'
+   cyan:    '0x00a7aa'
+   white:   '0xdbded8'
+ bright:
+   black:   '0x676965'
+   red:     '0xf44135'
+   green:   '0x98e342'
+   yellow:  '0xfcea60'
+   blue:    '0x83afd8'
+   magenta: '0xbc93b6'
+   cyan:    '0x37e5e7'
+   white:   '0xf1f1ef'
