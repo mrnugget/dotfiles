@@ -288,8 +288,8 @@ if [ -r ${dir_info_color_file} ]; then
 fi
 
 local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
-local promptnormal="%{$fg_bold[grey]%}$ %{$reset_color%}"
-local promptjobs="%{$fg_bold[red]%}$ %{$reset_color%}"
+local promptnormal="%{$fg_bold[grey]%}λ %{$reset_color%}"
+local promptjobs="%{$fg_bold[red]%}λ %{$reset_color%}"
 
 # PROMPT='${dir_info} %{$fg_bold[grey]%}`rbenv version-name`%{$reset_color%} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
