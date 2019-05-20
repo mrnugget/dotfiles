@@ -88,6 +88,7 @@ cask 'licecap'
 cask 'postgres'
 cask 'libreoffice'
 cask 'google-cloud-sdk'
+cask 'visual-studio-code'
 
 cask 'monodraw'
 cask 'KindleGen'
@@ -102,6 +103,7 @@ mas 'Annotate', id: 918207447
 mas 'Todoist', id: 585829637
 mas 'Pixelmator', id: 407963104
 mas 'Kindle', id: 405399194
+mas 'MoneyMoney', id: 872698314
 
 # Rust installed manually via: https://rustup.rs/
 
