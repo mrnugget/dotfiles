@@ -301,8 +301,12 @@ PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 if which nvim &> /dev/null; then
   alias vim='nvim'
   export EDITOR='nvim'
+  export PSQL_EDITOR='nvim -c"set filetype=sql"'
+  export GIT_EDITOR='nvim'
 else
   export EDITOR='vim'
+  export PSQL_EDITOR='vim -c"set filetype=sql"'
+  export GIT_EDITOR='vim'
 fi
 
 local envfile="${HOME}/.zsh.d/env.`uname`.sh"
@@ -346,9 +350,6 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
-
-# psql
-export PSQL_EDITOR='vim -c"set filetype=sql"'
 
 #heroku
 export PATH="/usr/local/heroku/bin:$PATH"
