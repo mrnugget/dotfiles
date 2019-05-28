@@ -90,7 +90,6 @@ cask 'postgres'
 cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
-cask 'colorpicker-skalacolor'
 
 cask 'monodraw'
 cask 'KindleGen'
