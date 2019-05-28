@@ -41,6 +41,7 @@ brew 'nginx'
 brew 'gnupg'
 brew 'golang-migrate'
 brew 'awscli'
+brew 'pulumi'
 
 # Give `asdf` a try
 # brew 'rbenv'
@@ -89,6 +90,7 @@ cask 'postgres'
 cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
+cask 'colorpicker-skalacolor'
 
 cask 'monodraw'
 cask 'KindleGen'
