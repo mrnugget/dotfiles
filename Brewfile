@@ -42,6 +42,7 @@ brew 'gnupg'
 brew 'golang-migrate'
 brew 'awscli'
 brew 'pulumi'
+brew 'hugo'
 
 # Give `asdf` a try
 # brew 'rbenv'
