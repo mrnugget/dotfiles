@@ -276,7 +276,7 @@ git_prompt_info() {
 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo "%{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+  echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
 # local dir_info_color="$fg_bold[black]"
@@ -298,7 +298,7 @@ local promptnormal="%{$fg_bold[grey]%}λ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}λ %{$reset_color%}"
 
 # PROMPT='${dir_info} %{$fg_bold[grey]%}`rbenv version-name`%{$reset_color%} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
-PROMPT='${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 ########
 # ENV
