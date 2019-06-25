@@ -44,6 +44,8 @@ brew 'awscli'
 brew 'pulumi'
 brew 'hugo'
 brew 'proctools'
+brew 'watchman'
+brew 'tldr'
 
 # Give `asdf` a try
 # brew 'rbenv'
@@ -92,6 +94,7 @@ cask 'postgres'
 cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
+cask 'pgadmin4'
 
 cask 'monodraw'
 cask 'KindleGen'
