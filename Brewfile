@@ -46,6 +46,8 @@ brew 'hugo'
 brew 'proctools'
 brew 'watchman'
 brew 'tldr'
+brew 'vegeta'
+brew 'graphviz'
 
 # Give `asdf` a try
 # brew 'rbenv'
