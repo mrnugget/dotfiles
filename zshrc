@@ -189,6 +189,10 @@ alias got='go test ./...'
 
 alias scr='vim ~/tmp/scratch.md'
 
+alias k='kubectl'
+alias g='git'
+alias v='vim'
+
 ##########
 # FUNCTIONS
 ##########
