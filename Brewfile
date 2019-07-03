@@ -49,6 +49,9 @@ brew 'tldr'
 brew 'vegeta'
 brew 'graphviz'
 
+tap 'TankerHQ/homebrew-repo'
+brew 'ruplacer'
+
 # Give `asdf` a try
 # brew 'rbenv'
 brew 'asdf'
