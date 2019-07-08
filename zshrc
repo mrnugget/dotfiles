@@ -420,3 +420,7 @@ if [ -e /usr/local/etc/profile.d/z.sh ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export BAT_THEME=ansi-light
+alias cat=bat
+alias ls=exa
