@@ -100,6 +100,7 @@ cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 cask 'pgadmin4'
+cask 'zulip'
 
 cask 'monodraw'
 cask 'KindleGen'
