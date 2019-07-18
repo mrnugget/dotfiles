@@ -48,6 +48,7 @@ brew 'watchman'
 brew 'tldr'
 brew 'vegeta'
 brew 'graphviz'
+brew 'gcc'
 
 tap 'TankerHQ/homebrew-repo'
 brew 'ruplacer'
