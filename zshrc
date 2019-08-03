@@ -138,8 +138,9 @@ if [ -r ${aliasfile} ]; then
   source ${aliasfile}
 fi
 
+alias ls=exa
 alias lls='ls -lh --sort=size --reverse'
-alias llt='ls -l -t -r'
+alias llt='ls -l -snew'
 alias bear='clear && echo "Clear as a bear!"'
 
 alias history='history 1'
@@ -423,4 +424,3 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export BAT_THEME=ansi-light
 alias cat=bat
-alias ls=exa
