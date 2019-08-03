@@ -122,3 +122,10 @@ mas 'MoneyMoney', id: 872698314
 
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
+
+
+# OCaml
+brew 'opam'
+# comby dependencies
+brew 'pkg-config'
+brew 'pcre'
