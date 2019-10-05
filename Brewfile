@@ -50,6 +50,9 @@ brew 'vegeta'
 brew 'graphviz'
 brew 'gcc'
 
+tap 'universal-ctags/homebrew-universal-ctags'
+brew 'universal-ctags', args: ['HEAD']
+
 tap 'TankerHQ/homebrew-repo'
 brew 'ruplacer'
 
