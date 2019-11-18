@@ -15,4 +15,4 @@ $(HOME)/.config/kitty/kitty.conf:
 	ln -sf $(DOTFILE_PATH)/kitty.conf $(HOME)/.config/kitty/kitty.conf
 kitty: $(HOME)/.config/kitty/kitty.conf
 
-all: irb ack git psql zsh tmux
+all: irb ack git psql zsh tmux kitty
