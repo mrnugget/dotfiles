@@ -158,6 +158,7 @@ alias gst='git status'
 alias gaa='git add -A'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
 # Go way, Ghostscript
 alias gs='gst'
 alias gp='git push'
