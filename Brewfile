@@ -34,6 +34,7 @@ brew 'tree'
 brew 'hub'
 brew 'dep'
 brew 'node'
+brew 'yarn'
 brew 'sqlite3'
 brew 'pandoc'
 brew 'redis'
@@ -51,6 +52,7 @@ brew 'graphviz'
 brew 'gcc'
 brew 'chezscheme'
 brew 'exa'
+brew 'dust'
 brew 'bat'
 brew 'moreutils'
 brew 'kubernetes-cli'
@@ -77,7 +79,6 @@ brew 'unixodbc'
 brew 'unzip'
 # Go installed with asdf
 # Ruby installed with asdf
-# Node installed with asdf
 
 cask 'firefox'
 cask 'iterm2'
