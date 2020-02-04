@@ -138,7 +138,9 @@ if [ -r ${aliasfile} ]; then
   source ${aliasfile}
 fi
 
-alias ls=exa
+if which exa &> /dev/null; then
+  alias ls=exa
+fi
 alias lls='ls -lh --sort=size --reverse'
 alias llt='ls -l -snew'
 alias bear='clear && echo "Clear as a bear!"'
@@ -436,8 +438,10 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export BAT_THEME=ansi-light
-alias cat=bat
+if which bat &> /dev/null; then
+  export BAT_THEME=ansi-light
+  alias cat=bat
+fi
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
