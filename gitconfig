@@ -14,6 +14,7 @@
   lr = "!git l -30"
   lra = "!git lr --all"
   lg = "!git l -G $1 -- $2"
+  feature = !sh -c 'git checkout --no-track -b $0 origin/master'
 
   ruf = "!. ~/.githelpers && remove_untracked_files"
 
@@ -36,6 +37,9 @@
 [push]
 	default = current
 	followTags = true
+
+[remote]
+  pushDefault = origin
 
 [branch]
 	autosetuprebase = always
