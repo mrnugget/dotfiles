@@ -65,8 +65,6 @@ brew 'universal-ctags', args: ['HEAD']
 tap 'TankerHQ/homebrew-repo'
 brew 'ruplacer'
 
-# Give `asdf` a try
-# brew 'rbenv'
 brew 'asdf'
 # asdf dependencies
 brew 'automake'
@@ -79,6 +77,12 @@ brew 'unixodbc'
 brew 'unzip'
 # Go installed with asdf
 # Ruby installed with asdf
+# Rust installed manually via: https://rustup.rs/
+# OCaml
+brew 'opam'
+# comby dependencies
+brew 'pkg-config'
+brew 'pcre'
 
 cask 'firefox'
 cask 'iterm2'
@@ -112,7 +116,6 @@ cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 cask 'pgadmin4'
-cask 'zulip'
 cask 'postman'
 
 cask 'monodraw'
@@ -130,14 +133,6 @@ mas 'Pixelmator', id: 407963104
 mas 'Kindle', id: 405399194
 mas 'MoneyMoney', id: 872698314
 
-# Rust installed manually via: https://rustup.rs/
-
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
 
-
-# OCaml
-brew 'opam'
-# comby dependencies
-brew 'pkg-config'
-brew 'pcre'
