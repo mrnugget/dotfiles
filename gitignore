@@ -12,3 +12,4 @@ rake.cache
 tramp
 .mypy_cache
 .tool-versions
+.idea

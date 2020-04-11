@@ -124,6 +124,7 @@ cask 'basictex'
 
 tap 'caskroom/drivers'
 cask 'sonos'
+cask 'focusrite-control' # Drivers for Focusrite Scarlett
 
 mas 'Fantastical 2', id: 975937182
 mas 'Xcode', id: 497799835
