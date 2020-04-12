@@ -104,7 +104,6 @@ cask 'karabiner-elements'
 cask 'vlc'
 cask 'adobe-acrobat-reader'
 cask 'kitty'
-cask 'alacritty'
 cask 'google-chrome'
 cask 'virtualbox'
 cask 'vagrant'
@@ -116,7 +115,7 @@ cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 cask 'pgadmin4'
-cask 'postman'
+cask 'muzzle'
 
 cask 'monodraw'
 cask 'KindleGen'
@@ -136,4 +135,3 @@ mas 'MoneyMoney', id: 872698314
 
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
-
