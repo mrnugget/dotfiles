@@ -121,6 +121,8 @@ cask 'monodraw'
 cask 'KindleGen'
 cask 'basictex'
 
+cask 'bartender'
+
 tap 'caskroom/drivers'
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
