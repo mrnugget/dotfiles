@@ -341,8 +341,6 @@ if [ -r ${envfile} ]; then
   . ${envfile}
 fi
 
-export PATH="$HOME/bin:$PATH"
-
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Reduce delay for key combinations in order to change to vi mode faster
@@ -444,3 +442,12 @@ fi
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+
+
+# Export my personal ~/bin as last one to have highest precedence
+export PATH="$HOME/bin:$PATH"
