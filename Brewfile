@@ -85,6 +85,9 @@ brew 'opam'
 brew 'pkg-config'
 brew 'pcre'
 
+# WASM Binary Toolkit
+brew 'wabt'
+
 cask 'firefox'
 cask 'iterm2'
 cask 'alfred'

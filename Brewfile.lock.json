@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "41faa3149e2fcf3cddc37688f8efad9be1bcc33e"
+        "revision": "910a7249f51655a934c99819597c52adc391b129"
       },
       "neovim/neovim": {
         "revision": "e587b5c90456a895a11bc5ae81e5cfdde6b23dd4"
@@ -1313,6 +1313,27 @@
             }
           }
         }
+      },
+      "wabt": {
+        "version": "1.0.15",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/wabt-1.0.15.catalina.bottle.tar.gz",
+              "sha256": "6f3308de6a50fe5bd1752ce05cd163909e1fc859d861dd58173cb5157b7196bf"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/wabt-1.0.15.mojave.bottle.tar.gz",
+              "sha256": "0b896c75b31a4a98049b1c09575adb59f43caec21eb4d8f0c64c36e01ba29b48"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/wabt-1.0.15.high_sierra.bottle.tar.gz",
+              "sha256": "163983a8850a98a297732be50f5e3c74dc39be63a66e0aedd2f866196651bc48"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -1761,7 +1782,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.16",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "cd6493288b22113fdbbcd5b1766a9b76668d7281",
+        "Homebrew/homebrew-core": "5652a01fdb05ab6bfbe80eb138ed582a2685c24f",
         "CLT": "11.4.1.0.1.1586360307",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"
