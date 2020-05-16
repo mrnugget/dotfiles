@@ -77,6 +77,7 @@ brew 'unixodbc'
 brew 'unzip'
 # Go installed with asdf
 # Ruby installed with asdf
+# Node installed with asdf
 # Rust installed manually via: https://rustup.rs/
 # OCaml
 brew 'opam'
@@ -122,18 +123,21 @@ cask 'KindleGen'
 cask 'basictex'
 
 cask 'bartender'
+cask 'cleanshot'
+cask 'screenflow'
 
-tap 'caskroom/drivers'
+tap 'homebrew/cask-drivers'
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
 
 mas 'Fantastical 2', id: 975937182
 mas 'Xcode', id: 497799835
-mas 'Annotate', id: 918207447
 mas 'Todoist', id: 585829637
 mas 'Pixelmator', id: 407963104
 mas 'Kindle', id: 405399194
 mas 'MoneyMoney', id: 872698314
+mas 'Microsoft Word', id: 462054704
+mas 'Microsoft Excel', id: 462058435
 
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html
