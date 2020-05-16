@@ -1692,6 +1692,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "screenflow": {
+        "version": "9.0.3",
+        "options": {
+          "full_name": "screenflow",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "obs": {
+        "version": "25.0.8",
+        "options": {
+          "full_name": "obs",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {

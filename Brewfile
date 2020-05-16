@@ -125,6 +125,7 @@ cask 'basictex'
 cask 'bartender'
 cask 'cleanshot'
 cask 'screenflow'
+cask 'obs'
 
 tap 'homebrew/cask-drivers'
 cask 'sonos'
