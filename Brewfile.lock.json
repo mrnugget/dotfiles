@@ -21,6 +21,9 @@
       },
       "homebrew/cask-drivers": {
         "revision": "47b3342d43c99ff5855382b90d2f2771da1007e0"
+      },
+      "homebrew/cask-fonts": {
+        "revision": "f264eec213cacc38f7461457090c9c5e4e49e492"
       }
     },
     "brew": {
@@ -1727,6 +1730,60 @@
         "version": "25.0.8",
         "options": {
           "full_name": "obs",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-hack": {
+        "version": "3.003",
+        "options": {
+          "full_name": "font-hack",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-jetbrains-mono": {
+        "version": "1.0.6",
+        "options": {
+          "full_name": "font-jetbrains-mono",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-inconsolata": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-inconsolata",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-roboto": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-roboto",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-roboto-mono": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-roboto-mono",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-ibm-plex": {
+        "version": "4.0.2",
+        "options": {
+          "full_name": "font-ibm-plex",
           "args": {
             "appdir": "/Applications"
           }

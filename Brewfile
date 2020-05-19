@@ -134,6 +134,14 @@ tap 'homebrew/cask-drivers'
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
 
+tap 'homebrew/cask-fonts'
+cask 'font-hack'
+cask 'font-jetbrains-mono'
+cask 'font-inconsolata'
+cask 'font-roboto'
+cask 'font-roboto-mono'
+cask 'font-ibm-plex'
+
 mas 'Fantastical 2', id: 975937182
 mas 'Xcode', id: 497799835
 mas 'Todoist', id: 585829637
