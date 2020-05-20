@@ -58,6 +58,7 @@ brew 'moreutils'
 brew 'kubernetes-cli'
 brew 'kubectx'
 brew 'watch'
+brew 'bash'
 
 tap 'universal-ctags/homebrew-universal-ctags'
 brew 'universal-ctags', args: ['HEAD']
