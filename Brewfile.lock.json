@@ -1809,6 +1809,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "uhk-agent": {
+        "version": "1.4.5",
+        "options": {
+          "full_name": "uhk-agent",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {

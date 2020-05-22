@@ -134,6 +134,7 @@ cask 'obs'
 tap 'homebrew/cask-drivers'
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
+cask 'uhk-agent' # Driver for Ultimate Hacking Keyboard
 
 tap 'homebrew/cask-fonts'
 cask 'font-hack'
