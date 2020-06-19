@@ -197,6 +197,8 @@ alias k='kubectl'
 alias g='git'
 alias v='vim'
 
+alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'"
+
 ##########
 # FUNCTIONS
 ##########
@@ -448,3 +450,5 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
+
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

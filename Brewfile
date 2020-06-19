@@ -23,6 +23,7 @@ brew 'tmux'
 brew 'ripgrep'
 brew 'direnv'
 brew 'youtube-dl'
+brew 'ffmpeg' # dependency of youtube-dl
 brew 'wget'
 brew 'curl'
 brew 'gnu-sed', args: ['with-default-names']
@@ -59,6 +60,8 @@ brew 'kubernetes-cli'
 brew 'kubectx'
 brew 'watch'
 brew 'bash'
+brew 'shellcheck'
+brew 'shfmt'
 
 tap 'universal-ctags/homebrew-universal-ctags'
 brew 'universal-ctags', args: ['HEAD']
@@ -130,6 +133,7 @@ cask 'bartender'
 cask 'cleanshot'
 cask 'screenflow'
 cask 'obs'
+cask 'iina'
 
 tap 'homebrew/cask-drivers'
 cask 'sonos'
