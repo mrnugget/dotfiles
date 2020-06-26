@@ -89,6 +89,8 @@ brew 'opam'
 brew 'pkg-config'
 brew 'pcre'
 
+brew 'comby'
+
 # WASM Binary Toolkit
 brew 'wabt'
 
