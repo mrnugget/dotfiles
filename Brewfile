@@ -64,7 +64,7 @@ brew 'shellcheck'
 brew 'shfmt'
 
 tap 'universal-ctags/homebrew-universal-ctags'
-brew 'universal-ctags', args: ['HEAD']
+brew 'universal-ctags', args: ['HEAD', 'with-jansson']
 
 tap 'TankerHQ/homebrew-repo'
 brew 'ruplacer'

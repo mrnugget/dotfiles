@@ -4,6 +4,7 @@
 
 [alias]
   co = checkout
+  cm = checkout main
   st = status
   rh = reset HEAD
   rhh = reset --hard HEAD
@@ -14,7 +15,7 @@
   lr = "!git l -30"
   lra = "!git lr --all"
   lg = "!git l -G $1 -- $2"
-  feature = !sh -c 'git checkout --no-track -b $0 origin/master'
+  feature = !sh -c 'git checkout --no-track -b $0 origin/main'
 
   ruf = "!. ~/.githelpers && remove_untracked_files"
 

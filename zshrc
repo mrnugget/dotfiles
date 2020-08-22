@@ -158,6 +158,8 @@ alias sz='source ~/.zshrc'
 # git
 alias gst='git status'
 alias gaa='git add -A'
+alias gcm='git checkout main'
+alias gpr='git pull --rebase'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
@@ -444,9 +446,6 @@ fi
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$WASMTIME_HOME/bin:$PATH"
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
