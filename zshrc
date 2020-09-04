@@ -158,20 +158,16 @@ alias sz='source ~/.zshrc'
 # git
 alias gst='git status'
 alias gaa='git add -A'
+alias gc='git commit'
 alias gcm='git checkout main'
 alias gpr='git pull --rebase'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias co='git checkout'
+alias up='git push'
+alias pu='git pull'
+alias lr='git l -30'
 alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
-# Go way, Ghostscript
-alias gs='gst'
-alias gp='git push'
-
-# ruby & rails
-alias be='bundle exec'
-
-# Screen
-alias screen='screen -R -D'
 
 # tmux
 alias tma='tmux attach -t'
@@ -196,8 +192,6 @@ alias got='go test ./...'
 alias scr='vim ~/tmp/scratch.md'
 
 alias k='kubectl'
-alias g='git'
-alias v='vim'
 
 alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'"
 
@@ -450,4 +444,4 @@ test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /de
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
 
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh

@@ -13,6 +13,15 @@ tmux: $(HOME)/.tmux.conf
 $(HOME)/.config/kitty/kitty.conf:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty.conf $(HOME)/.config/kitty/kitty.conf
-kitty: $(HOME)/.config/kitty/kitty.conf
+
+$(HOME)/.config/kitty/kitty_colors.conf:
+	mkdir -p $(HOME)/.config/kitty
+	ln -sf $(DOTFILE_PATH)/kitty_colors.conf $(HOME)/.config/kitty/kitty_colors.conf
+
+$(HOME)/.config/kitty/theme.conf:
+	mkdir -p $(HOME)/.config/kitty
+	ln -sf $(HOME)/.config/kitty/kitty_colors.conf $(HOME)/.config/kitty/theme.conf
+
+kitty: $(HOME)/.config/kitty/kitty.conf $(HOME)/.config/kitty/kitty_colors.conf $(HOME)/.config/kitty/theme.conf
 
 all: irb ack git psql zsh tmux kitty

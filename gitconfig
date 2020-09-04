@@ -4,11 +4,9 @@
 
 [alias]
   co = checkout
-  cm = checkout main
   st = status
   rh = reset HEAD
   rhh = reset --hard HEAD
-  unstage = reset HEAD
 
   l = "!. ~/.githelpers && pretty_git_log"
   la = "!git l --all"
@@ -18,9 +16,6 @@
   feature = !sh -c 'git checkout --no-track -b $0 origin/main'
 
   ruf = "!. ~/.githelpers && remove_untracked_files"
-
-  dev = checkout develop
-  stage = checkout staging
 
 	tree = log --oneline --decorate --graph
 

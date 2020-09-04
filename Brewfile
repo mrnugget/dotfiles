@@ -135,7 +135,6 @@ cask 'bartender'
 cask 'cleanshot'
 cask 'screenflow'
 cask 'obs'
-cask 'iina'
 
 tap 'homebrew/cask-drivers'
 cask 'sonos'
