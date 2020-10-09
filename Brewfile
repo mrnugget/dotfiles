@@ -32,7 +32,7 @@ brew 'cloc'
 brew 'terraform'
 brew 'jq'
 brew 'tree'
-brew 'hub'
+brew 'gh'
 brew 'dep'
 brew 'node'
 brew 'yarn'
@@ -126,15 +126,15 @@ cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 cask 'pgadmin4'
 cask 'muzzle'
-
-cask 'monodraw'
-cask 'KindleGen'
-cask 'basictex'
-
 cask 'bartender'
 cask 'cleanshot'
 cask 'screenflow'
 cask 'obs'
+cask 'imageoptim'
+
+cask 'monodraw'
+cask 'KindleGen'
+cask 'basictex'
 
 tap 'homebrew/cask-drivers'
 cask 'sonos'
@@ -157,6 +157,7 @@ mas 'Kindle', id: 405399194
 mas 'MoneyMoney', id: 872698314
 mas 'Microsoft Word', id: 462054704
 mas 'Microsoft Excel', id: 462058435
+mas 'Things 3', id: 904280696
 
 # 'Keyboard Cleaner' directly downloaded from here:
 # http://jan.prima.de/plok/archives/48-Keyboard-Cleaner.html

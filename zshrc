@@ -438,6 +438,8 @@ if which bat &> /dev/null; then
   alias cat=bat
 fi
 
+export GLAMOUR_STYLE=light
+
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
