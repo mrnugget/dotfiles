@@ -166,6 +166,7 @@ alias gdc='git diff --cached'
 alias co='git checkout'
 alias up='git push'
 alias pu='git pull'
+alias fe='git fetch'
 alias lr='git l -30'
 alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
 
