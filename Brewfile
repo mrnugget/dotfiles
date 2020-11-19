@@ -9,7 +9,7 @@ brew 'zsh'
 brew 'make'
 
 tap 'neovim/neovim'
-brew 'neovim'
+brew 'neovim', args: ['HEAD']
 
 tap 'd12frosted/emacs-plus'
 brew 'emacs-plus', args: ['HEAD', 'with-modern-icon', 'without-spacemacs-icon']

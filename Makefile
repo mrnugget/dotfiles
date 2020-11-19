@@ -18,7 +18,7 @@ $(HOME)/.config/kitty/kitty_colors.conf:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty_colors.conf $(HOME)/.config/kitty/kitty_colors.conf
 
-$(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf
+$(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty_colors_lucius_light_high_contrast.conf $(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf
 
