@@ -62,6 +62,8 @@ brew 'watch'
 brew 'bash'
 brew 'shellcheck'
 brew 'shfmt'
+brew 'pgrep'
+brew 'pkill'
 
 tap 'universal-ctags/homebrew-universal-ctags'
 brew 'universal-ctags', args: ['HEAD', 'with-jansson']
