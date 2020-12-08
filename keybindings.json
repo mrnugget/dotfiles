@@ -1,37 +1,45 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        "key": "ctrl+cmd+t",
-        "command": "workbench.action.terminal.focus",
-        "when": "!terminalFocus"
-    },
-    {
-        "key": "ctrl+cmd+n",
-        "command": "workbench.action.terminal.focusNext"
-    },
-    {
-        "key": "ctrl+cmd+p",
-        "command": "workbench.action.terminal.focusPrevious"
-    },
-    {
-        "key": "ctrl+cmd+t",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    }
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "ctrl+cmd+t",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+cmd+n",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  {
+    "key": "ctrl+cmd+p",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  {
+    "key": "ctrl+cmd+t",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+cmd+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+b shift+5",
+    "command": "workbench.action.terminal.splitInActiveWorkspace"
+  }
 ]

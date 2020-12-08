@@ -9,7 +9,7 @@
   "editor.cursorBlinking": "solid",
   "editor.formatOnSave": true,
 
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -37,17 +37,13 @@
     }
   ],
   "vim.useSystemClipboard": true,
-  "editor.fontFamily": "Hack",
-  "go.useLanguageServer": true,
-  "go.lintTool": "golangci-lint",
+  "editor.fontFamily": "Jetbrains Mono",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "go.autocompleteUnimportedPackages": true,
-  "go.formatTool": "goimports",
   "task.slowProviderWarning": ["npm"],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,5 +54,45 @@
     "RUST_BACKTRACE": 0
   },
   "reason.codelens.enabled": true,
-  "window.nativeFullScreen": false
+  "window.nativeFullScreen": false,
+  "clock.dateFormat": "HH:MM",
+  "explorer.confirmDelete": false,
+  "go.useLanguageServer": true,
+  "go.autocompleteUnimportedPackages": true,
+  "go.formatTool": "goimports",
+  "go.lintTool": "golint",
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "maxStringLen": 2048
+    },
+    "apiVersion": 2
+  },
+  "go.testEnvVars": {
+    "PGPORT": "5432",
+    "PGHOST": "localhost",
+    "PGUSER": "sourcegraph",
+    "PGPASSWORD": "sourcegraph",
+    "PGDATABASE": "sourcegraph",
+    "PGSSLMODE": "disable"
+  },
+  "terminal.integrated.fontFamily": "IBM Plex Mono",
+  "terminal.integrated.fontWeightBold": "bold",
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+  "bracket-pair-colorizer-2.scopeLineRelativePosition": false,
+  "bracketPairColorizer.showHorizontalScopeLine": false,
+  "bracketPairColorizer.showVerticalScopeLine": false,
+  "projectManager.git.baseFolders": [
+    "~/code/clones",
+    "~/work",
+    "~/code/projects"
+  ],
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "metals.javaHome": "/Users/thorstenball/.jabba/jdk/adopt@1.11.0-9/Contents/Home",
+  "window.restoreWindows": "none",
+  "breadcrumbs.enabled": true,
 }
