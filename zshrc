@@ -363,6 +363,10 @@ if [ -f /usr/local/opt/asdf/asdf.sh ]; then
   source /usr/local/opt/asdf/asdf.sh
 fi
 
+if [ -f ~/.asdf/asdf.sh ]; then
+  source ~/.asdf/asdf.sh
+fi
+
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
@@ -449,4 +453,6 @@ test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /de
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
 
-source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
+if [ -e ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]; then
+  source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
+fi
