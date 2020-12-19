@@ -1,3 +1,4 @@
+UNAME := $(shell uname)
 DOTFILE_PATH := $(shell pwd)
 
 $(HOME)/.%: %
@@ -10,22 +11,15 @@ psql: $(HOME)/.psqlrc
 zsh: $(HOME)/.zshrc $(HOME)/.zsh.d
 tmux: $(HOME)/.tmux.conf
 
-$(HOME)/.config/kitty/kitty.conf:
+kitty:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty.conf $(HOME)/.config/kitty/kitty.conf
-
-$(HOME)/.config/kitty/kitty_colors.conf:
-	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty_colors.conf $(HOME)/.config/kitty/kitty_colors.conf
-
-$(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf:
-	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty_colors_lucius_light_high_contrast.conf $(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf
-
-$(HOME)/.config/kitty/theme.conf:
-	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(HOME)/.config/kitty/kitty_colors_lucius_light_high_contrast.conf $(HOME)/.config/kitty/theme.conf
+ifeq ($(UNAME), Linux)
+	ln -sf $(DOTFILE_PATH)/kitty.linux.conf $(HOME)/.config/kitty/kitty.linux.conf
+endif
 
-kitty: $(HOME)/.config/kitty/kitty.conf $(HOME)/.config/kitty/kitty_colors.conf $(HOME)/.config/kitty/theme.conf
 
 all: irb ack git psql zsh tmux kitty

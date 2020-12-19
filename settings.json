@@ -75,11 +75,8 @@
     "PGDATABASE": "sourcegraph",
     "PGSSLMODE": "disable"
   },
-  "terminal.integrated.fontFamily": "IBM Plex Mono",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontWeightBold": "bold",
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
-  "bracket-pair-colorizer-2.scopeLineRelativePosition": false,
   "bracketPairColorizer.showHorizontalScopeLine": false,
   "bracketPairColorizer.showVerticalScopeLine": false,
   "projectManager.git.baseFolders": [
@@ -95,4 +92,6 @@
   "metals.javaHome": "/Users/thorstenball/.jabba/jdk/adopt@1.11.0-9/Contents/Home",
   "window.restoreWindows": "none",
   "breadcrumbs.enabled": true,
+  "terminal.integrated.fontSize": 12,
+  "editor.fontSize": 13,
 }
