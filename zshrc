@@ -456,3 +456,30 @@ export PATH="$HOME/bin:$PATH"
 if [ -e ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]; then
   source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
 fi
+
+
+kitty_dark_theme="$HOME/.dotfiles/kitty_theme_afterglow.conf"
+kitty_light_theme="$HOME/.dotfiles/kitty_colors_lucius_white_high_contrast.conf"
+kitty_theme_symlink="$HOME/.dotfiles/theme.conf"
+
+if [ "$(readlink -- "${kitty_theme_symlink}")" = "${kitty_light_theme}" ];
+then
+  export KITTY_COLORS="light"
+else
+  export KITTY_COLORS="dark"
+fi
+
+toggle_colors() {
+  if [[ $KITTY_COLORS == "light" ]]; then
+    export KITTY_COLORS="dark"
+    ln -sf "${kitty_dark_theme}" "${kitty_theme_symlink}"
+  else
+    export KITTY_COLORS="light"
+    ln -sf "${kitty_light_theme}" "${kitty_theme_symlink}"
+  fi
+  # Kitty listens on a UNIX socket, so that we can send commands even while in
+  # tmux (which swallows the kitty escape codes)
+  for socket in /tmp/kitty*; do
+    kitty @ --to "unix:${socket}" set-colors -a -c "${kitty_theme_symlink}"
+  done
+}
