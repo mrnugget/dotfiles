@@ -200,7 +200,7 @@ alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/F
 ##########
 # FUNCTIONS
 ##########
-
+#
 startpostgres() {
   local pidfile="/usr/local/var/postgres/postmaster.pid"
   if [ -s $pidfile ] && kill -0 $(cat $pidfile | head -n 1) > /dev/null 2>&1; then
@@ -326,6 +326,59 @@ RPROMPT='$(check_last_exit_code)'
 # ENV
 ########
 
+kitty_dark_theme="$HOME/.dotfiles/kitty_theme_afterglow.conf"
+kitty_light_theme="$HOME/.dotfiles/kitty_colors_lucius_white_high_contrast.conf"
+kitty_theme_symlink="$HOME/.config/kitty/theme.conf"
+
+if [ "$(readlink -- "${kitty_theme_symlink}")" = "${kitty_light_theme}" ];
+then
+  export KITTY_COLORS="light"
+  export GLAMOUR_STYLE=light
+else
+  export KITTY_COLORS="dark"
+  export GLAMOUR_STYLE=dark
+fi
+
+set_fzf_default_opts() {
+  if [[ $KITTY_COLORS == "light" ]]; then
+    export FZF_DEFAULT_OPTS='
+    --color=bg+:#DEECF9,bg:#FFFFFF,spinner:#3f5fff,hl:#586e75
+    --color=fg:#839496,header:#586e75,info:#cb4b16,pointer:#3f5fff
+    --color=marker:#3f5fff,fg+:#839496,prompt:#3f5fff,hl+:#3f5fff'
+  else
+    export FZF_DEFAULT_OPTS=''
+  fi
+}
+
+set_bat_theme() {
+  if [[ $KITTY_COLORS == "light" ]]; then
+    export BAT_THEME=ansi-light
+  else
+    export BAT_THEME=ansi-dark
+  fi
+}
+
+toggle_colors() {
+  if [[ $KITTY_COLORS == "light" ]]; then
+    export KITTY_COLORS="dark"
+    ln -sf "${kitty_dark_theme}" "${kitty_theme_symlink}"
+    export GLAMOUR_STYLE=dark
+  else
+    export KITTY_COLORS="light"
+    ln -sf "${kitty_light_theme}" "${kitty_theme_symlink}"
+    export GLAMOUR_STYLE=light
+  fi
+
+  # Kitty listens on a UNIX socket, so that we can send commands even while in
+  # tmux (which swallows the kitty escape codes)
+  for socket in /tmp/kitty*; do
+    kitty @ --to "unix:${socket}" set-colors -a -c "${kitty_theme_symlink}"
+  done
+
+  set_bat_theme
+  set_fzf_default_opts
+}
+
 if which nvim &> /dev/null; then
   alias vim='nvim'
   export EDITOR='nvim'
@@ -408,10 +461,7 @@ if which fzf &> /dev/null && which rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-    --color=bg+:#DEECF9,bg:#FFFFFF,spinner:#3f5fff,hl:#586e75
-    --color=fg:#839496,header:#586e75,info:#cb4b16,pointer:#3f5fff
-    --color=marker:#3f5fff,fg+:#839496,prompt:#3f5fff,hl+:#3f5fff'
+  set_fzf_default_opts
 fi
 
 # rust
@@ -441,11 +491,9 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if which bat &> /dev/null; then
-  export BAT_THEME=ansi-light
+  set_bat_theme
   alias cat=bat
 fi
-
-export GLAMOUR_STYLE=light
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -456,30 +504,3 @@ export PATH="$HOME/bin:$PATH"
 if [ -e ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]; then
   source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
 fi
-
-
-kitty_dark_theme="$HOME/.dotfiles/kitty_theme_afterglow.conf"
-kitty_light_theme="$HOME/.dotfiles/kitty_colors_lucius_white_high_contrast.conf"
-kitty_theme_symlink="$HOME/.dotfiles/theme.conf"
-
-if [ "$(readlink -- "${kitty_theme_symlink}")" = "${kitty_light_theme}" ];
-then
-  export KITTY_COLORS="light"
-else
-  export KITTY_COLORS="dark"
-fi
-
-toggle_colors() {
-  if [[ $KITTY_COLORS == "light" ]]; then
-    export KITTY_COLORS="dark"
-    ln -sf "${kitty_dark_theme}" "${kitty_theme_symlink}"
-  else
-    export KITTY_COLORS="light"
-    ln -sf "${kitty_light_theme}" "${kitty_theme_symlink}"
-  fi
-  # Kitty listens on a UNIX socket, so that we can send commands even while in
-  # tmux (which swallows the kitty escape codes)
-  for socket in /tmp/kitty*; do
-    kitty @ --to "unix:${socket}" set-colors -a -c "${kitty_theme_symlink}"
-  done
-}
