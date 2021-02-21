@@ -303,7 +303,7 @@ fi
 
 local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 # local promptnormal="%{$fg_bold[black]%}λ %{$reset_color%}"
-local promptnormal="λ %{$reset_color%}"
+local promptnormal="φ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}λ %{$reset_color%}"
 
 PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
