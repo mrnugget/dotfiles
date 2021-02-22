@@ -55,38 +55,37 @@ fi
 
 unsetopt menu_complete
 unsetopt flowcontrol
-setopt prompt_subst
 setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 setopt auto_pushd
-zmodload -i zsh/complist
-
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' special-dirs true
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH/cache/
-zstyle ':completion:*:*:*:*:*' menu select
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-
-# use /etc/hosts and known_hosts for hostname completion
-[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
-[ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-hosts=(
-  "$_ssh_config[@]"
-  "$_global_ssh_hosts[@]"
-  "$_ssh_hosts[@]"
-  "$_etc_hosts[@]"
-  "$HOST"
-  localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
-zstyle ':completion:*' users off
+# zmodload -i zsh/complist
+#
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' special-dirs true
+# zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+# zstyle ':completion::complete:*' use-cache 1
+# zstyle ':completion::complete:*' cache-path $ZSH/cache/
+# zstyle ':completion:*:*:*:*:*' menu select
+#
+# zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+# zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+#
+# # use /etc/hosts and known_hosts for hostname completion
+# [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+# [ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
+# [ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
+# hosts=(
+#   "$_ssh_config[@]"
+#   "$_global_ssh_hosts[@]"
+#   "$_ssh_hosts[@]"
+#   "$_etc_hosts[@]"
+#   "$HOST"
+#   localhost
+# )
+# zstyle ':completion:*:hosts' hosts $hosts
+# zstyle ':completion:*' users off
 
 ###############
 # KEY BINDINGS
@@ -138,7 +137,8 @@ bindkey '^E' end-of-line
 # Aliases
 #########
 
-local aliasfile="${HOME}/.zsh.d/aliases.`uname`.sh"
+local machine_name=$(uname)
+local aliasfile="${HOME}/.zsh.d/aliases.${machine_name}.sh"
 if [ -r ${aliasfile} ]; then
   source ${aliasfile}
 fi
@@ -240,6 +240,8 @@ s3() {
 #########
 # PROMPT
 #########
+
+setopt prompt_subst
 
 git_prompt_info() {
   local dirstatus=" OK"
@@ -357,7 +359,7 @@ else
   export GIT_EDITOR='vim'
 fi
 
-local envfile="${HOME}/.zsh.d/env.`uname`.sh"
+local envfile="${HOME}/.zsh.d/env.${machine_name}.sh"
 if [ -r ${envfile} ]; then
   . ${envfile}
 fi
@@ -372,21 +374,14 @@ export KEYTIMEOUT=1
 # homebrew
 export PATH="/usr/local/bin:$PATH"
 
-# rbenv
-if which rbenv &> /dev/null; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init - --no-rehash)"
-fi
-
 # asdf
-if [ -f /usr/local/opt/asdf/asdf.sh ]; then
-  source /usr/local/opt/asdf/asdf.sh
-fi
-
+# if [ -f /usr/local/opt/asdf/asdf.sh ]; then
+#   source /usr/local/opt/asdf/asdf.sh
+# fi
+#
 if [ -f ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
 fi
-
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
@@ -416,12 +411,12 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
 fi
 
 # fzf via local installation
-if [[ ! "$PATH" == */home/mrnugget/.fzf/bin* ]]; then
-  export PATH="$PATH:/home/mrnugget/.fzf/bin"
+if [[ ! "$PATH" == *$HOME.fzf/bin* ]]; then
+  export PATH="$PATH:$HOME/.fzf/bin"
 fi
 if [ -e ~/.fzf ]; then
   source ~/.fzf/shell/key-bindings.zsh
-  source ~/.fzf/shell/completion.zsh
+  # source ~/.fzf/shell/completion.zsh
 fi
 
 if which fzf &> /dev/null && which rg &> /dev/null; then
@@ -430,25 +425,6 @@ if which fzf &> /dev/null && which rg &> /dev/null; then
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
   set_fzf_default_opts
 fi
-
-# rust
-export PATH="$HOME/.cargo/bin:$PATH"
-if which rustc &> /dev/null; then
-  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
-
-# python
-if which pyenv &> /dev/null; then
-  eval "$(pyenv init -)"
-  export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Deactive this until this is fixed: https://github.com/BurntSushi/ripgrep/issues/375
-if which rg &> /dev/null; then
-  compdef -d rg
-  alias gr='rg' # Because in Vim you `:gr[ep]`
-fi
-# export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Try out `z`
 if [ -e /usr/local/etc/profile.d/z.sh ]; then
@@ -461,9 +437,6 @@ if which bat &> /dev/null; then
   set_bat_theme
   alias cat=bat
 fi
-
-# opam configuration
-test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
