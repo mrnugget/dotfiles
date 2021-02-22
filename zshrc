@@ -5,6 +5,8 @@
 typeset -U PATH
 autoload colors; colors;
 
+local machine_name=$(uname)
+
 #############
 ## PRIVATE ##
 #############
@@ -47,10 +49,14 @@ fi
 
 # Speed up completion init, see: https://htr3n.github.io/2018/07/faster-zsh/
 autoload -Uz compinit
-if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
-  compinit
+if [ $machine_name != "Linux" ]; then
+  if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+    compinit
+  else
+    compinit -C
+  fi
 else
-  compinit -C
+  compinit
 fi
 
 unsetopt menu_complete
@@ -137,7 +143,6 @@ bindkey '^E' end-of-line
 # Aliases
 #########
 
-local machine_name=$(uname)
 local aliasfile="${HOME}/.zsh.d/aliases.${machine_name}.sh"
 if [ -r ${aliasfile} ]; then
   source ${aliasfile}
