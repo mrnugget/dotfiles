@@ -45,8 +45,12 @@ if type brew &>/dev/null; then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-autoload -U compinit
-compinit -i
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 unsetopt menu_complete
 unsetopt flowcontrol
@@ -180,8 +184,6 @@ alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 
-# fzz and ag
-alias fazz='fzz ag -i {{}}'
 # fzz and find
 alias fizz='fzz find . -iname "*{{}}*"'
 
@@ -191,8 +193,6 @@ alias n='vim +Notes' # Opens Vim and calls `:Notes`
 # Go
 alias got='go test ./...'
 
-alias scr='vim ~/tmp/scratch.md'
-
 alias k='kubectl'
 
 alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'"
@@ -200,26 +200,6 @@ alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/F
 ##########
 # FUNCTIONS
 ##########
-#
-startpostgres() {
-  local pidfile="/usr/local/var/postgres/postmaster.pid"
-  if [ -s $pidfile ] && kill -0 $(cat $pidfile | head -n 1) > /dev/null 2>&1; then
-    echo "Already running"
-  else
-    pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
-  fi
-}
-
-stoppostgres() {
-  pg_ctl -D /usr/local/var/postgres stop
-}
-
-# Taken from here: http://timbabwe.com/2012/05/iterm_tab_and_window_titles_with_zsh
-# precmd () {
-#   tab_label=${PWD/${HOME}/\~} # use 'relative' path
-#   echo -ne "\e]2;${tab_label}\a" # set window title to full string
-#   echo -ne "\e]1;${tab_label: -24}\a" # set tab title to rightmost 24 characters
-# }
 
 mkdircd() {
   mkdir -p $1 && cd $1
@@ -254,20 +234,6 @@ s3() {
   local route="s3.thorstenball.com/${1}"
   aws s3 cp ${1} s3://${route}
   echo http://${route} | pbcopy
-}
-
-vimfzz() {
-  exec vim $(fzz ag {{}} ${1} | awk -F":" '{print $1}' | uniq)
-}
-
-cdfzz() {
-  local file=$(fzz find . -iname "*{{}}*" | head -n 1)
-  local filedir=$(dirname ${file})
-  cd ${filedir}
-}
-
-f() {
-  find . -iname "*${1}*"
 }
 
 #########
