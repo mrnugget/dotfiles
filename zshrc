@@ -45,6 +45,7 @@ if type brew &>/dev/null; then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
+# Speed up completion init, see: https://htr3n.github.io/2018/07/faster-zsh/
 autoload -Uz compinit
 if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
   compinit
