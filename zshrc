@@ -5,8 +5,6 @@
 typeset -U PATH
 autoload colors; colors;
 
-local machine_name=$(uname)
-
 #############
 ## PRIVATE ##
 #############
@@ -49,7 +47,8 @@ fi
 
 # Speed up completion init, see: https://htr3n.github.io/2018/07/faster-zsh/
 autoload -Uz compinit
-if [ $machine_name != "Linux" ]; then
+
+if [[ $OSTYPE = darwin* ]]; then
   if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
     compinit
   else
@@ -143,10 +142,16 @@ bindkey '^E' end-of-line
 # Aliases
 #########
 
-local aliasfile="${HOME}/.zsh.d/aliases.${machine_name}.sh"
-if [ -e ${aliasfile} ]; then
-  source ${aliasfile}
-fi
+case $OSTYPE in
+  linux*)
+    local aliasfile="${HOME}/.zsh.d/aliases.Linux.sh"
+    [[ -e ${aliasfile} ]] && source ${aliasfile}
+  ;;
+  darwin*)
+    local aliasfile="${HOME}/.zsh.d/aliases.Darwin.sh"
+    [[ -e ${aliasfile} ]] && source ${aliasfile}
+  ;;
+esac
 
 if type exa &> /dev/null; then
   alias ls=exa
@@ -364,10 +369,16 @@ else
   export GIT_EDITOR='vim'
 fi
 
-local envfile="${HOME}/.zsh.d/env.${machine_name}.sh"
-if [ -e ${envfile} ]; then
-  . ${envfile}
-fi
+case $OSTYPE in
+  linux*)
+    local envfile="${HOME}/.zsh.d/env.Linux.sh"
+    [[ -e ${envfile} ]] && source ${envfile}
+  ;;
+  darwin*)
+    local envfile="${HOME}/.zsh.d/env.Darwin.sh"
+    [[ -e ${envfile} ]] && source ${envfile}
+  ;;
+esac
 
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
