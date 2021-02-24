@@ -13,7 +13,7 @@ local machine_name=$(uname)
 # Include private stuff that's not supposed to show up
 # in the dotfiles repo
 local private="${HOME}/.zsh.d/private.sh"
-if [ -r ${private} ]; then
+if [ -e ${private} ]; then
   . ${private}
 fi
 
@@ -144,11 +144,11 @@ bindkey '^E' end-of-line
 #########
 
 local aliasfile="${HOME}/.zsh.d/aliases.${machine_name}.sh"
-if [ -r ${aliasfile} ]; then
+if [ -e ${aliasfile} ]; then
   source ${aliasfile}
 fi
 
-if which exa &> /dev/null; then
+if type exa &> /dev/null; then
   alias ls=exa
 fi
 alias lls='ls -lh --sort=size --reverse'
@@ -278,7 +278,7 @@ fi
 local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 # local promptnormal="%{$fg_bold[black]%}λ %{$reset_color%}"
 local promptnormal="φ %{$reset_color%}"
-local promptjobs="%{$fg_bold[red]%}λ %{$reset_color%}"
+local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 
 PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
@@ -353,7 +353,7 @@ toggle_colors() {
   set_fzf_default_opts
 }
 
-if which nvim &> /dev/null; then
+if type nvim &> /dev/null; then
   alias vim='nvim'
   export EDITOR='nvim'
   export PSQL_EDITOR='nvim -c"set filetype=sql"'
@@ -365,7 +365,7 @@ else
 fi
 
 local envfile="${HOME}/.zsh.d/env.${machine_name}.sh"
-if [ -r ${envfile} ]; then
+if [ -e ${envfile} ]; then
   . ${envfile}
 fi
 
@@ -380,13 +380,13 @@ export KEYTIMEOUT=1
 export PATH="/usr/local/bin:$PATH"
 
 # asdf
-# if [ -f /usr/local/opt/asdf/asdf.sh ]; then
-#   source /usr/local/opt/asdf/asdf.sh
-# fi
-#
-if [ -f ~/.asdf/asdf.sh ]; then
-  source ~/.asdf/asdf.sh
+if [ -e /usr/local/opt/asdf/asdf.sh ]; then
+  source /usr/local/opt/asdf/asdf.sh
 fi
+#
+# if [ -e ~/.asdf/asdf.sh ]; then
+#   source ~/.asdf/asdf.sh
+# fi
 
 # Encoding problems with gem
 export LC_ALL=en_US.UTF-8
@@ -404,7 +404,7 @@ export PATH="$GOBIN:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # direnv
-if which direnv &> /dev/null; then
+if type direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
@@ -413,18 +413,18 @@ fi
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
   source /usr/local/opt/fzf/shell/completion.zsh
+else
+  # fzf via local installation
+  if [ -e ~/.fzf ]; then
+    source ~/.fzf/shell/key-bindings.zsh
+    source ~/.fzf/shell/completion.zsh
+    if [[ ! "$PATH" == *$HOME.fzf/bin* ]]; then
+      export PATH="$PATH:$HOME/.fzf/bin"
+    fi
+  fi
 fi
 
-# fzf via local installation
-if [[ ! "$PATH" == *$HOME.fzf/bin* ]]; then
-  export PATH="$PATH:$HOME/.fzf/bin"
-fi
-if [ -e ~/.fzf ]; then
-  source ~/.fzf/shell/key-bindings.zsh
-  # source ~/.fzf/shell/completion.zsh
-fi
-
-if which fzf &> /dev/null && which rg &> /dev/null; then
+if type fzf &> /dev/null && type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -438,7 +438,7 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-if which bat &> /dev/null; then
+if type bat &> /dev/null; then
   set_bat_theme
   alias cat=bat
 fi
