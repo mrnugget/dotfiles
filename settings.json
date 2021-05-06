@@ -36,6 +36,11 @@
       "commands": ["codelens.showLensesInCurrentLine"]
     }
   ],
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<C-f>": false,
+    "<C-t>": false
+  },
   "vim.useSystemClipboard": true,
   "editor.fontFamily": "Jetbrains Mono",
   "files.exclude": {
