@@ -64,6 +64,9 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 setopt auto_pushd
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # zmodload -i zsh/complist
 #
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -333,7 +336,7 @@ set_fzf_default_opts() {
 
 set_bat_theme() {
   if [[ $KITTY_COLORS == "light" ]]; then
-    export BAT_THEME=ansi-light
+    export BAT_THEME=ansi
   else
     export BAT_THEME=ansi-dark
   fi
