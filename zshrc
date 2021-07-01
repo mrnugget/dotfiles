@@ -310,7 +310,7 @@ RPROMPT='$(check_last_exit_code)'
 # ENV
 ########
 
-kitty_dark_theme="$HOME/.dotfiles/kitty_theme_afterglow.conf"
+kitty_dark_theme="$HOME/.dotfiles/kitty_theme_gruvbox_dark_hard.conf"
 kitty_light_theme="$HOME/.dotfiles/kitty_colors_lucius_white_high_contrast.conf"
 kitty_theme_symlink="$HOME/.config/kitty/theme.conf"
 
@@ -465,3 +465,10 @@ export PATH="$HOME/bin:$PATH"
 if [ -e ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]; then
   source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
 fi
+
+
+# cl: https://github.com/felixge/cl
+cl() {
+  clonedpath=$(command cl -dir "$GOPATH/src" "$1")
+  cd "$clonedpath"
+}
