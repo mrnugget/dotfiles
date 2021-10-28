@@ -178,12 +178,13 @@ alias gst='git status'
 alias gaa='git add -A'
 alias gc='git commit'
 alias gcm='git checkout main'
-alias gpr='git pull --rebase'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias co='git checkout'
 alias up='git push'
+alias upf='git push --force'
 alias pu='git pull'
+alias pur='git pull --rebase'
 alias fe='git fetch'
 alias re='git rebase'
 alias lr='git l -30'
@@ -250,6 +251,15 @@ s3() {
   local route="s3.thorstenball.com/${1}"
   aws s3 cp ${1} s3://${route}
   echo http://${route} | pbcopy
+}
+
+# Open PR on GitHub
+pr() {
+  if type gh &> /dev/null; then
+    gh pr view -w
+  else
+    echo "gh is not installed"
+  fi
 }
 
 #########
@@ -363,11 +373,12 @@ toggle_colors() {
   set_fzf_default_opts
 }
 
+export PATH="$HOME/neovim/bin:$PATH"
 if type nvim &> /dev/null; then
-  alias vim='nvim'
-  export EDITOR='nvim'
-  export PSQL_EDITOR='nvim -c"set filetype=sql"'
-  export GIT_EDITOR='nvim'
+  alias vim='/home/mrnugget/neovim/bin/nvim'
+  export EDITOR='/home/mrnugget/neovim/bin/nvim'
+  export PSQL_EDITOR='/home/mrnugget/neovim/bin/nvim -c"set filetype=sql"'
+  export GIT_EDITOR='/home/mrnugget/neovim/bin/nvim'
 else
   export EDITOR='vim'
   export PSQL_EDITOR='vim -c"set filetype=sql"'
@@ -404,10 +415,6 @@ fi
 #   source ~/.asdf/asdf.sh
 # fi
 
-# Encoding problems with gem
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
@@ -415,9 +422,6 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
-
-#heroku
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # direnv
 if type direnv &> /dev/null; then
@@ -462,13 +466,14 @@ fi
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
 
-if [ -e ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh ]; then
-  source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
-fi
-
-
 # cl: https://github.com/felixge/cl
 cl() {
   clonedpath=$(command cl -dir "$GOPATH/src" "$1")
   cd "$clonedpath"
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mrnugget/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mrnugget/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mrnugget/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mrnugget/google-cloud-sdk/completion.zsh.inc'; fi
