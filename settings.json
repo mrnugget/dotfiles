@@ -97,4 +97,7 @@
   "metals.javaHome": "/Users/thorstenball/.jabba/jdk/adopt@1.11.0-9/Contents/Home",
   "window.restoreWindows": "none",
   "breadcrumbs.enabled": true,
+  "editor.fontSize": 13,
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
 }
