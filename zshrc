@@ -375,10 +375,10 @@ toggle_colors() {
 
 export PATH="$HOME/neovim/bin:$PATH"
 if type nvim &> /dev/null; then
-  alias vim='/home/mrnugget/neovim/bin/nvim'
-  export EDITOR='/home/mrnugget/neovim/bin/nvim'
-  export PSQL_EDITOR='/home/mrnugget/neovim/bin/nvim -c"set filetype=sql"'
-  export GIT_EDITOR='/home/mrnugget/neovim/bin/nvim'
+  alias vim="$HOME/neovim/bin/nvim"
+  export EDITOR="$HOME/neovim/bin/nvim"
+  export PSQL_EDITOR="$HOME/neovim/bin/nvim -c"set filetype=sql""
+  export GIT_EDITOR="$HOME/neovim/bin/nvim"
 else
   export EDITOR='vim'
   export PSQL_EDITOR='vim -c"set filetype=sql"'
