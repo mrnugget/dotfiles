@@ -141,6 +141,9 @@ bindkey '^[[3~' delete-char
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
+# Where should I put you?
+bindkey -s '^F' "tmux-sessionizer\n"
+
 #########
 # Aliases
 #########
