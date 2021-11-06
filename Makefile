@@ -9,10 +9,13 @@ ack: $(HOME)/.ackrc
 git: $(HOME)/.gitconfig $(HOME)/.githelpers $(HOME)/.gitignore
 psql: $(HOME)/.psqlrc
 zsh: $(HOME)/.zshrc $(HOME)/.zsh.d
-tmux: $(HOME)/.tmux.conf
+
+$(HOME)/bin/tmux-sessionizer:
 	mkdir -p $(HOME)/bin
 	ln -sf $(DOTFILE_PATH)/bin/tmux-sessionizer $(HOME)/bin/tmux-sessionizer
 	chmod +x $(HOME)/bin/tmux-sessionizer
+
+tmux: $(HOME)/.tmux.conf $(HOME)/bin/tmux-sessionizer
 
 kitty:
 	mkdir -p $(HOME)/.config/kitty
