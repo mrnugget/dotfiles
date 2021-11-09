@@ -183,7 +183,16 @@ alias gc='git commit'
 alias gcm='git checkout main'
 alias gd='git diff'
 alias gdc='git diff --cached'
+# [c]heck [o]ut
 alias co='git checkout'
+# [f]uzzy check[o]ut
+fo() {
+  git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
+}
+# [p]pull request check[o]ut
+po() {
+  gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-1)}' | xargs git checkout
+}
 alias up='git push'
 alias upf='git push --force'
 alias pu='git pull'
