@@ -102,7 +102,7 @@ cask 'alfred'
 cask '1password'
 cask 'dropbox'
 cask 'keepingyouawake'
-cask 'sizeup'
+cask 'rectangle'
 cask 'slack'
 cask 'istat-menus'
 cask 'zoom'
@@ -139,7 +139,7 @@ cask 'basictex'
 tap 'homebrew/cask-drivers'
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
-cask 'uhk-agent' # Driver for Ultimate Hacking Keyboard
+# cask 'uhk-agent' # Driver for Ultimate Hacking Keyboard
 
 tap 'homebrew/cask-fonts'
 cask 'font-hack'
