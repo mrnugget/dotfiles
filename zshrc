@@ -360,7 +360,7 @@ set_bat_theme() {
   if [[ $KITTY_COLORS == "light" ]]; then
     export BAT_THEME=ansi
   else
-    export BAT_THEME=ansi-dark
+    export BAT_THEME=ansi
   fi
 }
 
