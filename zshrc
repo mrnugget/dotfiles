@@ -189,7 +189,7 @@ alias co='git checkout'
 fo() {
   git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
 }
-# [p]pull request check[o]ut
+# [p]ull request check[o]ut
 po() {
   gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-1)}' | xargs git checkout
 }
@@ -419,8 +419,8 @@ export KEYTIMEOUT=1
 export PATH="/usr/local/bin:$PATH"
 
 # asdf
-if [ -e /usr/local/opt/asdf/asdf.sh ]; then
-  source /usr/local/opt/asdf/asdf.sh
+if [ -e /usr/local/opt/asdf/libexec/asdf.sh ]; then
+  source /usr/local/opt/asdf/libexec/asdf.sh
 fi
 #
 # if [ -e ~/.asdf/asdf.sh ]; then
@@ -472,7 +472,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if type bat &> /dev/null; then
   set_bat_theme
-  alias cat=bat
+  # alias cat=bat
 fi
 
 # Export my personal ~/bin as last one to have highest precedence
@@ -483,9 +483,3 @@ cl() {
   clonedpath=$(command cl -dir "$GOPATH/src" "$1")
   cd "$clonedpath"
 }
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/mrnugget/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mrnugget/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/mrnugget/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mrnugget/google-cloud-sdk/completion.zsh.inc'; fi
