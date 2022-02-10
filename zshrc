@@ -422,10 +422,15 @@ export KEYTIMEOUT=1
 
 # homebrew
 export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # asdf
 if [ -e /usr/local/opt/asdf/libexec/asdf.sh ]; then
   source /usr/local/opt/asdf/libexec/asdf.sh
+fi
+
+if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+  source /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 #
 # if [ -e ~/.asdf/asdf.sh ]; then
@@ -447,7 +452,10 @@ fi
 
 # fzf
 # fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+if [ -e /opt/homebrew/opt/fzf/shell/completion.zsh ]; then
+  source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+  source /opt/homebrew/opt/fzf/shell/completion.zsh
+elif [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
   source /usr/local/opt/fzf/shell/completion.zsh
 else
@@ -470,7 +478,11 @@ fi
 
 # Try out `z`
 if [ -e /usr/local/etc/profile.d/z.sh ]; then
-  source /usr/local/etc/profile.d/z.sh 
+  source /usr/local/etc/profile.d/z.sh
+fi
+
+if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
+  source /opt/homebrew/etc/profile.d/z.sh
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

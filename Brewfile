@@ -23,7 +23,7 @@ brew 'youtube-dl'
 brew 'ffmpeg' # dependency of youtube-dl
 brew 'wget'
 brew 'curl'
-brew 'gnu-sed', args: ['with-default-names']
+brew 'gnu-sed'
 brew 'z'
 brew 'cloc'
 brew 'jq'
@@ -58,7 +58,7 @@ brew 'pgrep'
 brew 'pkill'
 
 tap 'universal-ctags/homebrew-universal-ctags'
-brew 'universal-ctags', args: ['HEAD', 'with-jansson']
+brew 'universal-ctags', args: ['HEAD']
 
 tap 'TankerHQ/homebrew-repo'
 brew 'ruplacer'
@@ -97,9 +97,8 @@ cask 'vlc'
 cask 'adobe-acrobat-reader'
 cask 'kitty'
 cask 'google-chrome'
-cask 'virtualbox'
 cask 'vagrant'
-cask 'postgres'
+# Postgres.app
 cask 'libreoffice'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
@@ -113,7 +112,8 @@ cask 'imageoptim'
 cask 'barrier'
 
 cask 'monodraw'
-cask 'KindleGen'
+# Doesn't exist anymore?
+# cask 'KindleGen'
 cask 'basictex'
 
 tap 'homebrew/cask-drivers'
