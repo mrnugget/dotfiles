@@ -328,6 +328,11 @@ function check_last_exit_code() {
 
 RPROMPT='$(check_last_exit_code)'
 
+simple_prompt() {
+  local prompt_color="%B"
+  export PROMPT="%{$prompt_color%}$promptnormal"
+}
+
 ########
 # ENV
 ########
