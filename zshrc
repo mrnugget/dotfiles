@@ -207,6 +207,7 @@ alias hm='git log --format=%B -n 1 HEAD'
 # tmux
 alias tma='tmux attach -t'
 alias tmn='tmux new -s'
+alias tmm='tmux new -s main'
 
 # ceedee dot dot dot
 alias -g ...='../..'
