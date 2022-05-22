@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/code/clones ~/work ~/code/projects ~ -mindepth 1 -maxdepth 1 -type d -not -path "$HOME/.sourcegraph*" | fzf)
+    selected=$(find ~/code/clones ~/work ~/Dropbox ~/code/projects ~ -mindepth 1 -maxdepth 1 -type d -not -path "$HOME/.sourcegraph*" | fzf)
 fi
 
 if [[ -z $selected ]]; then
