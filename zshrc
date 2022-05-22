@@ -433,10 +433,10 @@ fi
 if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
   source /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
-#
-# if [ -e ~/.asdf/asdf.sh ]; then
-#   source ~/.asdf/asdf.sh
-# fi
+
+if [ -e ~/.asdf/asdf.sh ]; then
+  source ~/.asdf/asdf.sh
+fi
 
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
