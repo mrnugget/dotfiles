@@ -316,7 +316,7 @@ git_prompt_info() {
 # Future me. Try this to see what's correct:
 #   $ print -P '%fg_bold[black] black'
 #   $ print -P '%B%F{black} black'
-#   $ print -P '%B black'         
+#   $ print -P '%B black'
 local dir_info_color="%B"
 
 local dir_info_color_file="${HOME}/.zsh.d/dir_info_color"
@@ -419,6 +419,10 @@ else
   export GIT_EDITOR='vim'
 fi
 
+if [[ -e "$HOME/code/clones/lua-language-server/3rd/luamake/luamake" ]]; then
+  alias luamake="$HOME/code/clones/lua-language-server/3rd/luamake/luamake"
+fi
+
 case $OSTYPE in
   linux*)
     local envfile="${HOME}/.zsh.d/env.Linux.sh"
@@ -467,6 +471,9 @@ if type direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# rustup
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # fzf
 # fzf via Homebrew
 if [ -e /opt/homebrew/opt/fzf/shell/completion.zsh ]; then
@@ -509,11 +516,13 @@ if type bat &> /dev/null; then
   # alias cat=bat
 fi
 
+# sg & Sourcegraph
+export PATH="$HOME/.sg:$PATH"
+
+if [ -e "$HOME/.sourcegraph/sg.zsh_autocomplete" ]; then
+  PROG=sg source "$HOME/.sourcegraph/sg.zsh_autocomplete"
+fi
+export MG_DEPLOY_SOURCEGRAPH_MANAGED_PATH=/Users/thorstenball/work/deploy-sourcegraph-managed
+
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
-
-# cl: https://github.com/felixge/cl
-cl() {
-  clonedpath=$(command cl -dir "$GOPATH/src" "$1")
-  cd "$clonedpath"
-}
