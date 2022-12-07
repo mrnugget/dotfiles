@@ -191,7 +191,7 @@ fo() {
 }
 # [p]ull request check[o]ut
 po() {
-  gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-1)}' | xargs git checkout
+  gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-5)}' | xargs git checkout
 }
 alias up='git push'
 alias upf='git push --force'
