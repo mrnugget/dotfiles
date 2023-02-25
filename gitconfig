@@ -7,6 +7,8 @@
   st = status
   rh = reset HEAD
   rhh = reset --hard HEAD
+  pu = pull
+  up = push
 
   l = "!. ~/.githelpers && pretty_git_log"
   la = "!git l --all"
