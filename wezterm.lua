@@ -58,6 +58,16 @@ local colors = {
 	},
 }
 
+local function wayland_enabled()
+	local wayland = os.getenv("XDG_SESSION_TYPE")
+	return wayland == "wayland"
+end
+
+local font_size = 11.0
+if wayland_enabled() then
+	font_size = 12.0
+end
+
 return {
 	-- See: https://wezfurlong.org/wezterm/config/lua/config/term.html
 	-- term = "wezterm",
@@ -65,7 +75,7 @@ return {
 	enable_tab_bar = false,
 
 	font = wezterm.font("BerkeleyMono Nerd Font"),
-	font_size = 12.0,
+	font_size = font_size,
 
 	launch_menu = launch_menu,
 
