@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
+	enable_tab_bar = false,
+
 	font = wezterm.font("BerkeleyMono Nerd Font"),
 	font_size = 11.0,
 
