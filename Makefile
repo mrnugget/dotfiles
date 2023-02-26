@@ -17,6 +17,8 @@ $(HOME)/bin/tmux-sessionizer:
 
 tmux: $(HOME)/.tmux.conf $(HOME)/bin/tmux-sessionizer
 
+wezterm: $(HOME)/.wezterm.lua
+
 kitty:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(DOTFILE_PATH)/kitty.conf $(HOME)/.config/kitty/kitty.conf
@@ -27,4 +29,4 @@ endif
 
 imwheel: $(HOME)/.imwheelrc
 
-all: irb ack git psql zsh tmux kitty imwheel
+all: irb ack git psql zsh tmux kitty imwheel wezterm
