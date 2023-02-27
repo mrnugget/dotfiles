@@ -441,6 +441,9 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 # Set it to 10ms
 export KEYTIMEOUT=1
 
+# rustup
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # homebrew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -470,9 +473,6 @@ export PATH="$GOBIN:$PATH"
 if type direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
-
-# rustup
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # fzf
 # fzf via Homebrew
