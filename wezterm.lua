@@ -15,22 +15,13 @@ local colors = {
 	foreground = "#fbf1c7",
 	background = "#1d2021",
 
-	-- Overrides the cell background color when the current cell is occupied by the
-	-- cursor and the cursor style is set to Block
 	cursor_bg = "#928374",
-	-- Overrides the text color when the current cell is occupied by the cursor
 	cursor_fg = "black",
-	-- Specifies the border color of the cursor when the cursor style is set to Block,
-	-- or the color of the vertical or horizontal bar when the cursor style is set to
-	-- Bar or Underline.
 	cursor_border = "#928374",
 
-	-- the foreground color of selected text
 	selection_fg = "#928374",
-	-- the background color of selected text
 	selection_bg = "#ebdbb2",
 
-	-- The color of the scrollbar "thumb"; the portion that represents the current viewport
 	scrollbar_thumb = "#222222",
 
 	-- The color of the split lines between panes
@@ -58,13 +49,14 @@ local colors = {
 	},
 }
 
+local is_macos = wezterm.target_triple:match("darwin") ~= nil
 local function wayland_enabled()
 	local wayland = os.getenv("XDG_SESSION_TYPE")
 	return wayland == "wayland"
 end
 
 local font_size = 11.0
-if wayland_enabled() then
+if wayland_enabled() or is_macos then
 	font_size = 12.0
 end
 
