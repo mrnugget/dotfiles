@@ -66,7 +66,7 @@ return {
 
 	enable_tab_bar = false,
 
-	font = wezterm.font("BerkeleyMono Nerd Font"),
+	font = wezterm.font("BerkeleyMono Nerd Font Mono"),
 	font_size = font_size,
 
 	launch_menu = launch_menu,
@@ -74,4 +74,12 @@ return {
 	-- Use this, but then overwrite it basically completely further down
 	color_scheme = "Gruvbox Dark",
 	colors = colors,
+
+	keys = {
+		{
+			key = "f",
+			mods = "SHIFT|SUPER",
+			action = wezterm.action.ToggleFullScreen,
+		},
+	},
 }
