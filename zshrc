@@ -67,34 +67,6 @@ setopt auto_pushd
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# zmodload -i zsh/complist
-#
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# zstyle ':completion:*' list-colors ''
-# zstyle ':completion:*' special-dirs true
-# zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-# zstyle ':completion::complete:*' use-cache 1
-# zstyle ':completion::complete:*' cache-path $ZSH/cache/
-# zstyle ':completion:*:*:*:*:*' menu select
-#
-# zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-# zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-#
-# # use /etc/hosts and known_hosts for hostname completion
-# [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-# [ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
-# [ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-# hosts=(
-#   "$_ssh_config[@]"
-#   "$_global_ssh_hosts[@]"
-#   "$_ssh_hosts[@]"
-#   "$_etc_hosts[@]"
-#   "$HOST"
-#   localhost
-# )
-# zstyle ':completion:*:hosts' hosts $hosts
-# zstyle ':completion:*' users off
-
 ###############
 # KEY BINDINGS
 ###############
@@ -326,24 +298,10 @@ fi
 
 local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 # local promptnormal="%{$fg_bold[black]%}λ %{$reset_color%}"
-local promptnormal="φ %{$reset_color%}"
+local promptnormal="%% "
 local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 
-PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
-
-# Taken from here: https://zenbro.github.io/2015/07/23/show-exit-code-of-last-command-in-zsh
-function check_last_exit_code() {
-  local LAST_EXIT_CODE=$?
-  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
-    local EXIT_CODE_PROMPT=' '
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    echo "$EXIT_CODE_PROMPT"
-  fi
-}
-
-RPROMPT='$(check_last_exit_code)'
+PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)%b'
 
 simple_prompt() {
   local prompt_color="%B"
