@@ -58,7 +58,7 @@ else
   compinit
 fi
 
-unsetopt menu_complete
+# unsetopt menucomplete
 unsetopt flowcontrol
 setopt auto_menu
 setopt complete_in_word
@@ -297,11 +297,10 @@ if [ -r ${dir_info_color_file} ]; then
 fi
 
 local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
-# local promptnormal="%{$fg_bold[black]%}λ %{$reset_color%}"
-local promptnormal="%% "
+local promptnormal="φ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 
-PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)%b'
+PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 simple_prompt() {
   local prompt_color="%B"
