@@ -418,6 +418,11 @@ if [ -e ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
 fi
 
+# google cloud sdk
+if [ -e /opt/homebrew/share/google-cloud-sdk/path.zsh.inc ]; then
+  source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
+fi
+
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
