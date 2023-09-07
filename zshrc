@@ -131,11 +131,11 @@ case $OSTYPE in
   ;;
 esac
 
-if type exa &> /dev/null; then
-  alias ls=exa
+if type lsd &> /dev/null; then
+  alias ls=lsd
 fi
 alias lls='ls -lh --sort=size --reverse'
-alias llt='ls -l -snew'
+alias llt='ls -lrt'
 alias bear='clear && echo "Clear as a bear!"'
 
 alias history='history 1'
