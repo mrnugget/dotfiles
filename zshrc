@@ -300,7 +300,16 @@ local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 local promptnormal="φ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 
-PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+# Show how many nested `nix shell`s we are in
+local nix_prompt=""
+if [[ -z $ORIG_SHLVL ]]; then
+  export ORIG_SHLVL=$SHLVL
+fi;
+if [[ $SHLVL -gt $ORIG_SHLVL ]]; then
+  nix_prompt=("(%F{yellow}$(($SHLVL - $ORIG_SHLVL))%f) ")
+fi;
+
+PROMPT='${dir_info}$(git_prompt_info) ${nix_prompt}%(1j.$promptjobs.$promptnormal)'
 
 simple_prompt() {
   local prompt_color="%B"
