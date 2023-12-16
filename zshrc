@@ -302,10 +302,17 @@ local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 
 # Show how many nested `nix shell`s we are in
 local nix_prompt=""
+# Set ORIG_SHLVL only if it wasn't previously set and if SHLVL > 1 and
+# GHOSTTY_RESOURCES_DIR is not empty
 if [[ -z $ORIG_SHLVL ]]; then
-  export ORIG_SHLVL=$SHLVL
+  if [[ -z $GHOSTTY_RESOURCES_DIR ]]; then
+    export ORIG_SHLVL=$SHLVL
+  elif  [[ $SHLVL -gt 1 ]]; then
+    export ORIG_SHLVL=$SHLVL
+  fi
 fi;
-if [[ $SHLVL -gt $ORIG_SHLVL ]]; then
+# If ORIG_SHLVL is set and SHLVL is now greater: display nesting level
+if [[ ! -z $ORIG_SHLVL && $SHLVL -gt $ORIG_SHLVL ]]; then
   nix_prompt=("(%F{yellow}$(($SHLVL - $ORIG_SHLVL))%f) ")
 fi;
 
