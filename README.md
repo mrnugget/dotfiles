@@ -15,6 +15,18 @@ To set up all of the files as symlinks in your home directory, just run this:
 make all
 ```
 
+### Installing with homebrew
+
+```
+brew bundle --file=~/.dotfiles/Brewfile
+```
+
+and
+
+```
+brew bundle --force cleanup --file=~/.dotfiles/Brewfile
+```
+
 ## ZSH
 
 ZSH is set up to have full completion for killing processes, `cd`-ing to a
