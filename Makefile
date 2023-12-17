@@ -27,6 +27,12 @@ ifeq ($(UNAME), Linux)
 	ln -sf $(DOTFILE_PATH)/kitty.linux.conf $(HOME)/.config/kitty/kitty.linux.conf
 endif
 
+$(HOME)/.config/ghostty/config:
+	mkdir -p $(HOME)/.config/ghostty
+	ln -sf $(DOTFILE_PATH)/ghostty_config $(HOME)/.config/ghostty/config
+
+ghostty: $(HOME)/.config/ghostty/config
+
 imwheel: $(HOME)/.imwheelrc
 
-all: irb ack git psql zsh tmux kitty imwheel wezterm
+all: irb ack git psql zsh tmux kitty imwheel wezterm ghostty
