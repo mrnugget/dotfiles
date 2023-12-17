@@ -434,6 +434,11 @@ if [ -e ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
 fi
 
+# rtx
+if [ -e ~/bin/rtx ]; then
+  eval "$(~/bin/rtx activate zsh)"
+fi
+
 # google cloud sdk
 if [ -e /opt/homebrew/share/google-cloud-sdk/path.zsh.inc ]; then
   source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
