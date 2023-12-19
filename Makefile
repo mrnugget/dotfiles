@@ -4,8 +4,6 @@ DOTFILE_PATH := $(shell pwd)
 $(HOME)/.%: %
 	ln -sf $(DOTFILE_PATH)/$^ $@
 
-irb: $(HOME)/.irbrc
-ack: $(HOME)/.ackrc
 git: $(HOME)/.gitconfig $(HOME)/.githelpers $(HOME)/.gitignore
 psql: $(HOME)/.psqlrc
 zsh: $(HOME)/.zshrc $(HOME)/.zsh.d
@@ -35,4 +33,4 @@ ghostty: $(HOME)/.config/ghostty/config
 
 imwheel: $(HOME)/.imwheelrc
 
-all: irb ack git psql zsh tmux kitty imwheel wezterm ghostty
+all: git psql zsh tmux kitty imwheel wezterm ghostty
