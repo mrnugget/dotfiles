@@ -67,6 +67,7 @@ cask 'imageoptim'
 cask 'barrier'
 cask 'discord'
 cask 'orbstack'
+cask 'vmware-fusion'
 
 cask 'monodraw'
 # Doesn't exist anymore?
