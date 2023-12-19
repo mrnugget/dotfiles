@@ -1,5 +1,0 @@
---type-add=html=.haml
---type-add=css=.sass,.scss
---ignore-file=is:tags
---ignore-dir=log
---ignore-dir=tmp
