@@ -1,6 +1,8 @@
 {
   "editor.minimap.enabled": false,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.renderLineHighlight": "none",
   "editor.renderIndentGuides": false,
   "editor.suggestSelection": "first",
@@ -8,7 +10,6 @@
   "editor.selectionHighlight": false,
   "editor.cursorBlinking": "solid",
   "editor.formatOnSave": true,
-
   "workbench.activityBar.visible": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -20,20 +21,44 @@
   "vim.foldfix": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "g", "o", "t"],
-      "commands": ["go.test.file"]
+      "before": [
+        "<leader>",
+        "g",
+        "o",
+        "t"
+      ],
+      "commands": [
+        "go.test.file"
+      ]
     },
     {
-      "before": ["<leader>", "f", "i"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "f",
+        "i"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", "h"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["<leader>", "c", "l"],
-      "commands": ["codelens.showLensesInCurrentLine"]
+      "before": [
+        "<leader>",
+        "c",
+        "l"
+      ],
+      "commands": [
+        "codelens.showLensesInCurrentLine"
+      ]
     }
   ],
   "vim.handleKeys": {
@@ -49,7 +74,9 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "task.slowProviderWarning": ["npm"],
+  "task.slowProviderWarning": [
+    "npm"
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -102,5 +129,5 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "go.trace.server": "verbose",
   "window.zoomLevel": 1,
-  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.untrustedFiles": "open"
 }
