@@ -1,1 +1,11 @@
+# magenta bold
 local dir_info_color="$fg_bold[magenta]"
+
+# yellow-ish bold
+local dir_info_color="%B%F{172}"
+
+# gruvbox yellow, bold
+local dir_info_color="%B%F{#fabd2f}"
+
+# gruvbox grey
+local dir_info_color="%F{#7c6f64}"
