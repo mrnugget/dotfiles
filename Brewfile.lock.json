@@ -3253,6 +3253,12 @@
         "options": {
           "full_name": "wezterm"
         }
+      },
+      "contour": {
+        "version": "0.4.0.6245",
+        "options": {
+          "full_name": "contour"
+        }
       }
     },
     "mas": {

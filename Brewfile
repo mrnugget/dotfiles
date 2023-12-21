@@ -68,13 +68,17 @@ cask 'barrier'
 cask 'discord'
 cask 'orbstack'
 cask 'vmware-fusion'
-cask 'wezterm'
-cask 'alacritty'
-cask 'kitty'
 cask 'monodraw'
 # Doesn't exist anymore?
 # cask 'KindleGen'
 cask 'basictex'
+
+
+# terminal emulators
+cask 'wezterm'
+cask 'alacritty'
+cask 'kitty'
+cask 'contour'
 
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
