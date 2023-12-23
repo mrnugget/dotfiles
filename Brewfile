@@ -3,7 +3,7 @@
 brew 'git'
 brew 'zsh'
 brew 'make'
-
+brew 'cmake'
 brew 'openssl'
 brew 'coreutils'
 brew 'gnu-tar'
@@ -48,6 +48,7 @@ brew 'libtool'
 brew 'unixodbc'
 brew 'unzip'
 
+cask 'soundsource'
 cask 'keepingyouawake'
 cask 'rectangle'
 cask 'slack'
