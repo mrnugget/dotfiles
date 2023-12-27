@@ -45,18 +45,12 @@ if type brew &>/dev/null; then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-# Speed up completion init, see: https://htr3n.github.io/2018/07/faster-zsh/
+# Speed up completion init, see: https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit
-
-if [[ $OSTYPE = darwin* ]]; then
-  if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
-    compinit
-  else
-    compinit -C
-  fi
-else
+for dump in ~/.zcompdump(N.mh+24); do
   compinit
-fi
+done
+compinit -C
 
 # unsetopt menucomplete
 unsetopt flowcontrol
@@ -439,11 +433,6 @@ if [ -e ~/bin/rtx ]; then
   eval "$(~/bin/rtx activate zsh)"
 fi
 
-# google cloud sdk
-if [ -e /opt/homebrew/share/google-cloud-sdk/path.zsh.inc ]; then
-  source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
-fi
-
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
@@ -462,9 +451,6 @@ fi
 if [ -e /opt/homebrew/opt/fzf/shell/completion.zsh ]; then
   source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
   source /opt/homebrew/opt/fzf/shell/completion.zsh
-elif [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
 else
   # fzf via local installation
   if [ -e ~/.fzf ]; then
@@ -493,19 +479,6 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-if type bat &> /dev/null; then
-  set_bat_theme
-  # alias cat=bat
-fi
-
-# sg & Sourcegraph
-export PATH="$HOME/.sg:$PATH"
-
-if [ -e "$HOME/.sourcegraph/sg.zsh_autocomplete" ]; then
-  PROG=sg source "$HOME/.sourcegraph/sg.zsh_autocomplete"
-fi
-export MG_DEPLOY_SOURCEGRAPH_MANAGED_PATH=/Users/thorstenball/work/deploy-sourcegraph-managed
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
