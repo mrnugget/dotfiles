@@ -34,8 +34,11 @@ brew 'shellcheck'
 brew 'shfmt'
 brew 'pgrep'
 brew 'pkill'
-
 brew 'neovim'
+
+# See: https://apple.stackexchange.com/questions/431812/how-can-i-stop-a-bluetooth-keyboard-from-waking-my-macbook-pro/437396#437396
+brew 'sleepwatcher'
+brew 'blueutil'
 
 brew 'asdf'
 # asdf dependencies
