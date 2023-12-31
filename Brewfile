@@ -76,8 +76,9 @@ cask 'monodraw'
 # Doesn't exist anymore?
 # cask 'KindleGen'
 cask 'basictex'
-
-
+cask 'imageoptim'
+cask 'handbrake'
+cask 'figma'
 # terminal emulators
 cask 'wezterm'
 cask 'alacritty'

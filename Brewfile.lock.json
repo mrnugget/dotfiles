@@ -2357,45 +2357,45 @@
         }
       },
       "ffmpeg": {
-        "version": "6.1_1",
+        "version": "6.1.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_sonoma": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:ac8aa882f863e2b80371a735b0a050fa08ba1f18d1cebd186bcb05afdb3e5773",
-              "sha256": "ac8aa882f863e2b80371a735b0a050fa08ba1f18d1cebd186bcb05afdb3e5773"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:b5153b06d18a6748e2333b0a1446704d31be752450f4d9ffbab41e880ff8df02",
+              "sha256": "b5153b06d18a6748e2333b0a1446704d31be752450f4d9ffbab41e880ff8df02"
             },
             "arm64_ventura": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:e72662404cf134b5c72110bff0073162d37b7b744d99d316bf8466ef5a1882d9",
-              "sha256": "e72662404cf134b5c72110bff0073162d37b7b744d99d316bf8466ef5a1882d9"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:b2e175d6b6ef58ab0e6e227ca857b65371f8e7df746dcdaf4e9f3ae4a7033419",
+              "sha256": "b2e175d6b6ef58ab0e6e227ca857b65371f8e7df746dcdaf4e9f3ae4a7033419"
             },
             "arm64_monterey": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:49097441b52061a5f8e157dbd6d3bb098957822f431978df5a83601b3baeae28",
-              "sha256": "49097441b52061a5f8e157dbd6d3bb098957822f431978df5a83601b3baeae28"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:b4dee1bdb54c908ffa0372c4b6a38f378a6154a0c5666940505beedd92da26bd",
+              "sha256": "b4dee1bdb54c908ffa0372c4b6a38f378a6154a0c5666940505beedd92da26bd"
             },
             "sonoma": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:d36c66829dc2fbdd47997cdfcf9e852925a1be245a087b85670ebcda91501214",
-              "sha256": "d36c66829dc2fbdd47997cdfcf9e852925a1be245a087b85670ebcda91501214"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:722dccd925e2912b97af33671e210ac3f8c1db57b6b97e4dbb8cc9b3e4a28f42",
+              "sha256": "722dccd925e2912b97af33671e210ac3f8c1db57b6b97e4dbb8cc9b3e4a28f42"
             },
             "ventura": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:14837ec144a1be675498c55e385c492ec3a911fadc327b4579dd8afd2ae7f38f",
-              "sha256": "14837ec144a1be675498c55e385c492ec3a911fadc327b4579dd8afd2ae7f38f"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:8050a8b9c0bd86a9a59734157f3c6d95fed766a54a996851c973b5b545c10e96",
+              "sha256": "8050a8b9c0bd86a9a59734157f3c6d95fed766a54a996851c973b5b545c10e96"
             },
             "monterey": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:697dcc5644c2eefe8956e06384869ca080009e8749fd1bd44c456698ec127db9",
-              "sha256": "697dcc5644c2eefe8956e06384869ca080009e8749fd1bd44c456698ec127db9"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:04993a3e270d5e3ce3a34772192a712486b891e9483ba40d3a7d572f7c2e27b3",
+              "sha256": "04993a3e270d5e3ce3a34772192a712486b891e9483ba40d3a7d572f7c2e27b3"
             },
             "x86_64_linux": {
               "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:3c407391946b6833d421bca0304afeb4418aaa3fc82904e4eef2c25202f70bcd",
-              "sha256": "3c407391946b6833d421bca0304afeb4418aaa3fc82904e4eef2c25202f70bcd"
+              "url": "https://ghcr.io/v2/homebrew/core/ffmpeg/blobs/sha256:5b9536aa939955afa875003133b06c5ecf8a9d93a611b885c335727ac9883d9e",
+              "sha256": "5b9536aa939955afa875003133b06c5ecf8a9d93a611b885c335727ac9883d9e"
             }
           }
         }
@@ -3386,6 +3386,18 @@
         "version": "5.6.3",
         "options": {
           "full_name": "soundsource"
+        }
+      },
+      "handbrake": {
+        "version": "1.7.2",
+        "options": {
+          "full_name": "handbrake"
+        }
+      },
+      "figma": {
+        "version": "116.15.4",
+        "options": {
+          "full_name": "figma"
         }
       }
     },
