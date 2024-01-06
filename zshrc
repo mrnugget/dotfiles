@@ -428,11 +428,6 @@ if [ -e ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
 fi
 
-# rtx
-if [ -e ~/bin/rtx ]; then
-  eval "$(~/bin/rtx activate zsh)"
-fi
-
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
