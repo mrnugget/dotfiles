@@ -84,6 +84,9 @@ cask 'alacritty'
 cask 'kitty'
 cask 'contour'
 
+# try this
+cask 'synology-drive'
+
 cask 'sonos'
 cask 'focusrite-control' # Drivers for Focusrite Scarlett
 cask 'elgato-control-center'
