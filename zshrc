@@ -469,7 +469,12 @@ if type fzf &> /dev/null && type rg &> /dev/null; then
   set_fzf_default_opts
 fi
 
-# Try out `z`
+# Try out atuin
+if type atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
+# `z`
 if [ -e /usr/local/etc/profile.d/z.sh ]; then
   source /usr/local/etc/profile.d/z.sh
 fi

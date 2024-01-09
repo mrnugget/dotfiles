@@ -31,6 +31,12 @@ $(HOME)/.config/ghostty/config:
 
 ghostty: $(HOME)/.config/ghostty/config
 
+$(HOME)/.config/atuin/config.toml:
+	mkdir -p $(HOME)/.config/atuin
+	ln -sf $(DOTFILE_PATH)/atuin_config.toml $(HOME)/.config/atuin/config.toml
+
+atuin: $(HOME)/.config/atuin/config.toml
+
 imwheel: $(HOME)/.imwheelrc
 
-all: git psql zsh tmux kitty imwheel wezterm ghostty
+all: git psql zsh tmux kitty imwheel wezterm ghostty atuin
