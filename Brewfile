@@ -40,16 +40,20 @@ brew 'neovim'
 brew 'sleepwatcher'
 brew 'blueutil'
 
-brew 'asdf'
+# brew 'asdf'
 # asdf dependencies
-brew 'automake'
-brew 'autoconf'
-brew 'libyaml'
-brew 'readline'
-brew 'libxslt'
-brew 'libtool'
-brew 'unixodbc'
-brew 'unzip'
+# brew 'automake'
+# brew 'autoconf'
+# brew 'libyaml'
+# brew 'readline'
+# brew 'libxslt'
+# brew 'libtool'
+# brew 'unixodbc'
+# brew 'unzip'
+
+# Let's try mise
+brew 'mise'
+brew 'libyaml' # libyaml is needed for Ruby/ruby-build
 
 cask 'soundsource'
 cask 'keepingyouawake'

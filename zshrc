@@ -428,6 +428,11 @@ if [ -e ~/.asdf/asdf.sh ]; then
   source ~/.asdf/asdf.sh
 fi
 
+# mise
+if type mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
