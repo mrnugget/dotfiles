@@ -68,6 +68,15 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Vim Keybindings
 bindkey -v
 
+# This is a "fix" for zsh in Ghostty:
+# Ghostty implements the fixterms specification https://www.leonerd.org.uk/hacks/fixterms/
+# and under that `Ctrl-[` doesn't send escape but `ESC [91;5u`.
+#
+# (tmux and Neovim both handle 91;5u correctly, but raw zsh inside Ghostty doesn't)
+#
+# Thanks to @rockorager for this!
+bindkey "^[[91;5u" vi-cmd-mode
+
 # Open line in Vim by pressing 'v' in Command-Mode
 autoload -U edit-command-line
 zle -N edit-command-line
