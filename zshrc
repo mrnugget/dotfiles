@@ -330,60 +330,8 @@ simple_prompt() {
 # ENV
 ########
 
-kitty_dark_theme="$HOME/.dotfiles/kitty_theme_gruvbox_dark_hard.conf"
-kitty_light_theme="$HOME/.dotfiles/kitty_colors_lucius_white_high_contrast.conf"
-kitty_theme_symlink="$HOME/.config/kitty/theme.conf"
-
-if [ "$(readlink -- "${kitty_theme_symlink}")" = "${kitty_light_theme}" ];
-then
-  export KITTY_COLORS="light"
-  export GLAMOUR_STYLE=light
-else
-  export KITTY_COLORS="dark"
-  export GLAMOUR_STYLE=dark
-fi
-
-set_fzf_default_opts() {
-  if [[ $KITTY_COLORS == "light" ]]; then
-    export FZF_DEFAULT_OPTS='
-    --color=bg+:#DEECF9,bg:#FFFFFF,spinner:#3f5fff,hl:#586e75
-    --color=fg:#839496,header:#586e75,info:#cb4b16,pointer:#3f5fff
-    --color=marker:#3f5fff,fg+:#839496,prompt:#3f5fff,hl+:#3f5fff'
-  else
-    export FZF_DEFAULT_OPTS=''
-  fi
-}
-
-set_bat_theme() {
-  if [[ $KITTY_COLORS == "light" ]]; then
-    export BAT_THEME=ansi
-  else
-    export BAT_THEME=ansi
-  fi
-}
-
-toggle_colors() {
-  if [[ $KITTY_COLORS == "light" ]]; then
-    export KITTY_COLORS="dark"
-    ln -sf "${kitty_dark_theme}" "${kitty_theme_symlink}"
-    export GLAMOUR_STYLE=dark
-  else
-    export KITTY_COLORS="light"
-    ln -sf "${kitty_light_theme}" "${kitty_theme_symlink}"
-    export GLAMOUR_STYLE=light
-  fi
-
-  # Kitty listens on a UNIX socket, so that we can send commands even while in
-  # tmux (which swallows the kitty escape codes)
-  for socket in /tmp/kitty*; do
-    kitty @ --to "unix:${socket}" set-colors -a -c "${kitty_theme_symlink}"
-  done
-
-  set_bat_theme
-  set_fzf_default_opts
-}
-
 export PATH="$HOME/neovim/bin:$PATH"
+
 if type nvim &> /dev/null; then
   alias vim="nvim"
   export EDITOR="nvim"
@@ -425,17 +373,17 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # asdf
-if [ -e /usr/local/opt/asdf/libexec/asdf.sh ]; then
-  source /usr/local/opt/asdf/libexec/asdf.sh
-fi
+# if [ -e /usr/local/opt/asdf/libexec/asdf.sh ]; then
+#   source /usr/local/opt/asdf/libexec/asdf.sh
+# fi
 
-if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
-  source /opt/homebrew/opt/asdf/libexec/asdf.sh
-fi
+# if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+#   source /opt/homebrew/opt/asdf/libexec/asdf.sh
+# fi
 
-if [ -e ~/.asdf/asdf.sh ]; then
-  source ~/.asdf/asdf.sh
-fi
+# if [ -e ~/.asdf/asdf.sh ]; then
+#   source ~/.asdf/asdf.sh
+# fi
 
 # mise
 if type mise &> /dev/null; then
@@ -456,26 +404,10 @@ if type direnv &> /dev/null; then
 fi
 
 # fzf
-# fzf via Homebrew
-if [ -e /opt/homebrew/opt/fzf/shell/completion.zsh ]; then
-  source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-  source /opt/homebrew/opt/fzf/shell/completion.zsh
-else
-  # fzf via local installation
-  if [ -e ~/.fzf ]; then
-    source ~/.fzf/shell/key-bindings.zsh
-    source ~/.fzf/shell/completion.zsh
-    if [[ ! "$PATH" == *$HOME.fzf/bin* ]]; then
-      export PATH="$PATH:$HOME/.fzf/bin"
-    fi
-  fi
-fi
-
 if type fzf &> /dev/null && type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!vendor/*"'
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  set_fzf_default_opts
 fi
 
 # Try out atuin
