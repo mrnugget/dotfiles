@@ -36,3 +36,5 @@ palette = 14=#8ec07c
 # white
 palette = 7=#a89984
 palette = 15=#fbf1c7
+
+# window-new-tab-position = end

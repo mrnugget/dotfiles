@@ -90,6 +90,7 @@ cask 'wezterm'
 cask 'alacritty'
 cask 'kitty'
 cask 'contour'
+cask 'iterm2'
 
 # try this
 cask 'synology-drive'

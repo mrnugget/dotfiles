@@ -3070,12 +3070,9 @@
         }
       },
       "iterm2": {
-        "version": "3.3.10",
+        "version": "3.4.23",
         "options": {
-          "full_name": "iterm2",
-          "args": {
-            "appdir": "/Applications"
-          }
+          "full_name": "iterm2"
         }
       },
       "alfred": {
@@ -3562,7 +3559,7 @@
       "Fantastical 2": null,
       "Xcode": {
         "id": "497799835",
-        "version": "15.1"
+        "version": "15.2"
       },
       "Annotate": {
         "id": "918207447",
@@ -3570,7 +3567,7 @@
       },
       "Todoist": {
         "id": "585829637",
-        "version": "8.12.1"
+        "version": "8.14.1"
       },
       "Pixelmator": {
         "id": "407963104",
@@ -3596,7 +3593,7 @@
       },
       "Pixelmator Pro": {
         "id": "1289583905",
-        "version": "3.5.3"
+        "version": "3.5.5"
       }
     }
   },
@@ -3623,7 +3620,7 @@
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",
-        "Xcode": "15.1",
+        "Xcode": "15.2",
         "macOS": "14.2.1"
       }
     }
