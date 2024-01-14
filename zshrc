@@ -189,9 +189,6 @@ alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 
-# fzz and find
-alias fizz='fzz find . -iname "*{{}}*"'
-
 # Notes
 alias n='vim +Notes' # Opens Vim and calls `:Notes`
 
@@ -329,24 +326,7 @@ simple_prompt() {
 ########
 # ENV
 ########
-
-export PATH="$HOME/neovim/bin:$PATH"
-
-if type nvim &> /dev/null; then
-  alias vim="nvim"
-  export EDITOR="nvim"
-  export PSQL_EDITOR="nvim -c"set filetype=sql""
-  export GIT_EDITOR="nvim"
-else
-  export EDITOR='vim'
-  export PSQL_EDITOR='vim -c"set filetype=sql"'
-  export GIT_EDITOR='vim'
-fi
-
-if [[ -e "$HOME/code/clones/lua-language-server/3rd/luamake/luamake" ]]; then
-  alias luamake="$HOME/code/clones/lua-language-server/3rd/luamake/luamake"
-fi
-
+#
 case $OSTYPE in
   linux*)
     local envfile="${HOME}/.zsh.d/env.Linux.sh"
@@ -365,25 +345,30 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 # Set it to 10ms
 export KEYTIMEOUT=1
 
+export PATH="$HOME/neovim/bin:$PATH"
+
+if type nvim &> /dev/null; then
+  alias vim="nvim"
+  export EDITOR="nvim"
+  export PSQL_EDITOR="nvim -c"set filetype=sql""
+  export GIT_EDITOR="nvim"
+else
+  export EDITOR='vim'
+  export PSQL_EDITOR='vim -c"set filetype=sql"'
+  export GIT_EDITOR='vim'
+fi
+
+if [[ -e "$HOME/code/clones/lua-language-server/3rd/luamake/luamake" ]]; then
+  alias luamake="$HOME/code/clones/lua-language-server/3rd/luamake/luamake"
+fi
+
+
 # rustup
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # homebrew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
-# asdf
-# if [ -e /usr/local/opt/asdf/libexec/asdf.sh ]; then
-#   source /usr/local/opt/asdf/libexec/asdf.sh
-# fi
-
-# if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
-#   source /opt/homebrew/opt/asdf/libexec/asdf.sh
-# fi
-
-# if [ -e ~/.asdf/asdf.sh ]; then
-#   source ~/.asdf/asdf.sh
-# fi
 
 # mise
 if type mise &> /dev/null; then
