@@ -326,7 +326,9 @@ simple_prompt() {
 ########
 # ENV
 ########
-#
+
+export COLOR_PROFILE="dark"
+
 case $OSTYPE in
   linux*)
     local envfile="${HOME}/.zsh.d/env.Linux.sh"
