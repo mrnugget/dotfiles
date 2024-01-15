@@ -59,6 +59,11 @@ brew 'blueutil'
 brew 'mise'
 brew 'libyaml' # libyaml is needed for Ruby/ruby-build
 
+cask 'postgres-unofficial'
+brew 'livekit'
+brew 'postgrest'
+brew 'foreman'
+
 cask 'soundsource'
 cask 'keepingyouawake'
 cask 'rectangle'
