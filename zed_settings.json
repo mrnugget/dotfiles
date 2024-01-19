@@ -1,0 +1,37 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "copilot": {
+    "disabled_globs": [".env", "src/chapter2/main.rs"]
+  },
+  "vim_mode": true,
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "base_keymap": "VSCode",
+  "theme": "Gruvbox Dark Hard",
+  "ui_font_size": 14,
+  "ui_font_family": "BerkeleyMono Nerd Font Mono",
+  "buffer_font_size": 13,
+  "buffer_font_family": "BerkeleyMono Nerd Font Mono",
+  "buffer_line_height": {
+    "custom": 1.5
+  },
+  "terminal": {
+    "font_size": 12,
+    "font_family": "BerkeleyMono Nerd Font Mono",
+    "line_height": {
+      "custom": 1.25
+    }
+  },
+  "inlay_hints": {
+    "enabled": false
+  }
+}

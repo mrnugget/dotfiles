@@ -37,6 +37,16 @@ $(HOME)/.config/atuin/config.toml:
 
 atuin: $(HOME)/.config/atuin/config.toml
 
+$(HOME)/.config/zed/settings.json:
+	mkdir -p $(HOME)/.config/zed
+	ln -sf $(DOTFILE_PATH)/zed_settings.json $(HOME)/.config/zed/settings.json
+
+$(HOME)/.config/zed/keymap.json:
+	mkdir -p $(HOME)/.config/zed
+	ln -sf $(DOTFILE_PATH)/zed_keymap.json $(HOME)/.config/zed/keymap.json
+
+zed: $(HOME)/.config/zed/keymap.json $(HOME)/.config/zed/settings.json
+
 imwheel: $(HOME)/.imwheelrc
 
-all: git psql zsh tmux kitty imwheel wezterm ghostty atuin
+all: git psql zsh tmux kitty imwheel wezterm ghostty atuin zed
