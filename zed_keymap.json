@@ -10,9 +10,7 @@
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
       "g r": "editor::Rename",
-      "g c c": "editor::ToggleComments",
-      ", c c": "editor::ToggleComments",
-      ", w": "workspace::Save"
+      "g c c": "editor::ToggleComments"
     }
   },
   {
