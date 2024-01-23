@@ -7,9 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "copilot": {
-    "disabled_globs": [".env", "src/chapter2/main.rs"]
-  },
+  "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
