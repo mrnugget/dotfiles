@@ -23,6 +23,7 @@
     "custom": 1.5
   },
   "terminal": {
+    "blinking": "off",
     "font_size": 12,
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
