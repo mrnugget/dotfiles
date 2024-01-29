@@ -13,8 +13,19 @@
       "g shift-r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
-      "g r": "editor::Rename",
+      "g r": "editor::Rename"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
       "g c c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "g c": "editor::ToggleComments"
     }
   },
   {

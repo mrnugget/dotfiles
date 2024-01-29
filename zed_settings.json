@@ -28,6 +28,9 @@
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
       "custom": 1.25
+    },
+    "env": {
+      "GIT_EDITOR": "zed --wait"
     }
   },
   "inlay_hints": {
