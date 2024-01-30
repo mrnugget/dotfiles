@@ -20,11 +20,11 @@
   "buffer_font_size": 13,
   "buffer_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_line_height": {
-    "custom": 1.5
+    "custom": 1.25
   },
   "terminal": {
     "blinking": "off",
-    "font_size": 12,
+    "font_size": 13,
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
       "custom": 1.25
