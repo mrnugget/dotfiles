@@ -40,3 +40,8 @@ palette = 7=#a89984
 palette = 15=#fbf1c7
 
 # window-new-tab-position = end
+
+keybind = super+shift+h=goto_split:left
+keybind = super+shift+j=goto_split:bottom
+keybind = super+shift+k=goto_split:top
+keybind = super+shift+l=goto_split:right
