@@ -1,5 +1,4 @@
 macos-non-native-fullscreen = true
-macos-option-as-alt = true
 
 window-inherit-font-size = false
 
