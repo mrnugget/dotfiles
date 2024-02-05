@@ -200,6 +200,7 @@ alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/F
 
 alias zedn='/Applications/Zed\ Nightly.app/Contents/MacOS/cli'
 alias r='cargo run'
+alias rr='cargo run --release'
 
 ##########
 # FUNCTIONS

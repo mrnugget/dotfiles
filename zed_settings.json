@@ -7,6 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
@@ -23,6 +29,7 @@
     "custom": 1.25
   },
   "terminal": {
+    "dock": "bottom",
     "blinking": "off",
     "font_size": 13,
     "font_family": "BerkeleyMono Nerd Font Mono",
@@ -30,10 +37,14 @@
       "custom": 1.25
     },
     "env": {
+      // "SHELL": "/opt/homebrew/bin/bash",
       "GIT_EDITOR": "zed --wait"
     }
   },
   "inlay_hints": {
     "enabled": false
+  },
+  "experimental.theme_overrides": {
+    "search.match_background": "#d79921"
   }
 }
