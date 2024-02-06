@@ -13,7 +13,8 @@
       "g shift-r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
-      "g r": "editor::Rename"
+      "g r": "editor::Rename",
+      ", w": "workspace::Save"
     }
   },
   {
@@ -33,15 +34,11 @@
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
       "ctrl-w t": "terminal_panel::ToggleFocus",
-      "ctrl-u": "terminal::Clear",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-u": "terminal::Clear"
     }
   },
   {
-    "context": "ProjectPanel",
+    "context": "Dock",
     "bindings": {
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],

@@ -23,7 +23,7 @@
         "revision": "62da84bab464f68c61ee7b5c5aee19ebea923e41"
       },
       "homebrew/cask-fonts": {
-        "revision": "0395600ee456cde87294c4357e1167ecc3788fe2"
+        "revision": "3ca1d3dc52fefbb93d27bf45cf9ecd759f7ae5e4"
       }
     },
     "brew": {
@@ -3716,7 +3716,7 @@
         }
       },
       "contour": {
-        "version": "0.4.2.6429",
+        "version": "0.4.3.6442",
         "options": {
           "full_name": "contour"
         }
