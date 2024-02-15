@@ -1,20 +1,24 @@
 {
   "show_copilot_suggestions": false,
-  "show_completion_documentation": true,
+  "languages": {
+    "Plain Text": {
+      "show_copilot_suggestions": false
+    }
+  },
   "assistant": {
     "dock": "right"
   },
   "project_panel": {
     "dock": "left"
   },
-  "soft_wrap": "none",
+  //"soft_wrap": "preferred_line_length",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
     "show": "never"
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark Hard",
+  "theme": "Gruvbox Dark",
   "ui_font_size": 14,
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_font_size": 13,
@@ -24,7 +28,7 @@
   },
   "terminal": {
     "dock": "bottom",
-    "blinking": "off",
+    "blinking": "on",
     "font_size": 13,
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
@@ -37,5 +41,26 @@
   },
   "inlay_hints": {
     "enabled": false
+  },
+  "experimental.theme_overrides": {
+    "editor.background": "#1D2021",
+    "editor.gutter.background": "#1D2021",
+    "terminal.background": "#1D2021"
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "usePlaceholders": true,
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
   }
 }
