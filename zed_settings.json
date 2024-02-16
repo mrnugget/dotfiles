@@ -18,7 +18,7 @@
     "show": "never"
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark",
+  "theme": "Gruvbox Dark Hard",
   "ui_font_size": 14,
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_font_size": 13,
@@ -43,9 +43,12 @@
     "enabled": false
   },
   "experimental.theme_overrides": {
-    "editor.background": "#1D2021",
-    "editor.gutter.background": "#1D2021",
-    "terminal.background": "#1D2021"
+    // "editor.background": "#1D2021",
+    // "editor.gutter.background": "#1D2021",
+    // "terminal.background": "#1D2021",
+    // "toolbar.background": "#1D2021",
+    // "panel.background": "#1D2021",
+    // "tab.active_background": "#1D2021"
   },
   "lsp": {
     "gopls": {

@@ -15,15 +15,37 @@
       "g a": "editor::ToggleCodeActions",
       "g r": "editor::Rename",
       ", w": "workspace::Save",
-      "j": ["vim::Down", { "displayLines": true }],
-      "k": ["vim::Up", { "displayLines": true }]
+      "j": [
+        "vim::Down",
+        {
+          "displayLines": true
+        }
+      ],
+      "k": [
+        "vim::Up",
+        {
+          "displayLines": true
+        }
+      ]
     }
   },
   {
     "context": "Editor && vim_mode == normal && !VimCount",
     "bindings": {
-      "0": ["vim::StartOfLine", { "displayLines": true }],
-      "$": ["vim::EndOfLine", { "displayLines": true }]
+      "0": [
+        "vim::StartOfLine",
+        {
+          "displayLines": true
+        }
+      ],
+      "$": [
+        "vim::EndOfLine",
+        {
+          "displayLines": true
+        }
+      ],
+      ", f b": "file_finder::Toggle",
+      ", f i": "file_finder::Toggle"
     }
   },
   {
