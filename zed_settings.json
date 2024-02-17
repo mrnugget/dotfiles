@@ -19,9 +19,9 @@
   },
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark Hard",
-  "ui_font_size": 14,
+  "ui_font_size": 13,
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_font_size": 13,
+  "buffer_font_size": 12,
   "buffer_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_line_height": {
     "custom": 1.25
@@ -29,7 +29,7 @@
   "terminal": {
     "dock": "bottom",
     "blinking": "on",
-    "font_size": 13,
+    "font_size": 12,
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
       "custom": 1.25

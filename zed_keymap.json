@@ -26,7 +26,9 @@
         {
           "displayLines": true
         }
-      ]
+      ],
+      ", f b": "file_finder::Toggle",
+      ", f i": "file_finder::Toggle"
     }
   },
   {
@@ -43,9 +45,7 @@
         {
           "displayLines": true
         }
-      ],
-      ", f b": "file_finder::Toggle",
-      ", f i": "file_finder::Toggle"
+      ]
     }
   },
   {
