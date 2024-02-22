@@ -1,5 +1,8 @@
 {
-  "show_copilot_suggestions": false,
+  // "show_copilot_suggestions": false,
+  "features": {
+    "copilot": true
+  },
   "languages": {
     "Plain Text": {
       "show_copilot_suggestions": false
@@ -11,7 +14,7 @@
   "project_panel": {
     "dock": "left"
   },
-  //"soft_wrap": "preferred_line_length",
+  "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
