@@ -8,6 +8,7 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-s": "projects::OpenRecent",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "g shift-r": "editor::FindAllReferences",
@@ -32,7 +33,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !VimCount",
+    "context": "Editor && vim_mode == normal && !VimWaiting && !VimCount",
     "bindings": {
       "0": [
         "vim::StartOfLine",
