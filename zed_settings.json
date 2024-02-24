@@ -1,11 +1,15 @@
 {
-  // "show_copilot_suggestions": false,
   "features": {
     "copilot": true
   },
   "languages": {
     "Plain Text": {
       "show_copilot_suggestions": false
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
     }
   },
   "assistant": {
@@ -44,14 +48,6 @@
   },
   "inlay_hints": {
     "enabled": false
-  },
-  "experimental.theme_overrides": {
-    // "editor.background": "#1D2021",
-    // "editor.gutter.background": "#1D2021",
-    // "terminal.background": "#1D2021",
-    // "toolbar.background": "#1D2021",
-    // "panel.background": "#1D2021",
-    // "tab.active_background": "#1D2021"
   },
   "lsp": {
     "gopls": {
