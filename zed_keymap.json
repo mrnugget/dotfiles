@@ -1,5 +1,13 @@
 [
   {
+    "bindings": {
+      ", f b": "file_finder::Toggle",
+      ", f i": "file_finder::Toggle",
+      ", f o": "projects::OpenRecent",
+      "ctrl-s": "projects::OpenRecent"
+    }
+  },
+  {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
@@ -8,7 +16,6 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-s": "projects::OpenRecent",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "g shift-r": "editor::FindAllReferences",
@@ -27,9 +34,7 @@
         {
           "displayLines": true
         }
-      ],
-      ", f b": "file_finder::Toggle",
-      ", f i": "file_finder::Toggle"
+      ]
     }
   },
   {

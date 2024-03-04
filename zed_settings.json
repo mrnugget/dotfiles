@@ -1,8 +1,12 @@
 {
+  "show_copilot_suggestions": false,
   "features": {
     "copilot": true
   },
   "languages": {
+    "Markdown": {
+      "show_copilot_suggestions": false
+    },
     "Plain Text": {
       "show_copilot_suggestions": false
     },
