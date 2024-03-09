@@ -1,9 +1,11 @@
 [
   {
+    "context": "vim_mode == normal && vim_operator == none && !VimWaiting",
     "bindings": {
       ", f b": "file_finder::Toggle",
       ", f i": "file_finder::Toggle",
       ", f o": "projects::OpenRecent",
+      ", r l": "task::Rerun",
       "ctrl-s": "projects::OpenRecent"
     }
   },
@@ -22,6 +24,8 @@
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
       "g r": "editor::Rename",
+      "[ x": "editor::SelectLargerSyntaxNode",
+      "] x": "editor::SelectSmallerSyntaxNode",
       ", w": "workspace::Save",
       "j": [
         "vim::Down",
