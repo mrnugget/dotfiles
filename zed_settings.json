@@ -51,7 +51,7 @@
     }
   },
   "inlay_hints": {
-    "enabled": false
+    "enabled": true
   },
   "lsp": {
     "gopls": {
