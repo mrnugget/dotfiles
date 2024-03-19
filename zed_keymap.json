@@ -1,6 +1,6 @@
 [
   {
-    "context": "vim_mode == normal && vim_operator == none && !VimWaiting",
+    "context": "vim_operator == none && !VimWaiting && vim_mode != insert",
     "bindings": {
       ", f b": "file_finder::Toggle",
       ", f i": "file_finder::Toggle",
@@ -18,6 +18,7 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "1 g shift-d": "editor::GoToImplementation",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "g shift-r": "editor::FindAllReferences",
@@ -26,7 +27,7 @@
       "g r": "editor::Rename",
       "[ x": "editor::SelectLargerSyntaxNode",
       "] x": "editor::SelectSmallerSyntaxNode",
-      ", w": "workspace::Save",
+      // ", w": "workspace::Save",
       "j": [
         "vim::Down",
         {

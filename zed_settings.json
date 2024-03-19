@@ -12,7 +12,32 @@
     },
     "TSX": {
       "code_actions_on_format": {
-        "source.organizeImports": true
+        // "source.organizeImports": true
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      // "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Ruby": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "bundle",
+          "arguments": [
+            "exec",
+            "rubocop",
+            "--fail-level",
+            "error",
+            "--autocorrect",
+            "--stdin",
+            "corrected.rb",
+            "--stderr"
+          ]
+        }
       }
     }
   },
@@ -22,7 +47,7 @@
   "project_panel": {
     "dock": "left"
   },
-  "soft_wrap": "none",
+  "soft_wrap": "editor_width",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
@@ -54,6 +79,24 @@
     "enabled": true
   },
   "lsp": {
+    "eslint": {
+      "settings": {
+        "codeActionOnSave": {
+          // "rules": ["import/order"]
+        }
+      }
+    },
+    "rust-analyzer": {
+      "binary": {
+        "path": "/Users/thorstenball/tmp/rust-analyzer-aarch64-apple-darwin",
+        "arguments": ["--no-log-buffering"]
+      },
+      "initialization_options": {
+        "cargo": {
+          "features": "!test-support"
+        }
+      }
+    },
     "gopls": {
       "initialization_options": {
         "usePlaceholders": true,
@@ -66,6 +109,12 @@
           "parameterNames": true,
           "rangeVariableTypes": true
         }
+      }
+    },
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": false
       }
     }
   }
