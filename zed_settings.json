@@ -1,9 +1,14 @@
 {
+  "relative_line_numbers": false,
+  "always_treat_brackets_as_autoclosed": false,
   "show_copilot_suggestions": false,
   "features": {
-    "copilot": true
+    "copilot": false
   },
   "languages": {
+    "SQL": {
+      "formatter": "prettier"
+    },
     "Markdown": {
       "show_copilot_suggestions": false
     },
@@ -41,9 +46,6 @@
       }
     }
   },
-  "assistant": {
-    "dock": "right"
-  },
   "project_panel": {
     "dock": "left"
   },
@@ -51,7 +53,7 @@
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
-    "show": "never"
+    "show": "always"
   },
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark Hard",
@@ -59,6 +61,8 @@
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_font_size": 12,
   "buffer_font_family": "BerkeleyMono Nerd Font Mono",
+  // "buffer_font_size": 16,
+  // "buffer_font_family": "PragmataPro Liga",
   "buffer_line_height": {
     "custom": 1.25
   },
@@ -71,7 +75,6 @@
       "custom": 1.25
     },
     "env": {
-      // "SHELL": "/opt/homebrew/bin/bash",
       "GIT_EDITOR": "zed --wait"
     }
   },
@@ -80,24 +83,31 @@
   },
   "lsp": {
     "eslint": {
-      "settings": {
-        "codeActionOnSave": {
-          // "rules": ["import/order"]
-        }
-      }
+      // "settings": {
+      // "workingDirectories": ["./"],
+      // "codeActionOnSave": {
+      // "rules": ["import/order"]
+      // }
+      // }
     },
     "rust-analyzer": {
-      "binary": {
-        "path": "/Users/thorstenball/tmp/rust-analyzer-aarch64-apple-darwin",
-        "arguments": ["--no-log-buffering"]
-      },
-      "initialization_options": {
-        "cargo": {
-          "features": "!test-support"
-        }
-      }
+      // "binary": {
+      //   "path": "/Users/thorstenball/tmp/rust-analyzer-aarch64-apple-darwin",
+      //   "arguments": ["--no-log-buffering"]
+      // },
+      // "initialization_options": {
+      //   "checkOnSave": false,
+      //   "check": {
+      //     "allTargets": false,
+      //     "overrideCommand": ["cargo", "build", "--message-format=json"]
+      //   }
+      // }
     },
     "gopls": {
+      "binary": {
+        "path": "/Users/thorstenball/tmp/gopls",
+        "arguments": ["-debug=0.0.0.0:9090"]
+      },
       "initialization_options": {
         "usePlaceholders": true,
         "hints": {
