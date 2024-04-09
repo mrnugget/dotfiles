@@ -9,15 +9,8 @@
     "SQL": {
       "formatter": "prettier"
     },
-    "Markdown": {
-      "show_copilot_suggestions": false
-    },
-    "Plain Text": {
-      "show_copilot_suggestions": false
-    },
     "TSX": {
       "code_actions_on_format": {
-        // "source.organizeImports": true
         "source.fixAll.eslint": true
       }
     },

@@ -1,6 +1,6 @@
 [
   {
-    "context": "vim_operator == none && !VimWaiting && vim_mode != insert",
+    "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
     "bindings": {
       ", f b": "tab_switcher::Toggle",
       ", f i": "file_finder::Toggle",
