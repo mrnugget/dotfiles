@@ -53,7 +53,7 @@
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
-    "show": "always"
+    "show": "never"
   },
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark Hard",
@@ -67,7 +67,7 @@
     "custom": 1.25
   },
   "terminal": {
-    "dock": "bottom",
+    "dock": "right",
     "blinking": "on",
     "font_size": 12,
     "font_family": "BerkeleyMono Nerd Font Mono",
