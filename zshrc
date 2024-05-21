@@ -375,6 +375,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# direnv
+if type direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # mise
 if type mise &> /dev/null; then
   eval "$(mise activate zsh)"
@@ -387,11 +392,6 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
-
-# direnv
-if type direnv &> /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
 
 # fzf
 if type fzf &> /dev/null && type rg &> /dev/null; then

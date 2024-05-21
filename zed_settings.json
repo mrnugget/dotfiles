@@ -1,11 +1,30 @@
 {
-  "relative_line_numbers": false,
+  "current_line_highlight": "none",
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": true
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+      // "min_column": 80
+    }
+  },
+  "assistant": {
+    "dock": "right",
+    "version": "1",
+    "provider": { "name": "zed.dev", "default_model": "gpt-4o" }
+  },
+  // "relative_line_numbers": true,
   "always_treat_brackets_as_autoclosed": false,
-  "show_copilot_suggestions": false,
+  "show_copilot_suggestions": true,
   "features": {
-    "copilot": false
+    "copilot": true
   },
   "languages": {
+    "Scala": {
+      "language_servers": ["tailwindcss-language-server"]
+    },
+    "Markdown": { "preferred_line_length": 80 },
     "SQL": {
       "formatter": "prettier"
     },
@@ -14,13 +33,29 @@
         "source.fixAll.eslint": true
       }
     },
+    "Vue.js": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+      // "formatter": {
+      //   "code_actions": {
+      //     "source.fixAll.eslint": true
+      //   }
+      // }
+    },
     "JavaScript": {
       // "formatter": "language_server",
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
+      // "formatter": {
+      //   "code_actions": {
+      //     "source.fixAll.eslint": true
+      //   }
+      // }
     },
     "Ruby": {
+      "language_servers": ["tailwindcss-language-server", "solargraph"],
       "format_on_save": "on",
       "formatter": {
         "external": {
@@ -42,7 +77,8 @@
   "project_panel": {
     "dock": "left"
   },
-  "soft_wrap": "editor_width",
+  // "soft_wrap": "preferred_line_length",
+  "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
@@ -52,17 +88,15 @@
   "theme": "Gruvbox Dark Hard",
   "ui_font_size": 13,
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_font_size": 12,
+  "buffer_font_size": 13,
   "buffer_font_family": "BerkeleyMono Nerd Font Mono",
-  // "buffer_font_size": 16,
-  // "buffer_font_family": "PragmataPro Liga",
   "buffer_line_height": {
     "custom": 1.25
   },
   "terminal": {
     "dock": "right",
     "blinking": "on",
-    "font_size": 12,
+    "font_size": 13,
     "font_family": "BerkeleyMono Nerd Font Mono",
     "line_height": {
       "custom": 1.25
@@ -97,20 +131,47 @@
       // }
     },
     "gopls": {
-      "binary": {
-        "path": "/Users/thorstenball/tmp/gopls",
-        "arguments": ["-debug=0.0.0.0:9090"]
-      },
+      // "binary": {
+      //   "path": "/Users/thorstenball/bin/gopls",
+      //   "arguments": ["-debug=0.0.0.0:9090"]
+      // },
       "initialization_options": {
         "usePlaceholders": true,
+        "buildFlags": ["-tags=debug"],
+        "completeUnimported": true,
+        "experimentalPostfixCompletions": true,
         "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
+          "assignVariableTypes": false,
+          "compositeLiteralFields": false,
+          "compositeLiteralTypes": false,
           "constantValues": true,
           "functionTypeParameters": true,
           "parameterNames": true,
           "rangeVariableTypes": true
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "binary": {
+        // "path": "/Users/thorstenball/bin/gopls",
+        "arguments": [
+          "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
+          "--stdio"
+        ]
+      },
+      "settings": {
+        // "includeLanguages": {
+        //   "erb": "html",
+        //   "ruby": "html"
+        // },
+        // "experimental": {
+        //   "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
+        // }
+        "includeLanguages": {
+          "scala": "html"
+        },
+        "experimental": {
+          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
         }
       }
     },

@@ -1,11 +1,25 @@
 [
   {
+    "context": "Editor || Workspace",
+    "bindings": {
+      "ctrl-shift-e": "workspace::ToggleLeftDock",
+      "ctrl-x": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock"
+    }
+  },
+  {
     "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
     "bindings": {
       ", f b": "tab_switcher::Toggle",
       ", f i": "file_finder::Toggle",
       ", f o": "projects::OpenRecent",
       ", r l": "task::Rerun",
+      ", r e": ["task::Rerun", { "reevaluate_context": true }],
       "ctrl-s": "projects::OpenRecent"
     }
   },
@@ -19,7 +33,7 @@
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "cmd-shift-k": "editor::DeleteLine",
-      "1 g shift-d": "editor::GoToImplementation",
+      // "1 g shift-d": "editor::GoToImplementation",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "g shift-r": "editor::FindAllReferences",
