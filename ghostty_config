@@ -3,7 +3,7 @@ macos-non-native-fullscreen = true
 window-inherit-font-size = false
 
 font-family = BerkeleyMono Nerd Font Mono
-font-size = 12
+font-size = 13
 
 # adjust-underline-thickness = 50%
 
