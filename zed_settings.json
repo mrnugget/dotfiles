@@ -1,11 +1,13 @@
 {
+  // "autosave": "on_focus_change",
+  "indent_guides": { "enabled": false },
   "current_line_highlight": "none",
   "preview_tabs": {
     "enable_preview_from_code_navigation": true
   },
   "git": {
     "inline_blame": {
-      "enabled": false
+      "enabled": true
       // "min_column": 80
     }
   },
