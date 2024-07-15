@@ -1,2 +1,5 @@
 style = "compact"
 enter_accept = false
+
+[sync]
+records = true
