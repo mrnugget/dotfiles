@@ -13,13 +13,19 @@
     }
   },
   {
-    "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+    "context": "EmptyPane || SharedScreen || vim_mode == normal",
     "bindings": {
-      ", f b": "tab_switcher::Toggle",
+      // ", f b": "tab_switcher::Toggle",
+      ", f b": ["file_finder::Toggle", { "separate_history": true }],
       ", f i": "file_finder::Toggle",
       ", f o": "projects::OpenRecent",
       ", r l": "task::Rerun",
-      ", r e": ["task::Rerun", { "reevaluate_context": true }],
+      ", r e": [
+        "task::Rerun",
+        {
+          "reevaluate_context": true
+        }
+      ],
       "ctrl-s": "projects::OpenRecent"
     }
   },

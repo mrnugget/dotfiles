@@ -1,90 +1,12 @@
 {
-  // "autosave": "on_focus_change",
-  "indent_guides": { "enabled": false },
-  "current_line_highlight": "none",
-  "preview_tabs": {
-    "enable_preview_from_code_navigation": true
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": true
-      // "min_column": 80
-    }
-  },
-  "assistant": {
-    "dock": "right",
-    "version": "1",
-    "provider": { "name": "zed.dev", "default_model": "gpt-4o" }
-  },
-  // "relative_line_numbers": true,
-  "always_treat_brackets_as_autoclosed": false,
-  "show_copilot_suggestions": true,
-  "features": {
-    "copilot": true
-  },
-  "languages": {
-    "Scala": {
-      "language_servers": ["tailwindcss-language-server"]
-    },
-    "Markdown": { "preferred_line_length": 80 },
-    "SQL": {
-      "formatter": "prettier"
-    },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    },
-    "Vue.js": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-      // "formatter": {
-      //   "code_actions": {
-      //     "source.fixAll.eslint": true
-      //   }
-      // }
-    },
-    "JavaScript": {
-      // "formatter": "language_server",
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-      // "formatter": {
-      //   "code_actions": {
-      //     "source.fixAll.eslint": true
-      //   }
-      // }
-    },
-    "Ruby": {
-      "language_servers": ["tailwindcss-language-server", "solargraph"],
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "bundle",
-          "arguments": [
-            "exec",
-            "rubocop",
-            "--fail-level",
-            "error",
-            "--autocorrect",
-            "--stdin",
-            "corrected.rb",
-            "--stderr"
-          ]
-        }
-      }
-    }
-  },
-  "project_panel": {
-    "dock": "left"
-  },
-  // "soft_wrap": "preferred_line_length",
   "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
   "scrollbar": {
     "show": "never"
+  },
+  "project_panel": {
+    "scrollbar": { "show": "never" }
   },
   "base_keymap": "VSCode",
   "theme": "Gruvbox Dark Hard",
@@ -110,36 +32,34 @@
   "inlay_hints": {
     "enabled": true
   },
+  "indent_guides": {
+    "enabled": false
+  },
+  "current_line_highlight": "none",
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": false
+  },
+  "assistant": {
+    "version": "1",
+    "provider": {
+      "name": "zed.dev",
+      "default_model": "gpt-4o"
+    }
+  },
   "lsp": {
-    "eslint": {
-      // "settings": {
-      // "workingDirectories": ["./"],
-      // "codeActionOnSave": {
-      // "rules": ["import/order"]
-      // }
-      // }
-    },
     "rust-analyzer": {
-      // "binary": {
-      //   "path": "/Users/thorstenball/tmp/rust-analyzer-aarch64-apple-darwin",
-      //   "arguments": ["--no-log-buffering"]
-      // },
-      // "initialization_options": {
-      //   "checkOnSave": false,
-      //   "check": {
-      //     "allTargets": false,
-      //     "overrideCommand": ["cargo", "build", "--message-format=json"]
-      //   }
-      // }
+      "checkOnSave": {
+        "allTargets": false
+      },
+      "check": {
+        "allTargets": false,
+        "overrideCommand": ["cargo", "build", "--message-format=json"]
+      }
     },
     "gopls": {
-      // "binary": {
-      //   "path": "/Users/thorstenball/bin/gopls",
-      //   "arguments": ["-debug=0.0.0.0:9090"]
-      // },
       "initialization_options": {
         "usePlaceholders": true,
-        "buildFlags": ["-tags=debug"],
+        // "buildFlags": ["-tags=debug"],
         "completeUnimported": true,
         "experimentalPostfixCompletions": true,
         "hints": {
@@ -152,36 +72,88 @@
           "rangeVariableTypes": true
         }
       }
-    },
-    "tailwindcss-language-server": {
-      "binary": {
-        // "path": "/Users/thorstenball/bin/gopls",
-        "arguments": [
-          "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
-          "--stdio"
-        ]
-      },
-      "settings": {
-        // "includeLanguages": {
-        //   "erb": "html",
-        //   "ruby": "html"
-        // },
-        // "experimental": {
-        //   "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
-        // }
-        "includeLanguages": {
-          "scala": "html"
-        },
-        "experimental": {
-          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
-        }
-      }
-    },
-    "solargraph": {
-      "initialization_options": {
-        "diagnostics": true,
-        "formatting": false
-      }
     }
+    // "tailwindcss-language-server": {
+    //   "binary": {
+    //     // "path": "/Users/thorstenball/bin/gopls",
+    //     "arguments": [
+    //       "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
+    //       "--stdio"
+    //     ]
+    //   },
+    //   "settings": {
+    //     "classAttributes": ["class", "className", "ngClass", "styles"]
+    //   }
+    // }
+  },
+  "languages": {
+    "Scala": {
+      "language_servers": ["tailwindcss-language-server"]
+    },
+    "Markdown": {
+      "preferred_line_length": 80
+    },
+    "SQL": {
+      "formatter": "prettier"
+    }
+    // "Svelte": {
+    //   "code_actions_on_format": {
+    //     "source.organizeImports": true,
+    //     "source.fixAll.eslint": true
+    //   }
+    // },
+    // "TypeScript": {
+    //   "code_actions_on_format": {
+    //     "source.fixAll.eslint": true,
+    //     "source.organizeImports": true
+    //   }
+    // },
+    // "TSX": {
+    //   "code_actions_on_format": {
+    //     "source.fixAll": true,
+    //     "source.fixAll.eslint": true,
+    //     "source.organizeImports": true
+    //   }
+    // },
+    // "Vue.js": {
+    //   "code_actions_on_format": {
+    //     "source.fixAll.eslint": true
+    //   }
+    //   // "formatter": {
+    //   //   "code_actions": {
+    //   //     "source.fixAll.eslint": true
+    //   //   }
+    //   // }
+    // },
+    // "JavaScript": {
+    //   // "formatter": "language_server",
+    //   "code_actions_on_format": {
+    //     "source.fixAll.eslint": true
+    //   }
+    //   // "formatter": {
+    //   //   "code_actions": {
+    //   //     "source.fixAll.eslint": true
+    //   //   }
+    //   // }
+    // },
+    // "Ruby": {
+    //   "language_servers": ["tailwindcss-language-server", "solargraph"],
+    //   "format_on_save": "on",
+    //   "formatter": {
+    //     "external": {
+    //       "command": "bundle",
+    //       "arguments": [
+    //         "exec",
+    //         "rubocop",
+    //         "--fail-level",
+    //         "error",
+    //         "--autocorrect",
+    //         "--stdin",
+    //         "corrected.rb",
+    //         "--stderr"
+    //       ]
+    //     }
+    //   }
+    // }
   }
 }
