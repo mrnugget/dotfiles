@@ -1,37 +1,56 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "dev": {
+    // "server_url": "https://staging.zed.dev",
+    // "vertical_scroll_margin": 50
+  },
+  "nightly": {
+    "scrollbar": {
+      "show": "never"
+    },
+    "theme": "Gruvbox Dark Hard",
+    "ui_font_size": 13,
+    "ui_font_family": "BerkeleyMono Nerd Font Mono",
+    "buffer_font_size": 13,
+    "buffer_font_family": "BerkeleyMono Nerd Font Mono",
+    "buffer_line_height": {
+      "custom": 1.25
+    },
+    "terminal": {
+      "dock": "right",
+      "blinking": "on",
+      "font_size": 13,
+      "font_family": "BerkeleyMono Nerd Font Mono",
+      "line_height": {
+        "custom": 1.25
+      },
+      "env": {
+        "GIT_EDITOR": "zed --wait"
+      }
+    },
+    "inlay_hints": {
+      "enabled": true
+    },
+    "git": {
+      "inline_blame": { "enabled": true }
+    }
+  },
+  "git": {
+    "inline_blame": { "enabled": false }
+  },
   "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": false,
-  "scrollbar": {
-    "show": "never"
-  },
   "project_panel": {
     "scrollbar": { "show": "never" }
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark Hard",
-  "ui_font_size": 13,
-  "ui_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_font_size": 13,
-  "buffer_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_line_height": {
-    "custom": 1.25
-  },
-  "terminal": {
-    "dock": "right",
-    "blinking": "on",
-    "font_size": 13,
-    "font_family": "BerkeleyMono Nerd Font Mono",
-    "line_height": {
-      "custom": 1.25
-    },
-    "env": {
-      "GIT_EDITOR": "zed --wait"
-    }
-  },
-  "inlay_hints": {
-    "enabled": true
-  },
   "indent_guides": {
     "enabled": false
   },
@@ -39,12 +58,8 @@
   "preview_tabs": {
     "enable_preview_from_code_navigation": false
   },
-  "assistant": {
-    "version": "1",
-    "provider": {
-      "name": "zed.dev",
-      "default_model": "gpt-4o"
-    }
+  "features": {
+    "inline_completion_provider": "supermaven"
   },
   "lsp": {
     "rust-analyzer": {
@@ -95,6 +110,12 @@
     },
     "SQL": {
       "formatter": "prettier"
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": true,
+        "parser": "json"
+      }
     }
     // "Svelte": {
     //   "code_actions_on_format": {
