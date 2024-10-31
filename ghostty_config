@@ -1,4 +1,5 @@
 macos-non-native-fullscreen = true
+macos-option-as-alt = true
 
 window-inherit-font-size = false
 
@@ -45,4 +46,6 @@ keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
 keybind = ctrl+l=goto_split:right
 
-scrollback-limit = 100000000
+# open scrollback: cmd-shift-j
+
+scrollback-limit = 1000000000
