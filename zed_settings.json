@@ -1,31 +1,103 @@
 {
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
-    },
-    "version": "2"
+  "terminal": {
+    "dock": "bottom"
   },
+  "ssh_connections": [
+    {
+      "host": "127.0.0.1",
+      "projects": [
+        {
+          "paths": ["/Users/thorstenball/work/projs/go-proj"]
+        },
+        {
+          "paths": ["/Users/thorstenball/work/projs/rust-proj"]
+        }
+      ]
+    },
+    {
+      "host": "greyunixbox",
+      "projects": [
+        {
+          "paths": ["/home/mrnugget/code/projects/tucan"]
+        },
+        {
+          "paths": ["/home/mrnugget/work/zed"]
+        },
+        {
+          "paths": ["/home/mrnugget/work/zed.dev"]
+        },
+        {
+          "paths": ["/home/mrnugget/work/projs/go-proj"]
+        },
+        {
+          "paths": ["/home/mrnugget/work/projs/rust-proj"]
+        }
+      ],
+      "nickname": "shortname"
+    },
+    {
+      "host": "greyunixbox",
+      "username": "mrnugget",
+      "projects": [
+        {
+          "paths": ["~/work/zed.dev"]
+        }
+      ],
+      "nickname": "mrnugget@greyunixboxx"
+    }
+  ],
+  // "theme": "One Dark",
+  "node": {
+    // "path": null,
+    // "npm_path": null,
+    "disable_path_lookup": true
+  },
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "vim_mode": true,
   "dev": {
     // "server_url": "https://staging.zed.dev",
     // "vertical_scroll_margin": 50
+    "vertical_scroll_margin": 0,
+    "scroll_beyond_last_line": "off",
+    "inline_completions": {
+      "disabled_globs": [".env", "*.md", "*.json"]
+    },
+    "git": {
+      "inline_blame": { "enabled": true, "show_commit_summary": false }
+    }
   },
   "nightly": {
+    // "vertical_scroll_margin": 0,
+    // streaming or recording:
+    "ui_font_size": 18,
+    "buffer_font_size": 22,
+    // normal:
+    // "ui_font_size": 13,
+    // "buffer_font_size": 13,
+    "indent_guides": { "enabled": false },
+    "use_autoclose": false,
+    "wrap_guides": [80],
+    "theme": "Gruvbox Dark Hard",
     "scrollbar": {
       "show": "never"
     },
-    "theme": "Gruvbox Dark Hard",
-    "ui_font_size": 13,
     "ui_font_family": "BerkeleyMono Nerd Font Mono",
-    "buffer_font_size": 13,
     "buffer_font_family": "BerkeleyMono Nerd Font Mono",
     "buffer_line_height": {
       "custom": 1.25
     },
     "terminal": {
-      "dock": "right",
-      "blinking": "on",
+      "dock": "bottom",
+      // "blinking": "on",
+      // normal:
       "font_size": 13,
+      // streaming:
+      // "font_size": 22,
       "font_family": "BerkeleyMono Nerd Font Mono",
       "line_height": {
         "custom": 1.25
@@ -34,20 +106,21 @@
         "GIT_EDITOR": "zed --wait"
       }
     },
-    "inlay_hints": {
-      "enabled": true
-    },
     "git": {
-      "inline_blame": { "enabled": true }
+      "inline_blame": { "enabled": true, "show_commit_summary": false }
     }
   },
-  "git": {
-    "inline_blame": { "enabled": false }
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
   },
   "soft_wrap": "none",
-  "vim_mode": true,
   "cursor_blink": false,
   "project_panel": {
+    "show_diagnostics": "all",
     "scrollbar": { "show": "never" }
   },
   "base_keymap": "VSCode",
@@ -56,26 +129,15 @@
   },
   "current_line_highlight": "none",
   "preview_tabs": {
+    "enabled": false,
     "enable_preview_from_code_navigation": false
   },
-  "features": {
-    "inline_completion_provider": "supermaven"
-  },
   "lsp": {
-    "rust-analyzer": {
-      "checkOnSave": {
-        "allTargets": false
-      },
-      "check": {
-        "allTargets": false,
-        "overrideCommand": ["cargo", "build", "--message-format=json"]
-      }
-    },
     "gopls": {
       "initialization_options": {
         "usePlaceholders": true,
         // "buildFlags": ["-tags=debug"],
-        "completeUnimported": true,
+        "completeUnimported": false,
         "experimentalPostfixCompletions": true,
         "hints": {
           "assignVariableTypes": false,
@@ -88,25 +150,17 @@
         }
       }
     }
-    // "tailwindcss-language-server": {
-    //   "binary": {
-    //     // "path": "/Users/thorstenball/bin/gopls",
-    //     "arguments": [
-    //       "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
-    //       "--stdio"
-    //     ]
-    //   },
-    //   "settings": {
-    //     "classAttributes": ["class", "className", "ngClass", "styles"]
-    //   }
-    // }
   },
+  "use_on_type_format": false,
   "languages": {
-    "Scala": {
-      "language_servers": ["tailwindcss-language-server"]
-    },
     "Markdown": {
-      "preferred_line_length": 80
+      "preferred_line_length": 80,
+      "format_on_save": "off"
+      // "formatter": {
+      //   "external": {
+      //     "command": "my-formatter"
+      //   }
+      // }
     },
     "SQL": {
       "formatter": "prettier"
@@ -116,65 +170,14 @@
         "allowed": true,
         "parser": "json"
       }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Rust": {
+      "use_on_type_format": false
     }
-    // "Svelte": {
-    //   "code_actions_on_format": {
-    //     "source.organizeImports": true,
-    //     "source.fixAll.eslint": true
-    //   }
-    // },
-    // "TypeScript": {
-    //   "code_actions_on_format": {
-    //     "source.fixAll.eslint": true,
-    //     "source.organizeImports": true
-    //   }
-    // },
-    // "TSX": {
-    //   "code_actions_on_format": {
-    //     "source.fixAll": true,
-    //     "source.fixAll.eslint": true,
-    //     "source.organizeImports": true
-    //   }
-    // },
-    // "Vue.js": {
-    //   "code_actions_on_format": {
-    //     "source.fixAll.eslint": true
-    //   }
-    //   // "formatter": {
-    //   //   "code_actions": {
-    //   //     "source.fixAll.eslint": true
-    //   //   }
-    //   // }
-    // },
-    // "JavaScript": {
-    //   // "formatter": "language_server",
-    //   "code_actions_on_format": {
-    //     "source.fixAll.eslint": true
-    //   }
-    //   // "formatter": {
-    //   //   "code_actions": {
-    //   //     "source.fixAll.eslint": true
-    //   //   }
-    //   // }
-    // },
-    // "Ruby": {
-    //   "language_servers": ["tailwindcss-language-server", "solargraph"],
-    //   "format_on_save": "on",
-    //   "formatter": {
-    //     "external": {
-    //       "command": "bundle",
-    //       "arguments": [
-    //         "exec",
-    //         "rubocop",
-    //         "--fail-level",
-    //         "error",
-    //         "--autocorrect",
-    //         "--stdin",
-    //         "corrected.rb",
-    //         "--stderr"
-    //       ]
-    //     }
-    //   }
-    // }
   }
 }

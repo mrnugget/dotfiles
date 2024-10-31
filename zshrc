@@ -152,6 +152,7 @@ alias sz='source ~/.zshrc'
 
 # git
 alias gst='git status'
+alias s='git status'
 alias gaa='git add -A'
 alias gc='git commit'
 alias gcm='git checkout main'
@@ -200,6 +201,7 @@ alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/F
 
 alias zedn='/Applications/Zed\ Nightly.app/Contents/MacOS/cli'
 alias r='cargo run'
+alias cr='cargo run'
 alias rr='cargo run --release'
 
 ##########

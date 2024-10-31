@@ -19,6 +19,7 @@
       ", f b": ["file_finder::Toggle", { "separate_history": true }],
       ", f i": "file_finder::Toggle",
       ", f o": "projects::OpenRecent",
+      ", r t": "editor::SpawnNearestTask",
       ", r l": "task::Rerun",
       ", r e": [
         "task::Rerun",
@@ -61,7 +62,8 @@
           "displayLines": true
         }
       ],
-      ", g b": "editor::ToggleGitBlame"
+      ", g b": "editor::ToggleGitBlame",
+      "-": "pane::RevealInProjectPanel"
     }
   },
   {
