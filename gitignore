@@ -1,15 +1,8 @@
-custom_plan.rb
-zeus.json
 .DS_Store
 tags
 .agignore
-.projectile
 .env
 .envrc
-ac-comphist.dat
-eshell
-rake.cache
-tramp
 .mypy_cache
 .tool-versions
 .idea
