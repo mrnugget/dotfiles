@@ -2,8 +2,7 @@
   {
     "context": "Editor || Workspace",
     "bindings": {
-      "ctrl-shift-e": "workspace::ToggleLeftDock",
-      "ctrl-x": "pane::CloseActiveItem"
+      "ctrl-shift-e": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -19,7 +18,7 @@
       ", f b": ["file_finder::Toggle", { "separate_history": true }],
       ", f i": "file_finder::Toggle",
       ", f o": "projects::OpenRecent",
-      ", r t": "editor::SpawnNearestTask",
+      ", r t": ["editor::SpawnNearestTask", { "reveal": "no_focus" }],
       ", r l": "task::Rerun",
       ", r e": [
         "task::Rerun",
