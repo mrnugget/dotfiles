@@ -204,6 +204,7 @@ alias r='cargo run'
 alias cr='cargo run'
 alias rr='cargo run --release'
 
+alias -g DLOG='RUST_LOG=debug,cranelift_codegen=error,h2=error,hyper_util=error,wasmtime=error,globset=error'
 ##########
 # FUNCTIONS
 ##########
@@ -416,6 +417,14 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
   source /opt/homebrew/etc/profile.d/z.sh
 fi
 
+# pnpm
+export PNPM_HOME="/Users/thorstenball/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Export my personal ~/bin as last one to have highest precedence
