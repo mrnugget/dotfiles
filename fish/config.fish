@@ -7,14 +7,14 @@ function fish_mode_prompt; end
 
 set __fish_git_prompt_show_informative_status 1
 set __fish_git_prompt_showcolorhints 1
-# # set __fish_git_prompt_char_dirtystate 'X'
-# # set __fish_git_prompt_char_cleanstate 'OK'
+set __fish_git_prompt_char_dirtystate 'X'
+set __fish_git_prompt_char_cleanstate 'OK'
 set __fish_git_prompt_char_stagedstate '+'
-# set __fish_git_prompt_showdirtystate 1
+set __fish_git_prompt_showdirtystate 1
 set __fish_git_prompt_char_stateseparator ' '
-# set __fish_git_prompt_color_branch green
-# set __fish_git_prompt_color_cleanstate green
-# set __fish_git_prompt_color_dirtystate red
+set __fish_git_prompt_color_branch green
+set __fish_git_prompt_color_cleanstate green
+set __fish_git_prompt_color_dirtystate red
 
 function fish_prompt
     set_color --bold
