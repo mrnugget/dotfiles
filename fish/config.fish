@@ -18,6 +18,7 @@ function fish_prompt
     set -g __fish_git_prompt_char_cleanstate 'OK'
     set -g __fish_git_prompt_color_branch green
     set -g __fish_git_prompt_color_dirtystate red
+    set -g __fish_git_prompt_color_cleanstate green
     set -g __fish_git_prompt_char_prefix ''
     set -g __fish_git_prompt_char_suffix ''
 
