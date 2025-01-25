@@ -49,4 +49,10 @@ zed: $(HOME)/.config/zed/keymap.json $(HOME)/.config/zed/settings.json
 
 imwheel: $(HOME)/.imwheelrc
 
-all: git psql zsh tmux kitty imwheel wezterm ghostty atuin zed
+$(HOME)/.config/fish:
+	mkdir -p $(HOME)/.config
+	ln -sf $(DOTFILE_PATH)/fish $(HOME)/.config/fish
+
+fish: $(HOME)/.config/fish
+
+all: git psql zsh tmux kitty imwheel wezterm ghostty atuin zed fish
