@@ -74,11 +74,11 @@
   "nightly": {
     // "vertical_scroll_margin": 0,
     // streaming or recording:
-    "ui_font_size": 18,
-    "buffer_font_size": 22,
+    // "ui_font_size": 18,
+    // "buffer_font_size": 22,
     // normal:
-    // "ui_font_size": 13,
-    // "buffer_font_size": 13,
+    "ui_font_size": 13,
+    "buffer_font_size": 13,
     "indent_guides": { "enabled": false },
     "use_autoclose": false,
     "wrap_guides": [80],

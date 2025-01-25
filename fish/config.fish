@@ -10,23 +10,19 @@ function fish_prompt
     printf '%s' (prompt_pwd)
     set_color normal
 
-    # Git status
-    if command -q git
-        and test -d (git rev-parse --git-dir 2>/dev/null)
-        set -l ref (git symbolic-ref HEAD 2>/dev/null)
-        or set -l ref (git rev-parse --short HEAD 2>/dev/null)
-        if test -n "$ref"
-            printf ' %s%s' (set_color green) (string replace 'refs/heads/' '' $ref)
+    # Git prompt configuration
+    set -g __fish_git_prompt_show_informative_status 1
+    set -g __fish_git_prompt_showdirtystate 1
+    set -g __fish_git_prompt_char_stateseparator ' '
+    set -g __fish_git_prompt_char_dirtystate 'X'
+    set -g __fish_git_prompt_char_cleanstate 'OK'
+    set -g __fish_git_prompt_color_branch green
+    set -g __fish_git_prompt_color_dirtystate red
+    set -g __fish_git_prompt_char_prefix ''
+    set -g __fish_git_prompt_char_suffix ''
 
-            # Check if dirty
-            if test -n "(git status --porcelain 2>/dev/null)"
-                printf '%s X' (set_color red)
-            else
-                printf ' OK'
-            end
-            set_color normal
-        end
-    end
+    # Add git prompt
+    fish_git_prompt " %s"
 
     # Prompt character (φ) - red if there are background jobs, normal otherwise
     if jobs -q
