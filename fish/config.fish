@@ -4,28 +4,25 @@ if status is-interactive
 end
 
 function fish_mode_prompt; end
+
+set __fish_git_prompt_show_informative_status 1
+set __fish_git_prompt_showcolorhints 1
+# # set __fish_git_prompt_char_dirtystate 'X'
+# # set __fish_git_prompt_char_cleanstate 'OK'
+set __fish_git_prompt_char_stagedstate '+'
+# set __fish_git_prompt_showdirtystate 1
+set __fish_git_prompt_char_stateseparator ' '
+# set __fish_git_prompt_color_branch green
+# set __fish_git_prompt_color_cleanstate green
+# set __fish_git_prompt_color_dirtystate red
+
 function fish_prompt
-    # Directory info with bold color
     set_color --bold
     printf '%s' (prompt_pwd)
     set_color normal
 
-    # Git prompt configuration
-    set -g __fish_git_prompt_show_informative_status 1
-    set -g __fish_git_prompt_showdirtystate 1
-    set -g __fish_git_prompt_char_stateseparator ' '
-    set -g __fish_git_prompt_char_dirtystate 'X'
-    set -g __fish_git_prompt_char_cleanstate 'OK'
-    set -g __fish_git_prompt_color_branch green
-    set -g __fish_git_prompt_color_dirtystate red
-    set -g __fish_git_prompt_color_cleanstate green
-    set -g __fish_git_prompt_char_prefix ''
-    set -g __fish_git_prompt_char_suffix ''
-
-    # Add git prompt
     fish_git_prompt " %s"
 
-    # Prompt character (φ) - red if there are background jobs, normal otherwise
     if jobs -q
         set_color --bold red
         printf ' φ '
