@@ -3,6 +3,7 @@ if status is-interactive
     fish_vi_key_bindings --no-erase insert
 end
 
+function fish_mode_prompt; end
 function fish_prompt
     # Directory info with bold color
     set_color --bold
@@ -41,8 +42,6 @@ end
 set fish_greeting
 
 theme_gruvbox dark hard
-
-fish_vi_key_bindings
 
 alias lls='ls -lh --sort=size --reverse'
 alias llt='ls -lrt'
