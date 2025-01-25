@@ -429,3 +429,10 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
+
+alias c35="llm -m claude-3.5-sonnet"
+
+. "$HOME/.local/bin/env"
+
+# Added by Windsurf
+export PATH="/Users/thorstenball/.codeium/windsurf/bin:$PATH"
