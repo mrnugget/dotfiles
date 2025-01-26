@@ -39,6 +39,7 @@ brew 'neovim'
 brew 'atuin'
 brew 'btop'
 brew 'neofetch'
+brew 'zoxide'
 
 # See: https://apple.stackexchange.com/questions/431812/how-can-i-stop-a-bluetooth-keyboard-from-waking-my-macbook-pro/437396#437396
 brew 'sleepwatcher'
