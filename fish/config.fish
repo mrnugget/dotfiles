@@ -35,8 +35,6 @@ end
 
 set fish_greeting
 
-theme_gruvbox dark hard
-
 alias lls='ls -lh --sort=size --reverse'
 alias llt='ls -lrt'
 alias hs='history | grep'
@@ -105,23 +103,3 @@ end
 set -gx EDITOR (command -v nvim || echo "vim")
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
-
-fish_add_path $HOME/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path /usr/local/bin
-
-set -gx GOPATH $HOME/code/go
-set -gx GOBIN $GOPATH/bin
-fish_add_path $GOBIN
-
-if type -q direnv
-    direnv hook fish | source
-end
-
-if type -q mise
-    mise activate fish | source
-end
-
-if type -q atuin
-    atuin init fish | source
-end
