@@ -1,2 +1,4 @@
 zsh.d/private.sh
 zsh.d/dir_info_color
+fish/completions/docker.fish
+fish/completions/kubectl.fish

@@ -70,36 +70,6 @@ alias cr='cargo run'
 alias rr='cargo run --release'
 
 # Functions
-function mkdircd
-    mkdir -p $argv[1] && cd $argv[1]
-end
-
-function render_dot
-    set out "$argv[1].png"
-    dot "$argv[1]" \
-        -Tpng \
-        -Nfontname='JetBrains Mono' \
-        -Nfontsize=10 \
-        -Nfontcolor='#fbf1c7' \
-        -Ncolor='#fbf1c7' \
-        -Efontname='JetBrains Mono' \
-        -Efontcolor='#fbf1c7' \
-        -Efontsize=10 \
-        -Ecolor='#fbf1c7' \
-        -Gbgcolor='#1d2021' > $out
-    and kitty +kitten icat --align=left $out
-end
-
-function serve
-    set port $argv[1]
-    if test -z "$port"
-        set port 8000
-    end
-    set ip (ipconfig getifaddr en0)
-    echo "Serving on $ip:$port ..."
-    python -m SimpleHTTPServer $port
-end
-
 set -gx EDITOR (command -v nvim || echo "vim")
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR

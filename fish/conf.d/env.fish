@@ -1,32 +1,34 @@
-fish_add_path $HOME/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path /usr/local/bin
+if status is-login
+    fish_add_path $HOME/bin
+    fish_add_path $HOME/.cargo/bin
+    fish_add_path /usr/local/bin
 
-set -gx GOPATH $HOME/code/go
-set -gx GOBIN $GOPATH/bin
-fish_add_path $GOBIN
+    set -gx GOPATH $HOME/code/go
+    set -gx GOBIN $GOPATH/bin
+    fish_add_path $GOBIN
 
-if test -x /opt/homebrew/bin/brew
-    eval (/opt/homebrew/bin/brew shellenv)
-end
+    if test -x /opt/homebrew/bin/brew
+        eval (/opt/homebrew/bin/brew shellenv)
+    end
 
 
-test -f ~/.orbstack/shell/init.fish; and source ~/.orbstack/shell/init.fish
+    test -f ~/.orbstack/shell/init.fish; and source ~/.orbstack/shell/init.fish
 
-test -f "$HOME/.local/bin/env.fish"; and  source "$HOME/.local/bin/env.fish"
+    test -f "$HOME/.local/bin/env.fish"; and  source "$HOME/.local/bin/env.fish"
 
-if type -q direnv
-    direnv hook fish | source
-end
+    if type -q direnv
+        direnv hook fish | source
+    end
 
-if type -q mise
-    mise activate fish | source
-end
+    if type -q mise
+        mise activate fish | source
+    end
 
-if type -q atuin
-    atuin init fish | source
-end
+    if type -q atuin
+        atuin init fish | source
+    end
 
-if type -q zoxide
-    zoxide init fish | source
+    if type -q zoxide
+        zoxide init fish | source
+    end
 end
