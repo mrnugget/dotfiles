@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     fish_vi_key_bindings --no-erase insert
+    bind -M insert \e\[91\;5u 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
 end
 
 function fish_mode_prompt; end
