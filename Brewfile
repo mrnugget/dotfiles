@@ -73,7 +73,10 @@ brew 'cursor'
 brew 'windsurf'
 
 cask 'soundsource'
+<<<<<<< Updated upstream
 cask 'keepingyouawake'
+=======
+>>>>>>> Stashed changes
 cask 'slack'
 cask 'istat-menus'
 cask 'zoom'
