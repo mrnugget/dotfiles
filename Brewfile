@@ -65,6 +65,9 @@ brew 'livekit'
 brew 'postgrest'
 brew 'foreman'
 
+brew 'ghostty'
+brew 'raycast'
+
 cask 'soundsource'
 cask 'keepingyouawake'
 cask 'rectangle'
