@@ -1,114 +1,35 @@
 {
-  "terminal": {
-    "dock": "bottom"
-  },
-  "ssh_connections": [
-    {
-      "host": "127.0.0.1",
-      "projects": [
-        {
-          "paths": ["/Users/thorstenball/work/projs/go-proj"]
-        },
-        {
-          "paths": ["/Users/thorstenball/work/projs/rust-proj"]
-        }
-      ]
-    },
-    {
-      "host": "greyunixbox",
-      "projects": [
-        {
-          "paths": ["/home/mrnugget/code/projects/tucan"]
-        },
-        {
-          "paths": ["/home/mrnugget/work/zed"]
-        },
-        {
-          "paths": ["/home/mrnugget/work/zed.dev"]
-        },
-        {
-          "paths": ["/home/mrnugget/work/projs/go-proj"]
-        },
-        {
-          "paths": ["/home/mrnugget/work/projs/rust-proj"]
-        }
-      ],
-      "nickname": "shortname"
-    },
-    {
-      "host": "greyunixbox",
-      "username": "mrnugget",
-      "projects": [
-        {
-          "paths": ["~/work/zed.dev"]
-        }
-      ],
-      "nickname": "mrnugget@greyunixboxx"
-    }
-  ],
-  // "theme": "One Dark",
-  "node": {
-    // "path": null,
-    // "npm_path": null,
-    "disable_path_lookup": true
-  },
-  "features": {
-    "inline_completion_provider": "none"
-  },
-  "inlay_hints": {
-    "enabled": true
-  },
   "vim_mode": true,
-  "dev": {
-    // "server_url": "https://staging.zed.dev",
-    // "vertical_scroll_margin": 50
-    "vertical_scroll_margin": 0,
-    "scroll_beyond_last_line": "off",
-    "inline_completions": {
-      "disabled_globs": [".env", "*.md", "*.json"]
-    },
-    "git": {
-      "inline_blame": { "enabled": true, "show_commit_summary": false }
-    }
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
+  "use_autoclose": false,
+  "wrap_guides": [80],
+  "theme": "Gruvbox Dark Hard",
+  "scrollbar": {
+    "show": "never"
   },
-  "nightly": {
-    // "vertical_scroll_margin": 0,
-    // streaming or recording:
-    // "ui_font_size": 18,
-    // "buffer_font_size": 22,
-    // normal:
-    "ui_font_size": 13,
-    "buffer_font_size": 13,
-    "indent_guides": { "enabled": false },
-    "use_autoclose": false,
-    "wrap_guides": [80],
-    "theme": "Gruvbox Dark Hard",
-    "scrollbar": {
-      "show": "never"
-    },
-    "ui_font_family": "BerkeleyMono Nerd Font Mono",
-    "buffer_font_family": "BerkeleyMono Nerd Font Mono",
-    "buffer_line_height": {
+  "ui_font_family": "BerkeleyMono Nerd Font Mono",
+  "buffer_font_family": "BerkeleyMono Nerd Font Mono",
+  "buffer_line_height": {
+    "custom": 1.25
+  },
+  "terminal": {
+    "dock": "bottom",
+    "font_size": 13,
+    "font_family": "BerkeleyMono Nerd Font Mono",
+    "line_height": {
       "custom": 1.25
     },
-    "terminal": {
-      "dock": "bottom",
-      // "blinking": "on",
-      // normal:
-      "font_size": 13,
-      // streaming:
-      // "font_size": 22,
-      "font_family": "BerkeleyMono Nerd Font Mono",
-      "line_height": {
-        "custom": 1.25
-      },
-      "env": {
-        "GIT_EDITOR": "zed --wait"
-      }
-    },
-    "git": {
-      "inline_blame": { "enabled": true, "show_commit_summary": false }
+    "env": {
+      "GIT_EDITOR": "zed --wait"
     }
+  },
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
+  "indent_guides": { "enabled": false },
+  "inlay_hints": {
+    "enabled": true
   },
   "assistant": {
     "default_model": {
@@ -119,14 +40,6 @@
   },
   "soft_wrap": "none",
   "cursor_blink": false,
-  "project_panel": {
-    "show_diagnostics": "all",
-    "scrollbar": { "show": "never" }
-  },
-  "base_keymap": "VSCode",
-  "indent_guides": {
-    "enabled": false
-  },
   "current_line_highlight": "none",
   "preview_tabs": {
     "enabled": false,
@@ -136,7 +49,6 @@
     "gopls": {
       "initialization_options": {
         "usePlaceholders": true,
-        // "buildFlags": ["-tags=debug"],
         "completeUnimported": false,
         "experimentalPostfixCompletions": true,
         "hints": {
@@ -151,16 +63,10 @@
       }
     }
   },
-  "use_on_type_format": false,
   "languages": {
     "Markdown": {
       "preferred_line_length": 80,
       "format_on_save": "off"
-      // "formatter": {
-      //   "external": {
-      //     "command": "my-formatter"
-      //   }
-      // }
     },
     "SQL": {
       "formatter": "prettier"
