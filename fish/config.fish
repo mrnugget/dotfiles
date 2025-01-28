@@ -69,8 +69,3 @@ alias k='kubectl'
 alias r='cargo run'
 alias cr='cargo run'
 alias rr='cargo run --release'
-
-# Functions
-set -gx EDITOR (command -v nvim || echo "vim")
-set -gx VISUAL $EDITOR
-set -gx GIT_EDITOR $EDITOR

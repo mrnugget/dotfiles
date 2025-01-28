@@ -11,6 +11,15 @@ if status is-login
         eval (/opt/homebrew/bin/brew shellenv)
     end
 
+    if command -q nvim
+        alias vim='nvim'
+        set -gx EDITOR 'nvim'
+    else
+        set -gx EDITOR 'vim'
+    end
+
+    set -gx VISUAL $EDITOR
+    set -gx GIT_EDITOR $EDITOR
 
     test -f ~/.orbstack/shell/init.fish; and source ~/.orbstack/shell/init.fish
 
