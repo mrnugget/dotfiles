@@ -25,7 +25,7 @@
     }
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "zed"
   },
   "indent_guides": { "enabled": false },
   "inlay_hints": {
