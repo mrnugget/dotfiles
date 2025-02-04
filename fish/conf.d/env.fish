@@ -21,9 +21,11 @@ if status is-login
     set -gx VISUAL $EDITOR
     set -gx GIT_EDITOR $EDITOR
 
-    test -f ~/.orbstack/shell/init.fish; and source ~/.orbstack/shell/init.fish
+    test -f "$HOME/.orbstack/shell/init.fish"; and source "$HOME/.orbstack/shell/init.fish"
 
     test -f "$HOME/.local/bin/env.fish"; and  source "$HOME/.local/bin/env.fish"
+
+    test -f "$HOME/.codeium/windsurf/bin"; and fish_add_path "$HOME/.codeium/windsurf/bin"
 
     if type -q direnv
         direnv hook fish | source
