@@ -27,6 +27,8 @@ if status is-login
 
     test -f "$HOME/.codeium/windsurf/bin"; and fish_add_path "$HOME/.codeium/windsurf/bin"
 
+    test -f "$HOME/google-cloud-sdk/path.fish.inc"; and source "$HOME/google-cloud-sdk/path.fish.inc"
+
     if type -q direnv
         direnv hook fish | source
     end
