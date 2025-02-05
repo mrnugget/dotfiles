@@ -1,0 +1,39 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "cody.suggestions.mode": "auto-edit (Experimental)",
+    "chat.commandCenter.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "window.commandCenter": false,
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.lightbulb.enabled": "off",
+    "rust-analyzer.lens.implementations.enable": false,
+    "workbench.activityBar.location": "hidden",
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": false,
+    "editor.renderLineHighlight": "none",
+    "editor.stickyScroll.maxLineCount": 1,
+    "editor.suggest.showIcons": false,
+    "outline.icons": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "cody.experimental.minion.anthropicKey": "foo",
+    "vim.visualstar": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["g", "R"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["g", "y"],
+            "commands": ["editor.action.goToTypeDefinition"]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "editor.fontFamily": "BerkeleyMono Nerd Font Mono",
+    "editor.fontSize": 13
+}

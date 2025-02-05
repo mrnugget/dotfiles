@@ -417,13 +417,6 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
   source /opt/homebrew/etc/profile.d/z.sh
 fi
 
-# pnpm
-export PNPM_HOME="/Users/thorstenball/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -432,7 +425,5 @@ export PATH="$HOME/bin:$PATH"
 
 alias c35="llm -m claude-3.5-sonnet"
 
-. "$HOME/.local/bin/env"
-
 # Added by Windsurf
-export PATH="/Users/thorstenball/.codeium/windsurf/bin:$PATH"
+# export PATH="/Users/thorstenball/.codeium/windsurf/bin:$PATH"
