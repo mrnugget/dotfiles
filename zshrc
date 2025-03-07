@@ -204,6 +204,8 @@ alias r='cargo run'
 alias cr='cargo run'
 alias rr='cargo run --release'
 
+alias pc='pnpm run build && pnpm run check && pnpm run test --run'
+
 alias -g DLOG='RUST_LOG=debug,cranelift_codegen=error,h2=error,hyper_util=error,wasmtime=error,globset=error'
 ##########
 # FUNCTIONS
