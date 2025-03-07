@@ -419,6 +419,10 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
   source /opt/homebrew/etc/profile.d/z.sh
 fi
 
+if [ -e "$HOME/.zsh.d/mkbir.zsh" ]; then
+  source "$HOME/.zsh.d/mkbir.zsh"
+fi
+
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
