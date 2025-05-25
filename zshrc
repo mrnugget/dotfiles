@@ -277,6 +277,7 @@ pr() {
 
 setopt prompt_subst
 
+# Kinda replaced by `vcs_prompt_info` while I experiment with `jj`
 git_prompt_info() {
   local dirstatus=" OK"
   local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
@@ -289,6 +290,30 @@ git_prompt_info() {
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
+
+vcs_prompt_info() {
+  local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
+  local clean=""
+
+  # Check if we're in a jj repo
+  if command -v jj &>/dev/null && jj status &>/dev/null; then
+    local bookmark=$(jj bookmark list --color=never --no-pager --revisions=@ | awk '{print $NF}' | head -n1)
+    local is_dirty=$(jj status | grep -q "no changes" || echo "$dirty")
+    echo " %{$fg_bold[blue]%}${bookmark:-@}${is_dirty}%{$reset_color%}"
+    return
+  fi
+
+  # Fallback to Git
+  local dirstatus="$clean"
+  if [[ ! -z $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
+    dirstatus=$dirty
+  fi
+
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+}
+
 
 # local dir_info_color="$fg_bold[black]"
 
@@ -324,7 +349,8 @@ local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
 #   nix_prompt=("(%F{yellow}$(($SHLVL - $ORIG_SHLVL))%f) ")
 # fi;
 
-PROMPT='${dir_info}$(git_prompt_info) ${nix_prompt}%(1j.$promptjobs.$promptnormal)'
+# PROMPT='${dir_info}$(git_prompt_info) ${nix_prompt}%(1j.$promptjobs.$promptnormal)'
+PROMPT='${dir_info}$(vcs_prompt_info) ${nix_prompt}%(1j.$promptjobs.$promptnormal)'
 
 simple_prompt() {
   local prompt_color="%B"
@@ -386,9 +412,9 @@ if type direnv &> /dev/null; then
 fi
 
 # mise
-if type mise &> /dev/null; then
-  eval "$(mise activate zsh)"
-fi
+# if type mise &> /dev/null; then
+#   eval "$(mise activate zsh)"
+# fi
 
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
@@ -433,3 +459,22 @@ alias c35="llm -m claude-3.5-sonnet"
 
 # Added by Windsurf
 # export PATH="/Users/thorstenball/.codeium/windsurf/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mrnugget/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mrnugget/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+export FOO2=".zshrc"
+
+
+# pnpm
+export PNPM_HOME="/Users/mrnugget/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
