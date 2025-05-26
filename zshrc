@@ -314,8 +314,27 @@ git_prompt_info() {
 }
 
 jj_prompt_info() {
-  ref=$(jj log -r @ --no-graph -T 'change_id.shortest()' 2> /dev/null) || return
-  echo " %{$fg_bold[green]%}${ref}%{$reset_color%}"
+  local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
+  local clean=""
+  local conflicts="%{$fg_bold[yellow]%} !%{$reset_color%}"
+  
+  # Get bookmark and change info
+  local bookmark=$(jj log -r @ --no-graph -T 'bookmarks' 2> /dev/null | tr -d '*' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//')
+  local change_id=$(jj log -r @ --no-graph -T 'change_id.shortest()' 2> /dev/null) || return
+  
+  # Check working copy status
+  local wc_status=""
+  if jj status | grep -q "Working copy changes:"; then
+    wc_status=$dirty
+  elif jj log -r @ --no-graph -T 'conflict' 2> /dev/null | grep -q "true"; then
+    wc_status=$conflicts
+  else
+    wc_status=$clean
+  fi
+  
+  # Show bookmark if exists, otherwise change ID
+  local ref_display="${bookmark:-$change_id}"
+  echo " %{$fg_bold[green]%}${ref_display}${wc_status}%{$reset_color%}"
 }
 
 vcs_prompt_info() {
