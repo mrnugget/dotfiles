@@ -26,3 +26,6 @@ and
 ```
 brew bundle --force cleanup --file=~/.dotfiles/Brewfile
 ```
+
+
+I am now trying out JJ
