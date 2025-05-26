@@ -207,6 +207,21 @@ alias rr='cargo run --release'
 alias pc='pnpm run build && pnpm run check && pnpm run test --run'
 
 alias -g DLOG='RUST_LOG=debug,cranelift_codegen=error,h2=error,hyper_util=error,wasmtime=error,globset=error'
+
+# jj aliases
+# Get the closest ancestor bookmark
+alias jjpb="jj log -r 'latest(heads(ancestors(@) & bookmarks()), 1)' --limit 1 --no-graph --ignore-working-copy -T bookmarks | tr -d '*'"
+
+# jj update branch
+jj-update-branch() {
+  REV=${1:-@}
+  if [ $# -gt 0 ]; then
+    shift
+  fi
+  jj bookmark move $(jjpb) --to "$REV" "$@"
+}
+
+alias jjub=jj-update-branch
 ##########
 # FUNCTIONS
 ##########
@@ -291,15 +306,18 @@ git_prompt_info() {
   echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
+jj_prompt_info() {
+  ref=$(jj log -r @ --no-graph -T 'change_id.shortest()' 2> /dev/null) || return
+  echo " %{$fg_bold[green]%}${ref}%{$reset_color%}"
+}
+
 vcs_prompt_info() {
   local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
   local clean=""
 
   # Check if we're in a jj repo
   if command -v jj &>/dev/null && jj status &>/dev/null; then
-    local bookmark=$(jj bookmark list --color=never --no-pager --revisions=@ | awk '{print $NF}' | head -n1)
-    local is_dirty=$(jj status | grep -q "no changes" || echo "$dirty")
-    echo " %{$fg_bold[blue]%}${bookmark:-@}${is_dirty}%{$reset_color%}"
+    jj_prompt_info
     return
   fi
 
