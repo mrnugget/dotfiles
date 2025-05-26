@@ -209,6 +209,12 @@ alias pc='pnpm run build && pnpm run check && pnpm run test --run'
 alias -g DLOG='RUST_LOG=debug,cranelift_codegen=error,h2=error,hyper_util=error,wasmtime=error,globset=error'
 
 # jj aliases
+# Most of that stuff is taken from here: https://x.com/dimfeld/status/1926863685487559038
+# Workflow:
+#   jj commit 
+#   jjub
+#   jj git push
+
 # Get the closest ancestor bookmark
 alias jjpb="jj log -r 'latest(heads(ancestors(@) & bookmarks()), 1)' --limit 1 --no-graph --ignore-working-copy -T bookmarks | tr -d '*'"
 
