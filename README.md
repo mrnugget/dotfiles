@@ -1,6 +1,6 @@
 # dotfiles
 
-This includes my configuration for homebrew, ZSH, git, terminal emulators and other stuff.
+This includes my configuration for homebrew, ZSH, git, jj, terminal emulators and other stuff.
 
 ## Requirements
 
@@ -26,6 +26,3 @@ and
 ```
 brew bundle --force cleanup --file=~/.dotfiles/Brewfile
 ```
-
-
-I am now trying out JJ
