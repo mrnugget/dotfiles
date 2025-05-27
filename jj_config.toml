@@ -1,0 +1,16 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Thorsten Ball"
+email = "mrnugget@gmail.com"
+
+[aliases]
+# tug: bring nearest bookmark up to recent commit
+tug = ["bookmark", "move", "--from", "closest_bookmark(@-)", "--to", "@-"]
+
+[revset-aliases]
+"closest_bookmark(to)" = "heads(::to & bookmarks())"
+
+# From mitchellh
+[template-aliases]
+"format_timestamp(timestamp)" = "timestamp.ago()"

@@ -55,4 +55,10 @@ $(HOME)/.config/fish:
 
 fish: $(HOME)/.config/fish
 
-all: git psql zsh tmux kitty imwheel wezterm ghostty atuin zed fish
+$(HOME)/.config/jj/config.toml:
+	mkdir -p $(HOME)/.config/jj
+	ln -sf $(DOTFILE_PATH)/jj_config.toml $(HOME)/.config/jj/config.toml
+
+jj: $(HOME)/.config/jj/config.toml
+
+all: git psql zsh tmux kitty imwheel wezterm ghostty atuin zed fish jj
