@@ -8,6 +8,15 @@ email = "mrnugget@gmail.com"
 # tug: bring nearest bookmark up to recent commit
 tug = ["bookmark", "move", "--from", "closest_bookmark(@-)", "--to", "@-"]
 
+# retrunk:
+# `jj rebase -d 'trunk()'` is shorthand for `jj rebase -b @ -d 'trunk()'`
+#
+# What that does:
+#
+# `-b @` rebases the entire branch that the current @ is on relative to the destination. (Default),
+# `-d trunk()` sets the destination. trunk() finds the most recent `main | master | trunk` branch thats on a remote. trunk() is builtin.
+retrunk = ["rebase", "-d", "trunk()"]
+
 [revset-aliases]
 "closest_bookmark(to)" = "heads(::to & bookmarks())"
 
