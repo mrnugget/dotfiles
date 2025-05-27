@@ -154,7 +154,6 @@ alias sz='source ~/.zshrc'
 alias gst='git status'
 alias s='git status'
 alias gaa='git add -A'
-alias gc='git commit'
 alias gcm='git checkout main'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -178,6 +177,21 @@ alias lr='git l -30'
 alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
 alias hs='git rev-parse --short HEAD'
 alias hm='git log --format=%B -n 1 HEAD'
+
+# jj experiment warnings
+gc() {
+  echo "⚠️  You're trying out jj this week! Use 'jj commit' instead of 'gc'"
+  echo "   (or run 'command git commit' to bypass this warning)"
+}
+
+git() {
+  if [[ "$1" == "commit" ]]; then
+    echo "⚠️  You're trying out jj this week! Use 'jj commit' instead of 'git commit'"
+    echo "   (or run 'command git commit' to bypass this warning)"
+  else
+    command git "$@"
+  fi
+}
 
 # tmux
 alias tma='tmux attach -t'
