@@ -229,6 +229,10 @@ jj-update-branch() {
 }
 
 alias jjub=jj-update-branch
+alias jn='jj new'
+alias js='jj status'
+alias jf='jj git fetch'
+alias jp='jj git push'
 ##########
 # FUNCTIONS
 ##########
