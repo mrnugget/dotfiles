@@ -249,6 +249,7 @@ alias jf='jj git fetch'
 alias jp='jj git push'
 alias jjl="jj log"
 alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)'"
+alias jl="jj log"
 ##########
 # FUNCTIONS
 ##########
