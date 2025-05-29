@@ -23,3 +23,6 @@ retrunk = ["rebase", "-d", "trunk()"]
 # From mitchellh
 [template-aliases]
 "format_timestamp(timestamp)" = "timestamp.ago()"
+
+[ui]
+default-command = "log"
