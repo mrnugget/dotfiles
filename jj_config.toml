@@ -27,3 +27,4 @@ retrunk = ["rebase", "-d", "trunk()"]
 [ui]
 default-command = "log"
 diff-editor = ":builtin"
+merge-editor = ":builtin"
