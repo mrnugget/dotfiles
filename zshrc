@@ -247,6 +247,7 @@ alias jn='jj new'
 alias js='jj status'
 alias jf='jj git fetch'
 alias jp='jj git push'
+alias jd='jj diff'
 alias jjl="jj log"
 alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)'"
 alias jl="jj log"
