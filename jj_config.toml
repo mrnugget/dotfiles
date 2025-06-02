@@ -17,8 +17,15 @@ tug = ["bookmark", "move", "--from", "closest_bookmark(@-)", "--to", "@-"]
 # `-d trunk()` sets the destination. trunk() finds the most recent `main | master | trunk` branch thats on a remote. trunk() is builtin.
 retrunk = ["rebase", "-d", "trunk()"]
 
+# retrunk:
+# combine all of the revs from the current one to the start of the "branch" into one
+collapse = ["squash", "-f", "branch_start(@)+::@", "-t", "branch_start(@)"]
+
 [revset-aliases]
 "closest_bookmark(to)" = "heads(::to & bookmarks())"
+
+# From indigo
+"branch_start(to)" = "heads(::to & trunk())+ & ::to"
 
 # From mitchellh
 [template-aliases]
