@@ -251,6 +251,7 @@ alias jd='jj diff'
 alias jjl="jj log"
 alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)'"
 alias jl="jj log"
+alias jlr="jj lr"
 ##########
 # FUNCTIONS
 ##########
