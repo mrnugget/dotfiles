@@ -276,13 +276,6 @@ render_dot() {
     kitty +kitten icat --align=left ${out}
 }
 
-serve() {
-  local port=${1:-8000}
-  local ip=$(ipconfig getifaddr en0)
-  echo "Serving on ${ip}:${port} ..."
-  python -m SimpleHTTPServer ${port}
-}
-
 beautiful() {
   while
   do
