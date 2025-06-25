@@ -286,6 +286,17 @@ s3() {
   echo http://${route} | pbcopy
 }
 
+# Toggle between git and jj prompt modes
+prompt_git_mode() {
+  export VCS_PROMPT_MODE="git"
+  echo "Switched to git prompt mode"
+}
+
+prompt_jj_mode() {
+  unset VCS_PROMPT_MODE
+  echo "Switched to jj prompt mode (default)"
+}
+
 # Open PR on GitHub
 pr() {
   if type gh &> /dev/null; then
@@ -343,7 +354,21 @@ vcs_prompt_info() {
   local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
   local clean=""
 
-  # Check if we're in a jj repo
+  # Check if we're forcing git mode
+  if [[ "$VCS_PROMPT_MODE" == "git" ]]; then
+    # Force git mode - show git info even if jj is available
+    local dirstatus="$clean"
+    if [[ ! -z $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
+      dirstatus=$dirty
+    fi
+
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+    echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+    return
+  fi
+
+  # Default behavior: check if we're in a jj repo
   if command -v jj &>/dev/null && jj status &>/dev/null; then
     jj_prompt_info
     return
