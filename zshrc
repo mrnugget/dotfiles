@@ -151,6 +151,7 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # git
+alias monsterclean='git clean -fdx -e .jj/'
 alias gst='git status'
 alias s='git status'
 alias gaa='git add -A'
