@@ -38,3 +38,8 @@ lr = ["log", "-r", "all()", "-n", "10"]
 default-command = "log"
 diff-editor = ":builtin"
 merge-editor = ":builtin"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/id_ed25519.pub"
