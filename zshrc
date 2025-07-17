@@ -236,7 +236,7 @@ alias jf='jj git fetch'
 alias jp='jj git push'
 alias jd='jj diff'
 alias jjl="jj log"
-alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)'"
+alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)' --color=always -T 'builtin_log_oneline'"
 alias jl="jj log"
 alias jlr="jj lr"
 ##########
