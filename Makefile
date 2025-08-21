@@ -4,7 +4,7 @@ DOTFILE_PATH := $(shell pwd)
 $(HOME)/.%: %
 	ln -sf $(DOTFILE_PATH)/$^ $@
 
-git: $(HOME)/.gitconfig $(HOME)/.githelpers $(HOME)/.gitignore
+git: $(HOME)/.gitconfig $(HOME)/.gitconfig.signing $(HOME)/.githelpers $(HOME)/.gitignore
 psql: $(HOME)/.psqlrc
 zsh: $(HOME)/.zshrc $(HOME)/.zsh.d
 
