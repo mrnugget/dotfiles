@@ -2,6 +2,9 @@
   name = Thorsten Ball
   email = mrnugget@gmail.com
 
+[include]
+  path = ~/.gitconfig.signing
+
 [alias]
   co = checkout
   st = status

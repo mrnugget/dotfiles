@@ -1,0 +1,6 @@
+[user]
+	signingkey = /Users/mrnugget/.ssh/id_ed25519.pub
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
