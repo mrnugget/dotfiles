@@ -69,3 +69,8 @@ alias k='kubectl'
 alias r='cargo run'
 alias cr='cargo run'
 alias rr='cargo run --release'
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/mrnugget/.lmstudio/bin
+# End of LM Studio CLI section
+
