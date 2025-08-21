@@ -8,6 +8,10 @@
   "scrollbar": {
     "show": "never"
   },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
   "ui_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_font_family": "BerkeleyMono Nerd Font Mono",
   "buffer_line_height": {
@@ -25,18 +29,17 @@
     }
   },
   "features": {
-    "inline_completion_provider": "zed"
+    "edit_prediction_provider": "zed"
   },
   "indent_guides": { "enabled": false },
   "inlay_hints": {
     "enabled": true
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
+    }
   },
   "soft_wrap": "none",
   "cursor_blink": false,
@@ -65,6 +68,10 @@
   },
   "languages": {
     "Markdown": {
+      "completions": {
+        "words": "disabled"
+      },
+      "show_edit_predictions": false,
       "preferred_line_length": 80,
       "format_on_save": "off"
     },
