@@ -1,5 +1,6 @@
 macos-non-native-fullscreen = true
-macos-option-as-alt = true
+# macos-option-as-alt = true
+scrollbar = never
 
 window-inherit-font-size = false
 
