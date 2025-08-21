@@ -6,9 +6,7 @@ window-inherit-font-size = false
 font-family = BerkeleyMono Nerd Font Mono
 font-size = 13
 
-theme = GruvboxDarkHard
-cursor-color = #928374
-background = #1d2021
+theme = Gruvbox Dark Hard
 
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
