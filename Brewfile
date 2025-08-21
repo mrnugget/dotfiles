@@ -73,10 +73,7 @@ brew 'cursor'
 brew 'windsurf'
 
 cask 'soundsource'
-<<<<<<< Updated upstream
 cask 'keepingyouawake'
-=======
->>>>>>> Stashed changes
 cask 'slack'
 cask 'istat-menus'
 cask 'zoom'
@@ -98,7 +95,6 @@ cask 'monodraw'
 # Doesn't exist anymore?
 # cask 'KindleGen'
 cask 'basictex'
-cask 'imageoptim'
 cask 'handbrake'
 cask 'figma'
 # terminal emulators
