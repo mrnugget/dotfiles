@@ -4,7 +4,8 @@ scrollbar = never
 
 window-inherit-font-size = false
 
-font-family = BerkeleyMono Nerd Font Mono
+font-family = Berkeley Mono
+font-feature = -calt
 font-size = 13
 
 theme = Gruvbox Dark Hard
