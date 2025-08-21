@@ -588,3 +588,6 @@ export PATH="$HOME/bin:$PATH"
 
 # Added by Antigravity
 export PATH="/Users/mrnugget/.antigravity/antigravity/bin:$PATH"
+
+# browser
+export PATH="/Users/mrnugget/.browser/bin:$PATH"
