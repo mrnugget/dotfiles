@@ -210,6 +210,7 @@ alias pd='pnpm dev'
 alias pc='pnpm check'
 alias pf='pnpm check:fix'
 alias pt='pnpm test --run'
+alias cli='pnpm -C cli cli'
 
 alias ap='amp'
 
@@ -241,8 +242,33 @@ alias js='jj status'
 alias jf='jj git fetch'
 alias jp='jj git push'
 alias jd='jj diff'
+alias jrt='jj retrunk'
 alias jjl="jj log"
-alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)' --color=always -T 'builtin_log_oneline'"
+jjlt() {
+  local n="${1:-10}"
+  jj log -r "latest(ancestors(trunk()), $n)" --color=always -T '
+    change_id.shortest(8) ++ " " ++
+    commit_id.shortest(8) ++ " " ++
+    "§" ++ author.email() ++ "§{" ++
+    committer.timestamp().ago() ++ "{" ++
+    if(bookmarks, bookmarks ++ " ", "") ++
+    description.first_line()
+  ' | column -t -s '{' | perl -pe '
+    BEGIN {
+      # Bright colors that work on dark backgrounds
+      @colors = (1,2,3,5,6,9,10,11,12,13,14,33,39,41,47,50,51,82,118,154,166,172,196,199,208,214,220,226);
+      sub colorize {
+        my $e = shift;
+        $e =~ s/\e\[[0-9;]*m//g;
+        my $h = 0;
+        $h += ord($_) for split("", $e);
+        my $c = $colors[$h % scalar(@colors)];
+        return "\e[38;5;${c}m$e\e[0m";
+      }
+    }
+    s/§([^§]+)§/colorize($1)/ge
+  ' | less -XFRS
+}
 alias jl="jj log"
 alias jlr="jj lr"
 ##########
