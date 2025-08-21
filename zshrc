@@ -133,6 +133,32 @@ case $OSTYPE in
   ;;
 esac
 
+unalias eht 2>/dev/null
+eht() {
+  local hosts=/etc/hosts
+  local sites=(
+    twitter.com www.twitter.com mobile.twitter.com api.twitter.com
+    x.com www.x.com mobile.x.com api.x.com
+    news.ycombinator.com
+  )
+  local site_pattern='twitter\.com|www\.twitter\.com|mobile\.twitter\.com|api\.twitter\.com|x\.com|www\.x\.com|mobile\.x\.com|api\.x\.com|news\.ycombinator\.com'
+  local active_pattern="^(127\.0\.0\.1|0\.0\.0\.0)[[:space:]]+(${site_pattern})([[:space:]]|$)"
+  local commented_pattern="^#(127\.0\.0\.1|0\.0\.0\.0)[[:space:]]+(${site_pattern})([[:space:]]|$)"
+  local flush_dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder 2>/dev/null'
+
+  if sudo grep -Eq "${active_pattern}" "${hosts}"; then
+    sudo sed -i.bak -E "s/^(${active_pattern#^})/#\\1/" "${hosts}" && \
+      eval "${flush_dns}" && \
+      echo "Time-wasting sites are now ENABLED"
+  else
+    if sudo grep -Eq "${commented_pattern}" "${hosts}"; then
+      sudo sed -i.bak -E "s/^#(127\.0\.0\.1|0\.0\.0\.0)[[:space:]]+(${site_pattern})([[:space:]]|$)/0.0.0.0 \\2\\3/" "${hosts}"
+    else
+      { printf '\n'; printf '0.0.0.0 %s\n' "${sites[@]}"; } | sudo tee -a "${hosts}" >/dev/null
+    fi && eval "${flush_dns}" && echo "Time-wasting sites are now DISABLED"
+  fi
+}
+
 if type lsd &> /dev/null; then
   alias ls=lsd
 fi
