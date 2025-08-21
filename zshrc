@@ -155,6 +155,7 @@ alias monsterclean='git clean -fdx -e .jj/'
 alias gst='git status'
 alias s='git status'
 alias gaa='git add -A'
+alias gc='git commit'
 alias gcm='git checkout main'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -206,6 +207,8 @@ alias rr='cargo run --release'
 
 alias p='pnpm'
 alias pc='pnpm run build && pnpm run check && pnpm run test --run'
+
+alias ap='amp'
 
 alias -g DLOG='RUST_LOG=debug,cranelift_codegen=error,h2=error,hyper_util=error,wasmtime=error,globset=error'
 
@@ -524,23 +527,17 @@ fi
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Export my personal ~/bin as last one to have highest precedence
-export PATH="$HOME/bin:$PATH"
-
 alias c35="llm -m claude-3.5-sonnet"
 
-# Added by Windsurf
-# export PATH="/Users/thorstenball/.codeium/windsurf/bin:$PATH"
-
-. "$HOME/.local/bin/env"
+if [ -e "$HOME/.local/bin/env" ]; then
+  source "$HOME/.local/bin/env"
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mrnugget/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mrnugget/bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
-export FOO2=".zshrc"
 
 
 # pnpm
@@ -550,3 +547,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH=/Users/mrnugget/.opencode/bin:$PATH
+export PATH="$PATH:/Users/mrnugget/.lmstudio/bin"
+
+# Export my personal ~/bin as last one to have highest precedence
+export PATH="$HOME/bin:$PATH"
