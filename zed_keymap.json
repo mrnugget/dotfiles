@@ -34,14 +34,14 @@
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
       "ctrl-w t": "terminal_panel::ToggleFocus",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
       "cmd-shift-k": "editor::DeleteLine",
       // "1 g shift-d": "editor::GoToImplementation",
       "g ]": "editor::GoToDiagnostic",
-      "g [": "editor::GoToPrevDiagnostic",
+      "g [": "editor::GoToPreviousDiagnostic",
       "g shift-r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
@@ -49,18 +49,8 @@
       "[ x": "editor::SelectLargerSyntaxNode",
       "] x": "editor::SelectSmallerSyntaxNode",
       "space w": "workspace::Save",
-      "j": [
-        "vim::Down",
-        {
-          "displayLines": true
-        }
-      ],
-      "k": [
-        "vim::Up",
-        {
-          "displayLines": true
-        }
-      ],
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }],
       ", g b": "editor::ToggleGitBlame",
       "-": "pane::RevealInProjectPanel"
     }
@@ -68,18 +58,8 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !VimCount",
     "bindings": {
-      "0": [
-        "vim::StartOfLine",
-        {
-          "displayLines": true
-        }
-      ],
-      "$": [
-        "vim::EndOfLine",
-        {
-          "displayLines": true
-        }
-      ]
+      "0": ["vim::StartOfLine", { "display_lines": true }],
+      "$": ["vim::EndOfLine", { "display_lines": true }]
     }
   },
   {
@@ -104,10 +84,10 @@
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
     }
   }
 ]
