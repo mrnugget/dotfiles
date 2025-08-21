@@ -22,6 +22,25 @@ retrunk = ["rebase", "-d", "trunk()"]
 # combine all of the revs from the current one to the start of the "branch" into one
 collapse = ["squash", "-f", "branch_start(@)+::@", "-t", "branch_start(@)"]
 
+# co-br: checkout a remote branch to work on it
+# Usage: jj co-br <bookmark-name>
+co-br = ["util", "exec", "--", "sh", "-c", """
+jj git fetch && \
+jj bookmark track "$1@origin" 2>/dev/null; \
+jj new "$1"
+""", ""]
+
+# checkout: track a remote bookmark and create a new change on it
+# Usage: jj checkout <branch> [remote]
+checkout = ["util", "exec", "--", "sh", "-c", """
+set -e
+branch="$1"
+remote="${2:-origin}"
+jj git fetch --remote "$remote"
+jj bookmark track "$branch" --remote "$remote"
+jj new "$branch"
+""", ""]
+
 lr = ["log", "-r", "all()", "-n", "10"]
 
 [revset-aliases]
