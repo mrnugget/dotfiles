@@ -70,6 +70,44 @@ alias r='cargo run'
 alias cr='cargo run'
 alias rr='cargo run --release'
 
+# jj aliases
+# Most of that stuff is taken from here: https://x.com/dimfeld/status/1926863685487559038
+# Workflow:
+#   jj commit
+#   jjub
+#   jj git push
+
+# Get the closest ancestor bookmark
+alias jjpb="jj log -r 'latest(heads(ancestors(@) & bookmarks()), 1)' --limit 1 --no-graph --ignore-working-copy -T bookmarks | tr -d '*'"
+
+# jj update branch
+function jj-update-branch
+    set REV $argv[1]
+    if test -z "$REV"
+        set REV @
+    end
+
+    if test (count $argv) -gt 0
+        set remaining_args $argv[2..]
+    else
+        set remaining_args
+    end
+
+    jj bookmark move (jjpb) --to "$REV" $remaining_args
+end
+
+alias jjub=jj-update-branch
+alias jn='jj new'
+alias jc='jj commit'
+alias js='jj status'
+alias jf='jj git fetch'
+alias jp='jj git push'
+alias jd='jj diff'
+alias jjl='jj log'
+alias jjlt="jj log -r 'latest(ancestors(trunk()), 10)' --color=always -T 'builtin_log_oneline'"
+alias jl='jj log'
+alias jlr='jj lr'
+
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/mrnugget/.lmstudio/bin
 # End of LM Studio CLI section
