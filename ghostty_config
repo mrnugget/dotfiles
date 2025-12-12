@@ -8,7 +8,6 @@ font-family = Berkeley Mono
 font-feature = -calt
 font-size = 13
 
-theme = Gruvbox Dark Hard
 
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
@@ -18,3 +17,39 @@ keybind = ctrl+l=goto_split:right
 keybind = ctrl+b>shift+five=new_split:right
 keybind = ctrl+b>shift+apostrophe=new_split:down
 auto-update-channel = tip
+
+theme = Gruvbox Dark Hard
+# # Amp Color Scheme for Ghostty
+#
+# # UI Colors
+# background = #161616
+# foreground = #E1E1E1
+# cursor-color = #E7894C
+# selection-background = #1B2B56
+# selection-foreground = #F2ECDD
+# split-divider-color = #627987
+#
+# # macOS Icon Colors
+# macos-icon = custom-style
+# macos-icon-ghost-color = #E7894C
+# macos-icon-screen-color = #0D1323
+#
+# # Standard ANSI Colors (0-7)
+# palette = 0=#000000
+# palette = 1=#6B424F
+# palette = 2=#7C9B96
+# palette = 3=#E3A25A
+# palette = 4=#316E99
+# palette = 5=#D6B4A4
+# palette = 6=#B6D7BA
+# palette = 7=#F0C3AA
+#
+# # Bright ANSI Colors (8-15)
+# palette = 8=#627987
+# palette = 9=#E7894C
+# palette = 10=#B6D7BA
+# palette = 11=#E3C888
+# palette = 12=#A7A9A5
+# palette = 13=#D6B4A4
+# palette = 14=#E5FEEB
+# palette = 15=#F2ECDD

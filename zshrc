@@ -206,7 +206,10 @@ alias cr='cargo run'
 alias rr='cargo run --release'
 
 alias p='pnpm'
-alias pc='pnpm run build && pnpm run check && pnpm run test --run'
+alias pd='pnpm dev'
+alias pc='pnpm check'
+alias pf='pnpm check:fix'
+alias pt='pnpm test --run'
 
 alias ap='amp'
 
@@ -553,3 +556,9 @@ export PATH="$PATH:/Users/mrnugget/.lmstudio/bin"
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
+
+# bun completions
+[ -s "/Users/mrnugget/.bun/_bun" ] && source "/Users/mrnugget/.bun/_bun"
+
+# Added by Antigravity
+export PATH="/Users/mrnugget/.antigravity/antigravity/bin:$PATH"
