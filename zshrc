@@ -390,10 +390,19 @@ jj_prompt_info() {
   local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
   local clean=""
   local conflicts="%{$fg_bold[yellow]%} !%{$reset_color%}"
+  local unpushed=""
   
   # Get bookmark and change info
   local bookmark=$(jj log -r @ --no-graph -T 'bookmarks' 2> /dev/null | tr -d '*' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//')
   local change_id=$(jj log -r @ --no-graph -T 'change_id.shortest()' 2> /dev/null) || return
+
+  # Count committed changes on top of main/master. After `jj commit`, @ is the
+  # empty working-copy commit, so @- is the latest real commit.
+  local unpushed_revset='((trunk() & ~root() & ::@-)::@-) ~ (trunk() & ~root() & ::@-)'
+  local unpushed_count=$(jj log -r "$unpushed_revset" --no-graph --ignore-working-copy -T 'commit_id ++ "\n"' 2> /dev/null | wc -l | tr -d ' ')
+  if [[ "$unpushed_count" -gt 0 ]]; then
+    unpushed=" %{$fg_bold[blue]%}${unpushed_count}%{$reset_color%}"
+  fi
   
   # Check working copy status
   local wc_status=""
@@ -407,7 +416,7 @@ jj_prompt_info() {
   
   # Show bookmark if exists, otherwise change ID
   local ref_display="${bookmark:-$change_id}"
-  echo " %{$fg_bold[green]%}${ref_display}${wc_status}%{$reset_color%}"
+  echo " %{$fg_bold[green]%}${ref_display}${unpushed}${wc_status}%{$reset_color%}"
 }
 
 vcs_prompt_info() {
