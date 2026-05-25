@@ -552,9 +552,9 @@ if type direnv &> /dev/null; then
 fi
 
 # mise
-# if type mise &> /dev/null; then
-#   eval "$(mise activate zsh)"
-# fi
+if type mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
 
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
@@ -604,16 +604,14 @@ if [ -f '/Users/mrnugget/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mr
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mrnugget/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
-
 # pnpm
-export PNPM_HOME="/Users/mrnugget/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="/Users/mrnugget/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
 # pnpm end
 
-export PATH=/Users/mrnugget/.opencode/bin:$PATH
 export PATH="$PATH:/Users/mrnugget/.lmstudio/bin"
 
 # Export my personal ~/bin as last one to have highest precedence
@@ -621,9 +619,6 @@ export PATH="$HOME/bin:$PATH"
 
 # bun completions
 [ -s "/Users/mrnugget/.bun/_bun" ] && source "/Users/mrnugget/.bun/_bun"
-
-# Added by Antigravity
-export PATH="/Users/mrnugget/.antigravity/antigravity/bin:$PATH"
 
 # browser
 export PATH="/Users/mrnugget/.browser/bin:$PATH"
