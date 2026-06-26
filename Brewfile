@@ -10,7 +10,7 @@ brew 'openssl'
 brew 'coreutils'
 brew 'gnu-tar'
 brew 'fzf'
-brew 'reattach-to-user-namespace'
+# brew 'reattach-to-user-namespace'
 brew 'tmux'
 brew 'ripgrep'
 brew 'direnv'
@@ -38,7 +38,7 @@ brew 'pkill'
 brew 'neovim'
 brew 'atuin'
 brew 'btop'
-brew 'neofetch'
+# brew 'neofetch'
 brew 'zoxide'
 
 # See: https://apple.stackexchange.com/questions/431812/how-can-i-stop-a-bluetooth-keyboard-from-waking-my-macbook-pro/437396#437396
@@ -61,19 +61,18 @@ brew 'mise'
 brew 'libyaml' # libyaml is needed for Ruby/ruby-build
 
 cask 'postgres-unofficial'
-brew 'livekit'
-brew 'postgrest'
-brew 'foreman'
+# brew 'livekit'
+# brew 'postgrest'
+# brew 'foreman'
 
-brew 'claude'
 brew 'ghostty'
 brew 'raycast'
 brew 'arq'
-brew 'cursor'
-brew 'windsurf'
+# brew 'cursor'
+# brew 'windsurf'
 
-cask 'soundsource'
-cask 'keepingyouawake'
+# cask 'soundsource'
+# cask 'keepingyouawake'
 cask 'slack'
 cask 'istat-menus'
 cask 'zoom'
@@ -82,19 +81,19 @@ cask 'signal'
 cask 'spotify'
 cask 'vlc'
 cask 'visual-studio-code'
-cask 'postico'
+# cask 'postico'
 cask 'cleanshot'
-cask 'screenflow'
+# cask 'screenflow'
 cask 'obs'
 cask 'imageoptim'
-cask 'barrier'
+# cask 'barrier'
 cask 'discord'
 cask 'orbstack'
-cask 'vmware-fusion'
+# cask 'vmware-fusion'
 cask 'monodraw'
 # Doesn't exist anymore?
 # cask 'KindleGen'
-cask 'basictex'
+# cask 'basictex'
 cask 'handbrake'
 cask 'figma'
 # terminal emulators
@@ -108,23 +107,23 @@ cask 'iterm2'
 cask 'synology-drive'
 
 cask 'sonos'
-cask 'focusrite-control' # Drivers for Focusrite Scarlett
+# cask 'focusrite-control' # Drivers for Focusrite Scarlett
 cask 'elgato-control-center'
 
-tap 'homebrew/cask-fonts'
-cask 'font-hack'
-cask 'font-jetbrains-mono'
-cask 'font-inconsolata'
-cask 'font-roboto'
-cask 'font-roboto-mono'
-cask 'font-ibm-plex'
+# tap 'homebrew/cask-fonts'
+# cask 'font-hack'
+# cask 'font-jetbrains-mono'
+# cask 'font-inconsolata'
+# cask 'font-roboto'
+# cask 'font-roboto-mono'
+# cask 'font-ibm-plex'
 
-mas 'Fantastical 2', id: 975937182
-mas 'Xcode', id: 497799835
-mas 'Todoist', id: 585829637
+# mas 'Fantastical 2', id: 975937182
+# mas 'Xcode', id: 497799835
+# mas 'Todoist', id: 585829637
 mas 'Pixelmator Pro', id: 1289583905
-mas 'Kindle', id: 405399194
-mas 'MoneyMoney', id: 872698314
-mas 'Microsoft Word', id: 462054704
-mas 'Microsoft Excel', id: 462058435
+# mas 'Kindle', id: 405399194
+# mas 'MoneyMoney', id: 872698314
+# mas 'Microsoft Word', id: 462054704
+# mas 'Microsoft Excel', id: 462058435
 mas 'Tailscale', id: 1475387142
