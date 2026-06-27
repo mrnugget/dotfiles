@@ -31,7 +31,7 @@
   "scrollbar": {
     "show": "never",
   },
-  "ui_font_family": "BerkeleyMono Nerd Font Mono",
+  "ui_font_family": "Berkeley Mono",
   "buffer_font_family": "Berkeley Mono",
   "buffer_line_height": {
     "custom": 1.25,
@@ -39,7 +39,7 @@
   "terminal": {
     "dock": "bottom",
     "font_size": 13,
-    "font_family": "BerkeleyMono Nerd Font Mono",
+    "font_family": "Berkeley Mono",
     "line_height": {
       "custom": 1.25,
     },
